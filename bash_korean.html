@@ -49,7 +49,7 @@ kbd {font-style:oblique}
 pre.display {font-family: inherit}
 pre.format {font-family: inherit}
 pre.menu-comment {font-family: serif}
-pre.menu-preformatted {font-family: serif}
+pre.menu-preformatted {font-family: serif}https://github.com/ptjoker95/bash_document_transhttps://github.com/ptjoker95/bash_document_translate_Korean.gitlate_Korean.git
 pre.smalldisplay {font-family: inherit; font-size: smaller}
 pre.smallexample {font-size: smaller}
 pre.smallformat {font-family: inherit; font-size: smaller}
@@ -84,7 +84,7 @@ ul.no-bullet {list-style: none}
 <ul class="no-bullet">
   <li><a name="toc-Introduction-1" href="#Introduction">1 소개</a>
   <ul class="no-bullet">
-    <li><a name="toc-What-is-Bash_003f-1" href="#What-is-Bash_003f">1.1 Bash란?</a></li>
+    <li><a name="toc-What-is-Bash_003https://github.com/ptjoker95/bash_document_translate_Korean.gitf-1" href="#What-is-Bash_003f">1.1 Bash란?</a></li>
     <li><a name="toc-What-is-a-shell_003f-1" href="#What-is-a-shell_003f">1.2 shell이란?</a></li>
   </ul></li>
   <li><a name="toc-Definitions-1" href="#Definitions">2 각종 정의들</a></li>
@@ -138,9 +138,9 @@ ul.no-bullet {list-style: none}
       </ul></li>
       <li><a name="toc-Quote-Removal-1" href="#Quote-Removal">3.5.9 Quote Removal</a></li>
     </ul></li>
-    <li><a name="toc-Redirections-1" href="#Redirections">3.6 Redirections</a>
+    <li><a name="toc-Redirections-1" href="#Redirections">3.6 전송</a>
     <ul class="no-bullet">
-      <li><a name="toc-Redirecting-Input" href="#Redirecting-Input">3.6.1 Redirecting Input</a></li>
+      <li><a name="toc-Redirecting-Input" href="#Redirecting-Input">3.6.1 입력 전송</a></li>
       <li><a name="toc-Redirecting-Output" href="#Redirecting-Output">3.6.2 Redirecting Output</a></li>
       <li><a name="toc-Appending-Redirected-Output" href="#Appending-Redirected-Output">3.6.3 Appending Redirected Output</a></li>
       <li><a name="toc-Redirecting-Standard-Output-and-Standard-Error" href="#Redirecting-Standard-Output-and-Standard-Error">3.6.4 Redirecting Standard Output and Standard Error</a></li>
@@ -3039,23 +3039,14 @@ result from one of the above expansions are removed.
 Next: <a href="#Executing-Commands" accesskey="n" rel="next">Executing Commands</a>, Previous: <a href="#Shell-Expansions" accesskey="p" rel="prev">Shell Expansions</a>, Up: <a href="#Basic-Shell-Features" accesskey="u" rel="up">Basic Shell Features</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Redirections-1"></a>
-<h3 class="section">3.6 Redirections</h3>
+<h3 class="section">3.6 전송</h3>
 <a name="index-redirection"></a>
 
-<p>Before a command is executed, its input and output
-may be <var>redirected</var>
-using a special notation interpreted by the shell.
-Redirection allows commands&rsquo; file handles to be
-duplicated, opened, closed,
-made to refer to different files,
-and can change the files the command reads from and writes to.
-Redirection may also be used to modify file handles in the
-current shell execution environment.  The following redirection
-operators may precede or appear anywhere within a
-simple command or may follow a command.
-Redirections are processed in the order they appear, from
-left to right.
-</p>
+<p>명령어가 실행되기 전에 쉘에 특정한 지시를 하게 되면, 그 명령어에 대한 입력과 명령어의 출력을 <var>전송</var>할 수 있게 됩니다. 
+전송은 명령어가 파일을 복사, 읽기, 닫기, 다른 파일로의 참조, 그리고 명령어가 읽어온 파일을 바꾸거나 그 파일에 무언가를 쓸 수 있게 해줍니다. 
+전송은 또한 현재의 쉘 실행 환경에서의 파일 처리도 수정할 수 있게 해줍니다. 
+다음의 전송 조작자는 간단한 명령어를 선행하거나 후행하는 등 어디서든 나타날 수 있습니다. 
+전송은 왼쪽에서 오른쪽 순서로 실행됩니다.</p>
 <p>Each redirection that may be preceded by a file descriptor number
 may instead be preceded by a word of the form {<var>varname</var>}.
 In this case, for each redirection operator except
