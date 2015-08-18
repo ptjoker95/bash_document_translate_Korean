@@ -20,6 +20,9 @@ A copy of the license is included in the section entitled
 <!-- Bash를 공부하고 있는데, 매뉴얼이 별로 없어서 GNU에서 만든 매뉴얼을 번역해보기로 함.
 Bash를 공부하고자 하는 분들에게 도움이 되었으면 함.
 번역자: 손영채 (ptjoker95@gmail.com) -->
+<!-- 참고
+http://www.linuxcertif.com/man/1/bash/ko/
+-->
 <head>
 <title>Bash 레퍼런스 메뉴얼</title>
 
@@ -169,8 +172,12 @@ ul.no-bullet {list-style: none}
 <a name="toc-Shell-Functions-1" href="#Shell-Functions">3.3 Shell Functions</a>
 </li>
     <li>
-<a name="toc-Shell-Parameters-1" href="#Shell-Parameters">3.4 Shell Parameters</a>
+<a name="toc-Shell-Parameters-1" href="#Shell-Parameters">3.4 쉘 매개 변수</a>
     <ul class="no-bullet">
+      <li><a name="toc-Positional-Parameters-1" href="#Positional-Parameters">3.4.1 위치 매개 변수</a></li>
+      <li><a name="toc-Special-Parameters-1" href="#Special-Parameters">3.4.2 Special Parameters</a></li>
+    </ul></li>
+    <li><a name="toc-Shell-Expansions-1" href="#Shell-Expansions">3.5 Shell Expansions</a>
       <li>
 <a name="toc-Positional-Parameters-1" href="#Positional-Parameters">3.4.1 Positional Parameters</a>
 </li>
@@ -291,6 +298,12 @@ ul.no-bullet {list-style: none}
     <li>
 <a name="toc-Modifying-Shell-Behavior-1" href="#Modifying-Shell-Behavior">4.3 Modifying Shell Behavior</a>
     <ul class="no-bullet">
+      <li><a name="toc-The-Set-Builtin-1" href="#The-Set-Builtin">4.3.1 내부 명령어 Set</a></li>
+      <li><a name="toc-The-Shopt-Builtin-1" href="#The-Shopt-Builtin">4.3.2 The Shopt Builtin</a></li>
+    </ul></li>
+    <li><a name="toc-Special-Builtins-1" href="#Special-Builtins">4.4 Special Builtins</a></li>
+  </ul></li>
+  <li><a name="toc-Shell-Variables-1" href="#Shell-Variables">5 Shell Variables</a>
       <li>
 <a name="toc-The-Set-Builtin-1" href="#The-Set-Builtin">4.3.1 The Set Builtin</a>
 </li>
@@ -306,6 +319,7 @@ ul.no-bullet {list-style: none}
 </li>
   <li>
 <a name="toc-Shell-Variables-1" href="#Shell-Variables">5 Shell Variables</a>
+>>>>>>> c7b0c97511691e0bd76d5fcde2af4935d30bbf29
   <ul class="no-bullet">
     <li>
 <a name="toc-Bourne-Shell-Variables-1" href="#Bourne-Shell-Variables">5.1 Bourne Shell Variables</a>
@@ -2728,23 +2742,23 @@ Variable 이 지정되면 내부 명령어 <code>unset</code> 으로
 <var>name</var>=[<var>value</var>]
 </pre>
 </div>
-<p>If <var>value</var>
-is not given, the variable is assigned the null string.  All
-<var>value</var>s undergo tilde expansion, parameter and variable expansion,
-command substitution, arithmetic expansion, and quote
-removal (detailed below).  If the variable has its <code>integer</code>
-attribute set, then <var>value</var> 
-is evaluated as an arithmetic expression even if the <code>$((&hellip;))</code>
-expansion is not used (see <a href="#Arithmetic-Expansion">Arithmetic Expansion</a>).
-Word splitting is not performed, with the exception
-of <code>&quot;$@&quot;</code> as explained below.
-Filename expansion is not performed.
-Assignment statements may also appear as arguments to the
-<code>alias</code>, 
-<code>declare</code>, <code>typeset</code>, <code>export</code>, <code>readonly</code>,
-and <code>local</code> builtin commands.
-When in <small>POSIX</small> mode (see <a href="#Bash-POSIX-Mode">Bash POSIX Mode</a>), these builtins may appear
-in a command after one or more instances of the <code>command</code> builtin
+<p><var>Value</var> 가 주어지지 않으면, Variable 에는 Null 문자열이 지정됩니다.
+모든 <var>Value</var> 들은 틸드 확장, 매개 변수와 변수 확장, 명령어 치환, 산술 연산 확장, 
+그리고 인용문 제거 (자세한 것은 아래에) 를 수행합니다. 
+만일 <code>정수</code> 값을 가지게 되면, <code>$((&hellip;))</code> 표현식을 안 쓰더라도 
+<var>값</var> 은 산술 연산을 할 수 있습니다. 
+(<a href="#Arithmetic-Expansion">산술 연산 확장</a> 참고).
+아래에 있는 설명과 같이, <code>&quot;$@&quot;</code>가 없으면 
+단어 분리는 이루어지지 않습니다. 파일명 확장은 되지 않습니다. 
+지정문은 내부 명령어 
+<code>alias</code>, <code>declare</code>, <code>typeset</code>, 
+<code>export</code>, <code>readonly</code> 와 <code>local</code> 
+에서도 이뤄집니다. <small>POSIX</small> 
+(<a href="#Bash-POSIX-Mode">Bash POSIX Mode</a> 참조) 모드에서 
+앞의 내부명령어는 또다른 내부명령어 <code>command</code>
+
+When in  mode , these builtins may appear
+in a command after one or more instances of the  builtin
 and retain these assignment statement properties.
 </p>
 <p>In the context where an assignment statement is assigning a value  
@@ -2802,36 +2816,36 @@ as an argument, the variable referenced by the nameref variable will be unset.
 </a>
 <div class="header">
 <p>
-Next: <a href="#Special-Parameters" accesskey="n" rel="next">Special Parameters</a>, Up: <a href="#Shell-Parameters" accesskey="u" rel="up">Shell Parameters</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Special-Parameters" accesskey="n" rel="next">Special Parameters</a>, 
+Up: <a href="#Shell-Parameters" accesskey="u" rel="up">Shell Parameters</a> 
+&nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]
+[<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="Positional-Parameters-1">
-</a>
-<h4 class="subsection">3.4.1 Positional Parameters</h4>
-<a name="index-parameters_002c-positional">
-</a>
+<a name="Positional-Parameters-1"></a>
+<h4 class="subsection">3.4.1 위치 매개 변수</h4>
+<a name="index-parameters_002c-positional"></a>
 
-<p>A <var>positional parameter</var> is a parameter denoted by one or more
-digits, other than the single digit <code>0</code>.  Positional parameters are
-assigned from the shell&rsquo;s arguments when it is invoked,
-and may be reassigned using the <code>set</code> builtin command.
-Positional parameter <code>N</code> may be referenced as <code>${N}</code>, or
-as <code>$N</code> when <code>N</code> consists of a single digit.
-Positional parameters may not be assigned to with assignment statements.
-The <code>set</code> and <code>shift</code> builtins are used to set and
-unset them (see <a href="#Shell-Builtin-Commands">Shell Builtin Commands</a>).
-The positional parameters are
-temporarily replaced when a shell function is executed
-(see <a href="#Shell-Functions">Shell Functions</a>).
-</p>
-<p>When a positional parameter consisting of more than a single
-digit is expanded, it must be enclosed in braces.
-</p>
+<p><var>위치 매개 변수 (positional parameter)</var> 는 0보다 큰 한자리 이상의 
+숫자로 표현되는 매개 변수입니다. 위치 매개 변수는 쉘이 실행될 때 부여되거나, 내부 명령어
+인 <code>set</code> 으로 재설정될 수 있습니다. 위치 매개 변수 <code>N</code> 이 
+한자리 숫자로 되어 있으면 <code>${N}</code> 이나 <code>$N</code> 의 형태로 사용할 
+수 있습니다. 위치 매개 변수는 할당 구문으로는 할당할 수 없습니다. 내부 명령어 <code>set</code> 과 
+<code>shift</code> 로 매개 변수를 설정하거나 비설정할 수 있습니다 (<a href=
+"#Shell-Builtin-Commands">Shell Builtin Commands</a> 참조). 위치 매개 변수는
+쉘 함수가 실행될 때 임시로 바뀌게 됩니다 (<a href="#Shell-Functions">
+Shell Functions</a> 참조). 
+
+<p>위치 매개 변수가 한자리 이상의 숫자일 때에는 중괄호로 묶어야합니다.</p>
+
 <hr>
 <a name="Special-Parameters">
 </a>
 <div class="header">
 <p>
-Previous: <a href="#Positional-Parameters" accesskey="p" rel="prev">Positional Parameters</a>, Up: <a href="#Shell-Parameters" accesskey="u" rel="up">Shell Parameters</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
+이전: <a href="#Positional-Parameters" accesskey="p" rel="prev">위치 
+매개 변수</a>, 위로: <a href="#Shell-Parameters" accesskey="u" rel="up">
+쉘 매개 변수</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" 
+rel="contents">목차</a>][<a href="#Indexes" title="Index" rel="index">색인</a>]</p>
 </div>
 <a name="Special-Parameters-1">
 </a>
@@ -7129,13 +7143,18 @@ Next: <a href="#Special-Builtins" accesskey="n" rel="next">Special Builtins</a>,
 <p>
 Next: <a href="#The-Shopt-Builtin" accesskey="n" rel="next">The Shopt Builtin</a>, Up: <a href="#Modifying-Shell-Behavior" accesskey="u" rel="up">Modifying Shell Behavior</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
+<<<<<<< HEAD
+<a name="The-Set-Builtin-1"></a>
+<h4 class="subsection">4.3.1 내부 명령어 Set</h4>
+=======
 <a name="The-Set-Builtin-1">
 </a>
 <h4 class="subsection">4.3.1 The Set Builtin</h4>
+>>>>>>> c7b0c97511691e0bd76d5fcde2af4935d30bbf29
 
-<p>This builtin is so complicated that it deserves its own section.  <code>set</code>
-allows you to change the values of shell options and set the positional
-parameters, or to display the names and values of shell variables.
+<p>이 내부 명령어는 단독의 섹션이 있을만큼 복잡합니다. 
+<code>set</code>는 쉘의 옵션값을 바꿀 수도, 매개 변수 위치를 정할 수도, 혹은 쉘 
+변수의 이름과 값들을 표시할 수도 있습니다.
 </p>
 <dl compact="compact">
 <dt>
@@ -7150,22 +7169,24 @@ set [+abefhkmnptuvxBCEHPT] [+o <var>option-name</var>] [<var>argument</var> &hel
 </pre>
 </div>
 
-<p>If no options or arguments are supplied, <code>set</code> displays the names
-and values of all shell variables and functions, sorted according to the
-current locale, in a format that may be reused as input
-for setting or resetting the currently-set variables.
-Read-only variables cannot be reset.
-In <small>POSIX</small> mode, only shell variables are listed.
+<p> 만일 옵션이나 인수없이 실행되면, <code>set</code> 은 현재 쉘의 모든 변수와 함수를 
+현재 locale로 정해져있는 방식에 따라 정렬하여, 가장 최근의 변수들을 정의내리거나 재정의
+할 수 있는 입력양식으로 보여줍니다. 읽기 전용 변수들은 재정의할 수 없습니다. <small>
+POSIX</small> 모드에서는, 쉘 변수들만 보여줍니다.
 </p>
-<p>When options are supplied, they set or unset shell attributes.
-Options, if specified, have the following meanings:
-</p>
+<p>옵션이 지정되면, 쉘 속성을 정하거나 해제합니다. 지정된 옵션은 다음의 의미를 갖습니다:</p>
 <dl compact="compact">
+<<<<<<< HEAD
+<dt><code>-a</code></dt>
+<dd><p>
+	Mark variables and function which are modified or created for export
+=======
 <dt>
 <code>-a</code>
 </dt>
 <dd>
 <p>Mark variables and function which are modified or created for export
+>>>>>>> c7b0c97511691e0bd76d5fcde2af4935d30bbf29
 to the environment of subsequent commands.
 </p>
 </dd>
@@ -7177,6 +7198,28 @@ to the environment of subsequent commands.
 immediately, rather than before printing the next primary prompt.
 </p>
 </dd>
+<<<<<<< HEAD
+<dt><code>-e</code></dt>
+<dd><p>단일 명령어 (<a href="#Simple-Commands">Simple Commands</a> 참조) 를 
+이어주는 파이프 라인 (<a href="#Pipelines">Pipelines</a> 참조), 리스트 
+(<a href="#Lists">Lists</a> 참조), 혹은 복합 명령어 (<a href="#Compound-Commands">
+Compound Commands</a> 참조) 가 0이 아닌 값을 리턴했을 
+때 즉시 스크립트를 중지합니다. <code>while</code> 이나 <code>until</code> 
+직후에 이어지는 명령어나 <code>if</code> 문 안에 있거나, 마지막의 <code>&amp;&amp;
+</code> 이나 <code>||</code> 에 이어지는 명령어를 제외한 <code>&amp;&amp;</code> 
+나 <code>||</code> 리스트 안에서 실행되는 명령어나, 마지막 파이프를 제외한 파이프의 안에 
+있는 명령어, 혹은 명령어의 반환값이 <code>!</code>로 바뀌거나 하지 않으면, 쉘은 중지되지 
+않습니다. <samp>-e</samp> 옵션이 무시된 동안에는 명령어 실행 오류로 0이 아닌 값
+을 하위 쉘이 아닌 복합 명령어가 반환해도, 쉘은 중지되지 않습니다. 만일 지정되어 있으면, 
+<code>ERR</code> 의 trap이 쉘이 정지되기 전에 실행됩니다. 
+</p>
+<p>이 옵션은 쉘 환경과 각 하위 쉘 환경 (<a href="#Command-Execution-Environment">
+Command Execution Environment</a> 참조) 에 각각 적용되고, 하위 쉘에 있는 모든 
+명령어가 실행되기 전에 하위 쉘을 중지시킬 수 있습니다.
+</p>
+<p>
+	If a compound command or shell function executes in a context where
+=======
 <dt>
 <code>-e</code>
 </dt>
@@ -7204,6 +7247,7 @@ separately (see <a href="#Command-Execution-Environment">Command Execution Envir
 subshells to exit before executing all the commands in the subshell.
 </p>
 <p>If a compound command or shell function executes in a context where
+>>>>>>> c7b0c97511691e0bd76d5fcde2af4935d30bbf29
 <samp>-e</samp> is being ignored,
 none of the commands executed within the compound command or function body
 will be affected by the <samp>-e</samp> setting, even if <samp>-e</samp> is set
