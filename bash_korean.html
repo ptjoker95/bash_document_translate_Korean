@@ -721,20 +721,24 @@ Next: <a href="#Definitions" accesskey="n" rel="next">Definitions</a>, Up: <a hr
  을 만든 Stephen Bourne로부터 따온 &lsquo;<samp>Bourne-Again SHell</samp>&rsquo;
  의 첫글자로부터 이름지어졌습니다.
 </p>
-<p>Bash is largely compatible with <code>sh</code> and incorporates useful
-features from the Korn shell <code>ksh</code> and the C shell <code>csh</code>.
-It is intended to be a conformant implementation of the <small>IEEE</small>
-<small>POSIX</small> Shell and Tools portion of the <small>IEEE</small> <small>POSIX</small>
-specification (<small>IEEE</small> Standard 1003.1).
-It offers functional improvements over <code>sh</code> for both interactive and
-programming use.
+<p>Bash 는 <code>sh</code> 와 대부분 호환되며 Korn 쉘 
+<code>ksh</code> 과 C 쉘 <code>csh</code> 로부터 유용한 것들을 
+받아들였습니다. 
+<small>IEEE</small> 
+<small>POSIX</small> 쉘과 
+<small>IEEE</small> 
+<small>POSIX</small> 규격 (<small>IEEE</small> Standard 1003.1) 의 
+도구들을 따라하지 않을 것입니다. 명령어 실행과 프로그래밍 양쪽에서 
+<code>sh</code> 보다 기술적인 진보를 제공해줍니다.
 </p>
-<p>While the <small>GNU</small> operating system provides other shells, including
-a version of <code>csh</code>, Bash is the default shell.
-Like other <small>GNU</small> software, Bash is quite portable.  It currently runs
-on nearly every version of Unix and a few other operating systems -
-independently-supported ports exist for <small>MS-DOS</small>, <small>OS/2</small>,
-and Windows platforms.
+<p><small>GNU</small> 운영체제가 <code>csh</code> 를 포함한, 다른 
+쉘을 제공하더라도, Bash 는 기본 쉘입니다. 다른 
+<small>GNU</small> 소프트웨어와 같이, Bash 는 매우 조작이 쉽습니다. 
+Unix 의 거의 모든 버전에서 가동되며, 
+<small>MS-DOS</small>, 
+<small>OS/2</small>, 와 
+윈도우 플랫폼 중 개별적으로 지원 받는 포트를 가지고 있는 몇몇 
+운영 체제에서도 가동되고 있습니다.
 </p>
 <hr>
 <a name="What-is-a-shell_003f">
@@ -747,24 +751,22 @@ Previous: <a href="#What-is-Bash_003f" accesskey="p" rel="prev">Bash 란?</a>, �
 </a>
 <h3 class="section">1.2 What is a shell?</h3>
 
-<p>At its base, a shell is simply a macro processor that executes
-commands.  The term macro processor means functionality where text
-and symbols are expanded to create larger expressions.
+<p>기본적으로, 쉘은 명령어를 실행하기 위한 간단한 매크로 
+프로세서입니다. 매크로 프로세서란 텍스트나 기호들로 더 많은 표현을 
+하기 위한 기능을 의미합니다.
 </p>
-<p>A Unix shell is both a command interpreter and a programming
-language.  As a command interpreter, the shell provides the user
-interface to the rich set of <small>GNU</small> utilities.  The programming
-language features allow these utilities to be combined.
-Files containing commands can be created, and become
-commands themselves.  These new commands have the same status as
-system commands in directories such as <samp>/bin</samp>, allowing users
-or groups to establish custom environments to automate their common
-tasks.
+<p>유닉스 쉘은 명령어 실행자이기도 하면서 프로그래밍 언어이기도 
+합니다. 명령어 실행자로서, 쉘은 사용자에게 풍부한 <small>GNU</small> 
+유틸리티를 제공합니다. 프로그래밍 측면에서는 이런 유틸리티를 연결할 
+수 있게 해줍니다. 명령어를 포함한 파일을 만들 수고 있고, 그 자체가 
+명령어가 될 수도 있습니다. 이러한 새로운 명령어는 
+<samp>/bin</samp> 와 같은 디렉토리에 있는 시스템 명령어처럼 
+작동하고, 그럼으로서 사용자나 그룹이 업무에 필요한 그들만의 환경을 
+만들 수 있도록 돕습니다.
 </p>
-<p>Shells may be used interactively or non-interactively.  In
-interactive mode, they accept input typed from the keyboard.
-When executing non-interactively, shells execute commands read
-from a file.
+<p>쉘은 대화형이 될수고 비대화형이 될 수도 있습니다. 대화형 
+모드에서는 키보드로부터의 입력을 받을 수 있습니다. 비대화형으로 
+실행되면, 쉘은 파일로부터 읽어온 명령어를 실행합니다.
 </p>
 <p>A shell allows execution of <small>GNU</small> commands, both synchronously and
 asynchronously.
