@@ -446,7 +446,7 @@ ul.no-bullet {list-style: none}
 </a>
 </li>
 <li>
-<a name="toc-Arrays-1" href="#Arrays">6.7 Arrays
+<a name="toc-Arrays-1" href="#Arrays">6.7 배열들
 </a>
 </li>
 <li>
@@ -17557,151 +17557,96 @@ Next:
 </div>
 <a name="Arrays-1">
 </a>
-<h3 class="section">6.7 Arrays
+<h3 class="section">6.7 배열들
 </h3>
 <a name="index-arrays">
 </a>
-<p>Bash provides one-dimensional indexed and associative array variables.
-Any variable may be used as an indexed array;
-the 
-<code>declare
-</code> builtin will explicitly declare an array.
-There is no maximum
-limit on the size of an array, nor any requirement that members
-be indexed or assigned contiguously.
-Indexed arrays are referenced using integers (including arithmetic
-expressions (see 
-<a href="#Shell-Arithmetic">Shell Arithmetic
-</a>)) and are zero-based;
-associative arrays use arbitrary strings.
-Unless otherwise noted, indexed array indices must be non-negative integers.
+<p>Bash 는 1차원으로 색인되고 결합된 배열 변수를 제공합니다. 어떤 변수들이든 색인 배열로 
+사용가능합니다; 
+<code>declare</code> 내부 명령은 배열을 선언하는 데 사용됩니다. 배열의 최대 사이즈의 제한이나, 
+색인되거나 연속적으로 부여된 인자들에 대한 어떤 필요조건도 없습니다. 색인된 배열은 정수를 
+사용해 값은 찾고 (수식 포함 
+<a href="#Shell-Arithmetic">쉘 산술계산</a> 을 참조), 0을 시작으로 합니다; 연결된 배열은 
+임의의 문자열을 사용합니다. 따로 언급되지 않으면, 색인된 배열의 색인은 음수여서는 안됩니다.
 </p>
-<p>An indexed array is created automatically if any variable is assigned to
-using the syntax
+<p>색인 배열은 다음의 문법을 사용해서 값이 주어지면 자동적으로 만들어집니다</p>
+<div class="example">
+<pre class="example">
+<var>name</var>[<var>subscript</var>]=<var>value</var>
+</pre>
+</div>
+<p>위의  
+<var>subscript</var> 는 숫자를 도출해내야 하는 수식 표현으로 취급됩니다. 확실하게 배열을 
+정의하기 위해서는, 
+</p>
+<div class="example"><pre class="example">declare -a <var>name</var></pre>
+</div> 를 사용하십시요.
+<p>아래의 
+</p>
+<div class="example"><pre class="example">declare -a <var>name</var>[<var>subscript</var>]
+</pre>
+</div>
+<p>도 가능합니다; 
+<var>subscript
+</var> 는 무시됩니다.
+</p>
+<p>연결 배열은 </p>
+<div class="example"><pre class="example">declare -A <var>name</var></pre> 
+</div>
+으로 만들어집니다.
+<p>속성들은  
+<code>declare</code> 와 
+<code>readonly</code> 내부 명령을 사용해 배열 변수에 의해 특정될 수도 있습니다. 
+각 속성은 배열의 모든 요소에 적용됩니다.
+</p>
+<p>배열은 각 
+<var>값</var>들이 
+<code>[<var>subscript</var>]=
+</code>
+<var>string</var> 의 형태일 때 다음과 같이 내용을 할당하면서 지정됩니다
 </p>
 <div class="example">
 <pre class="example">
-<var>name
-</var>[
-<var>subscript
-</var>]=
-<var>value
-</var>
+<var>name</var>=(<var>value1</var> <var>value2</var> &hellip; )
 </pre>
 </div>
-<p>The 
-<var>subscript
-</var>
-is treated as an arithmetic expression that must evaluate to a number.
-To explicitly declare an array, use
+<p>색인 배열은 단지 
+<var>문자열</var>만 있으면 됩니다. 색인 배열에서, 별도의 조건이 주어진다면 
+색인은 따로 지정됩니다; 그렇지 않으면 요소의 색인은 맨 마지막 색인에 1을 더한 값이
+됩니다. 색인은 0에서 시작합니다.
 </p>
-<div class="example">
-<pre class="example">declare -a 
-<var>name
-</var>
-</pre>
-</div>
-<p>The syntax
-</p>
-<div class="example">
-<pre class="example">declare -a 
-<var>name
-</var>[
-<var>subscript
-</var>]
-</pre>
-</div>
-<p>is also accepted; the 
-<var>subscript
-</var> is ignored.
-</p>
-<p>Associative arrays are created using
-</p>
-<div class="example">
-<pre class="example">declare -A 
-<var>name
-</var>.
-</pre>
-</div>
-<p>Attributes may be
-specified for an array variable using the 
-<code>declare
-</code> and
-<code>readonly
-</code> builtins.  Each attribute applies to all members of
-an array.
-</p>
-<p>Arrays are assigned to using compound assignments of the form
-</p>
-<div class="example">
-<pre class="example">
-<var>name
-</var>=(
-<var>value1
-</var> 
-<var>value2
-</var> &hellip; )
-</pre>
-</div>
-<p>where each
-<var>value
-</var> is of the form 
-<code>[
-<var>subscript
-</var>]=
-</code>
-<var>string
-</var>.
-Indexed array assignments do not require anything but 
-<var>string
-</var>.
-When assigning to indexed arrays, if
-the optional subscript is supplied, that index is assigned to;
-otherwise the index of the element assigned is the last index assigned
-to by the statement plus one.  Indexing starts at zero.
-</p>
-<p>When assigning to an associative array, the subscript is required.
-</p>
-<p>This syntax is also accepted by the 
-<code>declare
-</code>
-builtin.  Individual array elements may be assigned to using the
+<p>연결 배열에 값을 넣을 때에는, subscript 가 있어야 합니다.</p>
+<p>
+<code>declare</code> 내부 명령으로도 이 문법을 쓸 수 있습니다. 개별적인 배열 요소들은 
+위에서 언급한
 <code>
-<var>name
-</var>[
-<var>subscript
-</var>]=
-<var>value
-</var>
-</code> syntax introduced above.
+<var>name</var>[
+<var>subscript</var>]=
+<var>value</var>
+</code> 문법으로도 부여할 수 있습니다.
 </p>
-<p>When assigning to an indexed array, if 
+<p>색인 배열에 값을 넣을 때에, 만일  
 <var>name
 </var>
-is subscripted by a negative number, that number is
-interpreted as relative to one greater than the maximum index of
-<var>name
-</var>, so negative indices count back from the end of the
-array, and an index of -1 references the last element.
+에 음수를 넣으면, 그 값은 
+<var>name</var> 의 가장 큰 값보다 하나 더 큰 값으로 간주합니다, 그래서 음수는 
+배열의 끝에서부터 거슬러 올라가고, -1은 마지막 요소를 가리킵니다.
 </p>
-<p>Any element of an array may be referenced using
+<p>배열의 값은 
 <code>${
-<var>name
-</var>[
-<var>subscript
-</var>]}
-</code>.
-The braces are required to avoid
-conflicts with the shell&rsquo;s filename expansion operators.  If the
-<var>subscript
-</var> is &lsquo;
-<samp>@
-</samp>&rsquo; or &lsquo;
-<samp>*
-</samp>&rsquo;, the word expands to all members
-of the array 
-<var>name
-</var>.  These subscripts differ only when the word
+<var>name</var>[
+<var>subscript</var>]}
+</code> 를 이용해서 불러올 수 있습니다. 쉘의 파일명 확장 연산자와 헷갈리지 않기 
+위해 중괄호가 필요합니다. 만일 
+<var>subscript</var> 가 &lsquo;
+<samp>@</samp>&rsquo; 이거나 &lsquo;
+<samp>*</samp>&rsquo; 이면, 그 
+<var>name</var> 의 배열의 모든 요소로 확장됩니다. 
+
+
+
+
+These subscripts differ only when the word
 appears within double quotes.
 If the word is double-quoted,
 <code>${
