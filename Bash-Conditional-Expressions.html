@@ -64,15 +64,18 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Bash-Conditional-Expressions"></a>
+<a name="Bash-Conditional-Expressions">
+</a>
 <div class="header">
 <p>
 Next: <a href="Shell-Arithmetic.html#Shell-Arithmetic" accesskey="n" rel="next">Shell Arithmetic</a>, Previous: <a href="Interactive-Shells.html#Interactive-Shells" accesskey="p" rel="prev">Interactive Shells</a>, Up: <a href="Bash-Features.html#Bash-Features" accesskey="u" rel="up">Bash Features</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Bash-Conditional-Expressions-1"></a>
+<a name="Bash-Conditional-Expressions-1">
+</a>
 <h3 class="section">6.4 Bash Conditional Expressions</h3>
-<a name="index-expressions_002c-conditional"></a>
+<a name="index-expressions_002c-conditional">
+</a>
 
 <p>Conditional expressions are used by the <code>[[</code> compound command
 and the <code>test</code> and <code>[</code> builtin commands.
@@ -81,7 +84,8 @@ and the <code>test</code> and <code>[</code> builtin commands.
 Unary expressions are often used to examine the status of a file.
 There are string operators and numeric comparison operators as well.
 If the <var>file</var> argument to one of the primaries is of the form
-<samp>/dev/fd/<var>N</var></samp>, then file descriptor <var>N</var> is checked.
+<samp>/dev/fd/<var>N</var>
+</samp>, then file descriptor <var>N</var> is checked.
 If the <var>file</var> argument to one of the primaries is one of
 <samp>/dev/stdin</samp>, <samp>/dev/stdout</samp>, or <samp>/dev/stderr</samp>, file
 descriptor 0, 1, or 2, respectively, is checked.
@@ -94,158 +98,312 @@ The <code>test</code> command uses ASCII ordering.
 links and operate on the target of the link, rather than the link itself.
 </p>
 <dl compact="compact">
-<dt><code>-a <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists.
+<dt>
+<code>-a <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists.
 </p>
 </dd>
-<dt><code>-b <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is a block special file.
+<dt>
+<code>-b <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is a block special file.
 </p>
 </dd>
-<dt><code>-c <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is a character special file.
+<dt>
+<code>-c <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is a character special file.
 </p>
 </dd>
-<dt><code>-d <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is a directory.
+<dt>
+<code>-d <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is a directory.
 </p>
 </dd>
-<dt><code>-e <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists.
+<dt>
+<code>-e <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists.
 </p>
 </dd>
-<dt><code>-f <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is a regular file.
+<dt>
+<code>-f <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is a regular file.
 </p>
 </dd>
-<dt><code>-g <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and its set-group-id bit is set.
+<dt>
+<code>-g <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and its set-group-id bit is set.
 </p>
 </dd>
-<dt><code>-h <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is a symbolic link.
+<dt>
+<code>-h <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is a symbolic link.
 </p>
 </dd>
-<dt><code>-k <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and its &quot;sticky&quot; bit is set.
+<dt>
+<code>-k <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and its &quot;sticky&quot; bit is set.
 </p>
 </dd>
-<dt><code>-p <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is a named pipe (FIFO).
+<dt>
+<code>-p <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is a named pipe (FIFO).
 </p>
 </dd>
-<dt><code>-r <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is readable.
+<dt>
+<code>-r <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is readable.
 </p>
 </dd>
-<dt><code>-s <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and has a size greater than zero.
+<dt>
+<code>-s <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and has a size greater than zero.
 </p>
 </dd>
-<dt><code>-t <var>fd</var></code></dt>
-<dd><p>True if file descriptor <var>fd</var> is open and refers to a terminal.
+<dt>
+<code>-t <var>fd</var>
+</code>
+</dt>
+<dd>
+<p>True if file descriptor <var>fd</var> is open and refers to a terminal.
 </p>
 </dd>
-<dt><code>-u <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and its set-user-id bit is set.
+<dt>
+<code>-u <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and its set-user-id bit is set.
 </p>
 </dd>
-<dt><code>-w <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is writable.
+<dt>
+<code>-w <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is writable.
 </p>
 </dd>
-<dt><code>-x <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is executable.
+<dt>
+<code>-x <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is executable.
 </p>
 </dd>
-<dt><code>-G <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is owned by the effective group id.
+<dt>
+<code>-G <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is owned by the effective group id.
 </p>
 </dd>
-<dt><code>-L <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is a symbolic link.
+<dt>
+<code>-L <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is a symbolic link.
 </p>
 </dd>
-<dt><code>-N <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and has been modified since it was last read.
+<dt>
+<code>-N <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and has been modified since it was last read.
 </p>
 </dd>
-<dt><code>-O <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is owned by the effective user id.
+<dt>
+<code>-O <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is owned by the effective user id.
 </p>
 </dd>
-<dt><code>-S <var>file</var></code></dt>
-<dd><p>True if <var>file</var> exists and is a socket.
+<dt>
+<code>-S <var>file</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file</var> exists and is a socket.
 </p>
 </dd>
-<dt><code><var>file1</var> -ef <var>file2</var></code></dt>
-<dd><p>True if <var>file1</var> and <var>file2</var> refer to the same device and
+<dt>
+<code>
+<var>file1</var> -ef <var>file2</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file1</var> and <var>file2</var> refer to the same device and
 inode numbers.
 </p>
 </dd>
-<dt><code><var>file1</var> -nt <var>file2</var></code></dt>
-<dd><p>True if <var>file1</var> is newer (according to modification date)
+<dt>
+<code>
+<var>file1</var> -nt <var>file2</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file1</var> is newer (according to modification date)
 than <var>file2</var>, or if <var>file1</var> exists and <var>file2</var> does not.
 </p>
 </dd>
-<dt><code><var>file1</var> -ot <var>file2</var></code></dt>
-<dd><p>True if <var>file1</var> is older than <var>file2</var>,
+<dt>
+<code>
+<var>file1</var> -ot <var>file2</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>file1</var> is older than <var>file2</var>,
 or if <var>file2</var> exists and <var>file1</var> does not.
 </p>
 </dd>
-<dt><code>-o <var>optname</var></code></dt>
-<dd><p>True if the shell option <var>optname</var> is enabled.
+<dt>
+<code>-o <var>optname</var>
+</code>
+</dt>
+<dd>
+<p>True if the shell option <var>optname</var> is enabled.
 The list of options appears in the description of the <samp>-o</samp>
 option to the <code>set</code> builtin (see <a href="The-Set-Builtin.html#The-Set-Builtin">The Set Builtin</a>).
 </p>
 </dd>
-<dt><code>-v <var>varname</var></code></dt>
-<dd><p>True if the shell variable <var>varname</var> is set (has been assigned a value).
+<dt>
+<code>-v <var>varname</var>
+</code>
+</dt>
+<dd>
+<p>True if the shell variable <var>varname</var> is set (has been assigned a value).
 </p>
 </dd>
-<dt><code>-R <var>varname</var></code></dt>
-<dd><p>True if the shell variable <var>varname</var> is set and is a name reference.
+<dt>
+<code>-R <var>varname</var>
+</code>
+</dt>
+<dd>
+<p>True if the shell variable <var>varname</var> is set and is a name reference.
 </p>
 </dd>
-<dt><code>-z <var>string</var></code></dt>
-<dd><p>True if the length of <var>string</var> is zero.
+<dt>
+<code>-z <var>string</var>
+</code>
+</dt>
+<dd>
+<p>True if the length of <var>string</var> is zero.
 </p>
 </dd>
-<dt><code>-n <var>string</var></code></dt>
-<dt><code><var>string</var></code></dt>
-<dd><p>True if the length of <var>string</var> is non-zero.
+<dt>
+<code>-n <var>string</var>
+</code>
+</dt>
+<dt>
+<code>
+<var>string</var>
+</code>
+</dt>
+<dd>
+<p>True if the length of <var>string</var> is non-zero.
 </p>
 </dd>
-<dt><code><var>string1</var> == <var>string2</var></code></dt>
-<dt><code><var>string1</var> = <var>string2</var></code></dt>
-<dd><p>True if the strings are equal.
+<dt>
+<code>
+<var>string1</var> == <var>string2</var>
+</code>
+</dt>
+<dt>
+<code>
+<var>string1</var> = <var>string2</var>
+</code>
+</dt>
+<dd>
+<p>True if the strings are equal.
 When used with the <code>[[</code> command, this performs pattern matching as
 described above (see <a href="Conditional-Constructs.html#Conditional-Constructs">Conditional Constructs</a>).
 </p>
 <p>&lsquo;<samp>=</samp>&rsquo; should be used with the <code>test</code> command for <small>POSIX</small> conformance.
 </p>
 </dd>
-<dt><code><var>string1</var> != <var>string2</var></code></dt>
-<dd><p>True if the strings are not equal.
+<dt>
+<code>
+<var>string1</var> != <var>string2</var>
+</code>
+</dt>
+<dd>
+<p>True if the strings are not equal.
 </p>
 </dd>
-<dt><code><var>string1</var> &lt; <var>string2</var></code></dt>
-<dd><p>True if <var>string1</var> sorts before <var>string2</var> lexicographically.
+<dt>
+<code>
+<var>string1</var> &lt; <var>string2</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>string1</var> sorts before <var>string2</var> lexicographically.
 </p>
 </dd>
-<dt><code><var>string1</var> &gt; <var>string2</var></code></dt>
-<dd><p>True if <var>string1</var> sorts after <var>string2</var> lexicographically.
+<dt>
+<code>
+<var>string1</var> &gt; <var>string2</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>string1</var> sorts after <var>string2</var> lexicographically.
 </p>
 </dd>
-<dt><code><var>arg1</var> OP <var>arg2</var></code></dt>
-<dd><p><code>OP</code> is one of 
+<dt>
+<code>
+<var>arg1</var> OP <var>arg2</var>
+</code>
+</dt>
+<dd>
+<p>
+<code>OP</code> is one of 
 &lsquo;<samp>-eq</samp>&rsquo;, &lsquo;<samp>-ne</samp>&rsquo;, &lsquo;<samp>-lt</samp>&rsquo;, &lsquo;<samp>-le</samp>&rsquo;, &lsquo;<samp>-gt</samp>&rsquo;, or &lsquo;<samp>-ge</samp>&rsquo;.
 These arithmetic binary operators return true if <var>arg1</var>
 is equal to, not equal to, less than, less than or equal to,
 greater than, or greater than or equal to <var>arg2</var>,
 respectively.  <var>Arg1</var> and <var>arg2</var>
 may be positive or negative integers.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <hr>

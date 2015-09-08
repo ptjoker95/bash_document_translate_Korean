@@ -64,26 +64,35 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Programmable-Completion-Builtins"></a>
+<a name="Programmable-Completion-Builtins">
+</a>
 <div class="header">
 <p>
 Next: <a href="A-Programmable-Completion-Example.html#A-Programmable-Completion-Example" accesskey="n" rel="next">A Programmable Completion Example</a>, Previous: <a href="Programmable-Completion.html#Programmable-Completion" accesskey="p" rel="prev">Programmable Completion</a>, Up: <a href="Command-Line-Editing.html#Command-Line-Editing" accesskey="u" rel="up">Command Line Editing</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Programmable-Completion-Builtins-1"></a>
+<a name="Programmable-Completion-Builtins-1">
+</a>
 <h3 class="section">8.7 Programmable Completion Builtins</h3>
-<a name="index-completion-builtins"></a>
+<a name="index-completion-builtins">
+</a>
 
 <p>Three builtin commands are available to manipulate the programmable completion
 facilities: one to specify how the arguments to a particular command are to
 be completed, and two to modify the completion as it is happening.
 </p>
 <dl compact="compact">
-<dt><code>compgen</code></dt>
-<dd><a name="index-compgen"></a>
+<dt>
+<code>compgen</code>
+</dt>
+<dd>
+<a name="index-compgen">
+</a>
 <div class="example">
-<pre class="example"><code>compgen [<var>option</var>] [<var>word</var>]</code>
-</pre></div>
+<pre class="example">
+<code>compgen [<var>option</var>] [<var>word</var>]</code>
+</pre>
+</div>
 
 <p>Generate possible completion matches for <var>word</var> according to
 the <var>option</var>s, which may be any option accepted by the
@@ -104,14 +113,20 @@ will be displayed.
 matches were generated.
 </p>
 </dd>
-<dt><code>complete</code></dt>
-<dd><a name="index-complete"></a>
+<dt>
+<code>complete</code>
+</dt>
+<dd>
+<a name="index-complete">
+</a>
 <div class="example">
-<pre class="example"><code>complete [-abcdefgjksuv] [-o <var>comp-option</var>] [-DE] [-A <var>action</var>] [-G <var>globpat</var>] [-W <var>wordlist</var>]
+<pre class="example">
+<code>complete [-abcdefgjksuv] [-o <var>comp-option</var>] [-DE] [-A <var>action</var>] [-G <var>globpat</var>] [-W <var>wordlist</var>]
 [-F <var>function</var>] [-C <var>command</var>] [-X <var>filterpat</var>]
 [-P <var>prefix</var>] [-S <var>suffix</var>] <var>name</var> [<var>name</var> &hellip;]</code>
 <code>complete -pr [-DE] [<var>name</var> &hellip;]</code>
-</pre></div>
+</pre>
+</div>
 
 <p>Specify how arguments to each <var>name</var> should be completed.
 If the <samp>-p</samp> option is supplied, or if no options are supplied, existing
@@ -139,46 +154,71 @@ should be quoted to protect them from expansion before the
 </p>
 
 <dl compact="compact">
-<dt><code>-o <var>comp-option</var></code></dt>
-<dd><p>The <var>comp-option</var> controls several aspects of the compspec&rsquo;s behavior
+<dt>
+<code>-o <var>comp-option</var>
+</code>
+</dt>
+<dd>
+<p>The <var>comp-option</var> controls several aspects of the compspec&rsquo;s behavior
 beyond the simple generation of completions.
 <var>comp-option</var> may be one of: 
 </p>
 <dl compact="compact">
-<dt><code>bashdefault</code></dt>
-<dd><p>Perform the rest of the default Bash completions if the compspec
+<dt>
+<code>bashdefault</code>
+</dt>
+<dd>
+<p>Perform the rest of the default Bash completions if the compspec
 generates no matches.
 </p>
 </dd>
-<dt><code>default</code></dt>
-<dd><p>Use Readline&rsquo;s default filename completion if the compspec generates
+<dt>
+<code>default</code>
+</dt>
+<dd>
+<p>Use Readline&rsquo;s default filename completion if the compspec generates
 no matches.
 </p>
 </dd>
-<dt><code>dirnames</code></dt>
-<dd><p>Perform directory name completion if the compspec generates no matches.
+<dt>
+<code>dirnames</code>
+</dt>
+<dd>
+<p>Perform directory name completion if the compspec generates no matches.
 </p>
 </dd>
-<dt><code>filenames</code></dt>
-<dd><p>Tell Readline that the compspec generates filenames, so it can perform any
+<dt>
+<code>filenames</code>
+</dt>
+<dd>
+<p>Tell Readline that the compspec generates filenames, so it can perform any
 filename-specific processing (like adding a slash to directory names
 quoting special characters, or suppressing trailing spaces).
 This option is intended to be used with shell functions specified
 with <samp>-F</samp>.
 </p>
 </dd>
-<dt><code>noquote</code></dt>
-<dd><p>Tell Readline not to quote the completed words if they are filenames
+<dt>
+<code>noquote</code>
+</dt>
+<dd>
+<p>Tell Readline not to quote the completed words if they are filenames
 (quoting filenames is the default).
 </p>
 </dd>
-<dt><code>nospace</code></dt>
-<dd><p>Tell Readline not to append a space (the default) to words completed at
+<dt>
+<code>nospace</code>
+</dt>
+<dd>
+<p>Tell Readline not to append a space (the default) to words completed at
 the end of the line.
 </p>
 </dd>
-<dt><code>plusdirs</code></dt>
-<dd><p>After any matches defined by the compspec are generated, 
+<dt>
+<code>plusdirs</code>
+</dt>
+<dd>
+<p>After any matches defined by the compspec are generated, 
 directory name completion is attempted and any
 matches are added to the results of the other actions.
 </p>
@@ -186,119 +226,205 @@ matches are added to the results of the other actions.
 </dl>
 
 </dd>
-<dt><code>-A <var>action</var></code></dt>
-<dd><p>The <var>action</var> may be one of the following to generate a list of possible
+<dt>
+<code>-A <var>action</var>
+</code>
+</dt>
+<dd>
+<p>The <var>action</var> may be one of the following to generate a list of possible
 completions:
 </p>
 <dl compact="compact">
-<dt><code>alias</code></dt>
-<dd><p>Alias names.  May also be specified as <samp>-a</samp>.
+<dt>
+<code>alias</code>
+</dt>
+<dd>
+<p>Alias names.  May also be specified as <samp>-a</samp>.
 </p>
 </dd>
-<dt><code>arrayvar</code></dt>
-<dd><p>Array variable names.
+<dt>
+<code>arrayvar</code>
+</dt>
+<dd>
+<p>Array variable names.
 </p>
 </dd>
-<dt><code>binding</code></dt>
-<dd><p>Readline key binding names (see <a href="Bindable-Readline-Commands.html#Bindable-Readline-Commands">Bindable Readline Commands</a>).
+<dt>
+<code>binding</code>
+</dt>
+<dd>
+<p>Readline key binding names (see <a href="Bindable-Readline-Commands.html#Bindable-Readline-Commands">Bindable Readline Commands</a>).
 </p>
 </dd>
-<dt><code>builtin</code></dt>
-<dd><p>Names of shell builtin commands.  May also be specified as <samp>-b</samp>.
+<dt>
+<code>builtin</code>
+</dt>
+<dd>
+<p>Names of shell builtin commands.  May also be specified as <samp>-b</samp>.
 </p>
 </dd>
-<dt><code>command</code></dt>
-<dd><p>Command names.  May also be specified as <samp>-c</samp>.
+<dt>
+<code>command</code>
+</dt>
+<dd>
+<p>Command names.  May also be specified as <samp>-c</samp>.
 </p>
 </dd>
-<dt><code>directory</code></dt>
-<dd><p>Directory names.  May also be specified as <samp>-d</samp>.
+<dt>
+<code>directory</code>
+</dt>
+<dd>
+<p>Directory names.  May also be specified as <samp>-d</samp>.
 </p>
 </dd>
-<dt><code>disabled</code></dt>
-<dd><p>Names of disabled shell builtins.
+<dt>
+<code>disabled</code>
+</dt>
+<dd>
+<p>Names of disabled shell builtins.
 </p>
 </dd>
-<dt><code>enabled</code></dt>
-<dd><p>Names of enabled shell builtins.
+<dt>
+<code>enabled</code>
+</dt>
+<dd>
+<p>Names of enabled shell builtins.
 </p>
 </dd>
-<dt><code>export</code></dt>
-<dd><p>Names of exported shell variables.  May also be specified as <samp>-e</samp>.
+<dt>
+<code>export</code>
+</dt>
+<dd>
+<p>Names of exported shell variables.  May also be specified as <samp>-e</samp>.
 </p>
 </dd>
-<dt><code>file</code></dt>
-<dd><p>File names.  May also be specified as <samp>-f</samp>.
+<dt>
+<code>file</code>
+</dt>
+<dd>
+<p>File names.  May also be specified as <samp>-f</samp>.
 </p>
 </dd>
-<dt><code>function</code></dt>
-<dd><p>Names of shell functions.
+<dt>
+<code>function</code>
+</dt>
+<dd>
+<p>Names of shell functions.
 </p>
 </dd>
-<dt><code>group</code></dt>
-<dd><p>Group names.  May also be specified as <samp>-g</samp>.
+<dt>
+<code>group</code>
+</dt>
+<dd>
+<p>Group names.  May also be specified as <samp>-g</samp>.
 </p>
 </dd>
-<dt><code>helptopic</code></dt>
-<dd><p>Help topics as accepted by the <code>help</code> builtin (see <a href="Bash-Builtins.html#Bash-Builtins">Bash Builtins</a>).
+<dt>
+<code>helptopic</code>
+</dt>
+<dd>
+<p>Help topics as accepted by the <code>help</code> builtin (see <a href="Bash-Builtins.html#Bash-Builtins">Bash Builtins</a>).
 </p>
 </dd>
-<dt><code>hostname</code></dt>
-<dd><p>Hostnames, as taken from the file specified by the
+<dt>
+<code>hostname</code>
+</dt>
+<dd>
+<p>Hostnames, as taken from the file specified by the
 <code>HOSTFILE</code> shell variable (see <a href="Bash-Variables.html#Bash-Variables">Bash Variables</a>).
 </p>
 </dd>
-<dt><code>job</code></dt>
-<dd><p>Job names, if job control is active.  May also be specified as <samp>-j</samp>.
+<dt>
+<code>job</code>
+</dt>
+<dd>
+<p>Job names, if job control is active.  May also be specified as <samp>-j</samp>.
 </p>
 </dd>
-<dt><code>keyword</code></dt>
-<dd><p>Shell reserved words.  May also be specified as <samp>-k</samp>.
+<dt>
+<code>keyword</code>
+</dt>
+<dd>
+<p>Shell reserved words.  May also be specified as <samp>-k</samp>.
 </p>
 </dd>
-<dt><code>running</code></dt>
-<dd><p>Names of running jobs, if job control is active.
+<dt>
+<code>running</code>
+</dt>
+<dd>
+<p>Names of running jobs, if job control is active.
 </p>
 </dd>
-<dt><code>service</code></dt>
-<dd><p>Service names.  May also be specified as <samp>-s</samp>.
+<dt>
+<code>service</code>
+</dt>
+<dd>
+<p>Service names.  May also be specified as <samp>-s</samp>.
 </p>
 </dd>
-<dt><code>setopt</code></dt>
-<dd><p>Valid arguments for the <samp>-o</samp> option to the <code>set</code> builtin
+<dt>
+<code>setopt</code>
+</dt>
+<dd>
+<p>Valid arguments for the <samp>-o</samp> option to the <code>set</code> builtin
 (see <a href="The-Set-Builtin.html#The-Set-Builtin">The Set Builtin</a>).
 </p>
 </dd>
-<dt><code>shopt</code></dt>
-<dd><p>Shell option names as accepted by the <code>shopt</code> builtin
+<dt>
+<code>shopt</code>
+</dt>
+<dd>
+<p>Shell option names as accepted by the <code>shopt</code> builtin
 (see <a href="Bash-Builtins.html#Bash-Builtins">Bash Builtins</a>).
 </p>
 </dd>
-<dt><code>signal</code></dt>
-<dd><p>Signal names.
+<dt>
+<code>signal</code>
+</dt>
+<dd>
+<p>Signal names.
 </p>
 </dd>
-<dt><code>stopped</code></dt>
-<dd><p>Names of stopped jobs, if job control is active.
+<dt>
+<code>stopped</code>
+</dt>
+<dd>
+<p>Names of stopped jobs, if job control is active.
 </p>
 </dd>
-<dt><code>user</code></dt>
-<dd><p>User names.  May also be specified as <samp>-u</samp>.
+<dt>
+<code>user</code>
+</dt>
+<dd>
+<p>User names.  May also be specified as <samp>-u</samp>.
 </p>
 </dd>
-<dt><code>variable</code></dt>
-<dd><p>Names of all shell variables.  May also be specified as <samp>-v</samp>.
-</p></dd>
+<dt>
+<code>variable</code>
+</dt>
+<dd>
+<p>Names of all shell variables.  May also be specified as <samp>-v</samp>.
+</p>
+</dd>
 </dl>
 
 </dd>
-<dt><code>-C <var>command</var></code></dt>
-<dd><p><var>command</var> is executed in a subshell environment, and its output is
+<dt>
+<code>-C <var>command</var>
+</code>
+</dt>
+<dd>
+<p>
+<var>command</var> is executed in a subshell environment, and its output is
 used as the possible completions.
 </p>
 </dd>
-<dt><code>-F <var>function</var></code></dt>
-<dd><p>The shell function <var>function</var> is executed in the current shell
+<dt>
+<code>-F <var>function</var>
+</code>
+</dt>
+<dd>
+<p>The shell function <var>function</var> is executed in the current shell
 environment.
 When it is executed, $1 is the name of the command whose arguments are
 being completed, $2 is the word being completed, and $3 is the word
@@ -308,37 +434,61 @@ When it finishes, the possible completions are retrieved from the value
 of the <code>COMPREPLY</code> array variable.
 </p>
 </dd>
-<dt><code>-G <var>globpat</var></code></dt>
-<dd><p>The filename expansion pattern <var>globpat</var> is expanded to generate
+<dt>
+<code>-G <var>globpat</var>
+</code>
+</dt>
+<dd>
+<p>The filename expansion pattern <var>globpat</var> is expanded to generate
 the possible completions.
 </p>
 </dd>
-<dt><code>-P <var>prefix</var></code></dt>
-<dd><p><var>prefix</var> is added at the beginning of each possible completion
+<dt>
+<code>-P <var>prefix</var>
+</code>
+</dt>
+<dd>
+<p>
+<var>prefix</var> is added at the beginning of each possible completion
 after all other options have been applied.
 </p>
 </dd>
-<dt><code>-S <var>suffix</var></code></dt>
-<dd><p><var>suffix</var> is appended to each possible completion
+<dt>
+<code>-S <var>suffix</var>
+</code>
+</dt>
+<dd>
+<p>
+<var>suffix</var> is appended to each possible completion
 after all other options have been applied.
 </p>
 </dd>
-<dt><code>-W <var>wordlist</var></code></dt>
-<dd><p>The <var>wordlist</var> is split using the characters in the
+<dt>
+<code>-W <var>wordlist</var>
+</code>
+</dt>
+<dd>
+<p>The <var>wordlist</var> is split using the characters in the
 <code>IFS</code> special variable as delimiters, and each resultant word
 is expanded.
 The possible completions are the members of the resultant list which
 match the word being completed.
 </p>
 </dd>
-<dt><code>-X <var>filterpat</var></code></dt>
-<dd><p><var>filterpat</var> is a pattern as used for filename expansion.
+<dt>
+<code>-X <var>filterpat</var>
+</code>
+</dt>
+<dd>
+<p>
+<var>filterpat</var> is a pattern as used for filename expansion.
 It is applied to the list of possible completions generated by the
 preceding options and arguments, and each completion matching
 <var>filterpat</var> is removed from the list.
 A leading &lsquo;<samp>!</samp>&rsquo; in <var>filterpat</var> negates the pattern; in this
 case, any completion not matching <var>filterpat</var> is removed.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <p>The return value is true unless an invalid option is supplied, an option
@@ -348,11 +498,17 @@ a <var>name</var> for which no specification exists, or
 an error occurs adding a completion specification.
 </p>
 </dd>
-<dt><code>compopt</code></dt>
-<dd><a name="index-compopt"></a>
+<dt>
+<code>compopt</code>
+</dt>
+<dd>
+<a name="index-compopt">
+</a>
 <div class="example">
-<pre class="example"><code>compopt</code> [-o <var>option</var>] [-DE] [+o <var>option</var>] [<var>name</var>]
-</pre></div>
+<pre class="example">
+<code>compopt</code> [-o <var>option</var>] [-DE] [+o <var>option</var>] [<var>name</var>]
+</pre>
+</div>
 <p>Modify completion options for each <var>name</var> according to the
 <var>option</var>s, or for the currently-executing completion if no <var>name</var>s
 are supplied.

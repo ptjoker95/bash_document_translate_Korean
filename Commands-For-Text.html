@@ -64,66 +64,90 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Commands-For-Text"></a>
+<a name="Commands-For-Text">
+</a>
 <div class="header">
 <p>
 Next: <a href="Commands-For-Killing.html#Commands-For-Killing" accesskey="n" rel="next">Commands For Killing</a>, Previous: <a href="Commands-For-History.html#Commands-For-History" accesskey="p" rel="prev">Commands For History</a>, Up: <a href="Bindable-Readline-Commands.html#Bindable-Readline-Commands" accesskey="u" rel="up">Bindable Readline Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Commands-For-Changing-Text"></a>
+<a name="Commands-For-Changing-Text">
+</a>
 <h4 class="subsection">8.4.3 Commands For Changing Text</h4>
 
 <dl compact="compact">
-<dt><code><i>end-of-file</i> (usually C-d)</code>
-<a name="index-end_002dof_002dfile-_0028usually-C_002dd_0029"></a>
+<dt>
+<code>
+<i>end-of-file</i> (usually C-d)</code>
+<a name="index-end_002dof_002dfile-_0028usually-C_002dd_0029">
+</a>
 </dt>
-<dd><p>The character indicating end-of-file as set, for example, by
+<dd>
+<p>The character indicating end-of-file as set, for example, by
 <code>stty</code>.  If this character is read when there are no characters
 on the line, and point is at the beginning of the line, Readline
 interprets it as the end of input and returns <small>EOF</small>.
 </p>
 </dd>
-<dt><code>delete-char (C-d)</code>
-<a name="index-delete_002dchar-_0028C_002dd_0029"></a>
+<dt>
+<code>delete-char (C-d)</code>
+<a name="index-delete_002dchar-_0028C_002dd_0029">
+</a>
 </dt>
-<dd><p>Delete the character at point.  If this function is bound to the
+<dd>
+<p>Delete the character at point.  If this function is bound to the
 same character as the tty <small>EOF</small> character, as <kbd>C-d</kbd>
 commonly is, see above for the effects.
 </p>
 </dd>
-<dt><code>backward-delete-char (Rubout)</code>
-<a name="index-backward_002ddelete_002dchar-_0028Rubout_0029"></a>
+<dt>
+<code>backward-delete-char (Rubout)</code>
+<a name="index-backward_002ddelete_002dchar-_0028Rubout_0029">
+</a>
 </dt>
-<dd><p>Delete the character behind the cursor.  A numeric argument means
+<dd>
+<p>Delete the character behind the cursor.  A numeric argument means
 to kill the characters instead of deleting them.
 </p>
 </dd>
-<dt><code>forward-backward-delete-char ()</code>
-<a name="index-forward_002dbackward_002ddelete_002dchar-_0028_0029"></a>
+<dt>
+<code>forward-backward-delete-char ()</code>
+<a name="index-forward_002dbackward_002ddelete_002dchar-_0028_0029">
+</a>
 </dt>
-<dd><p>Delete the character under the cursor, unless the cursor is at the
+<dd>
+<p>Delete the character under the cursor, unless the cursor is at the
 end of the line, in which case the character behind the cursor is
 deleted.  By default, this is not bound to a key.
 </p>
 </dd>
-<dt><code>quoted-insert (C-q or C-v)</code>
-<a name="index-quoted_002dinsert-_0028C_002dq-or-C_002dv_0029"></a>
+<dt>
+<code>quoted-insert (C-q or C-v)</code>
+<a name="index-quoted_002dinsert-_0028C_002dq-or-C_002dv_0029">
+</a>
 </dt>
-<dd><p>Add the next character typed to the line verbatim.  This is
+<dd>
+<p>Add the next character typed to the line verbatim.  This is
 how to insert key sequences like <kbd>C-q</kbd>, for example.
 </p>
 
 </dd>
-<dt><code>self-insert (a, b, A, 1, !, &hellip;)</code>
-<a name="index-self_002dinsert-_0028a_002c-b_002c-A_002c-1_002c-_0021_002c-_2026_0029"></a>
+<dt>
+<code>self-insert (a, b, A, 1, !, &hellip;)</code>
+<a name="index-self_002dinsert-_0028a_002c-b_002c-A_002c-1_002c-_0021_002c-_2026_0029">
+</a>
 </dt>
-<dd><p>Insert yourself.
+<dd>
+<p>Insert yourself.
 </p>
 </dd>
-<dt><code>transpose-chars (C-t)</code>
-<a name="index-transpose_002dchars-_0028C_002dt_0029"></a>
+<dt>
+<code>transpose-chars (C-t)</code>
+<a name="index-transpose_002dchars-_0028C_002dt_0029">
+</a>
 </dt>
-<dd><p>Drag the character before the cursor forward over
+<dd>
+<p>Drag the character before the cursor forward over
 the character at the cursor, moving the
 cursor forward as well.  If the insertion point
 is at the end of the line, then this
@@ -131,40 +155,55 @@ transposes the last two characters of the line.
 Negative arguments have no effect.
 </p>
 </dd>
-<dt><code>transpose-words (M-t)</code>
-<a name="index-transpose_002dwords-_0028M_002dt_0029"></a>
+<dt>
+<code>transpose-words (M-t)</code>
+<a name="index-transpose_002dwords-_0028M_002dt_0029">
+</a>
 </dt>
-<dd><p>Drag the word before point past the word after point,
+<dd>
+<p>Drag the word before point past the word after point,
 moving point past that word as well.
 If the insertion point is at the end of the line, this transposes
 the last two words on the line.
 </p>
 </dd>
-<dt><code>upcase-word (M-u)</code>
-<a name="index-upcase_002dword-_0028M_002du_0029"></a>
+<dt>
+<code>upcase-word (M-u)</code>
+<a name="index-upcase_002dword-_0028M_002du_0029">
+</a>
 </dt>
-<dd><p>Uppercase the current (or following) word.  With a negative argument,
+<dd>
+<p>Uppercase the current (or following) word.  With a negative argument,
 uppercase the previous word, but do not move the cursor.
 </p>
 </dd>
-<dt><code>downcase-word (M-l)</code>
-<a name="index-downcase_002dword-_0028M_002dl_0029"></a>
+<dt>
+<code>downcase-word (M-l)</code>
+<a name="index-downcase_002dword-_0028M_002dl_0029">
+</a>
 </dt>
-<dd><p>Lowercase the current (or following) word.  With a negative argument,
+<dd>
+<p>Lowercase the current (or following) word.  With a negative argument,
 lowercase the previous word, but do not move the cursor.
 </p>
 </dd>
-<dt><code>capitalize-word (M-c)</code>
-<a name="index-capitalize_002dword-_0028M_002dc_0029"></a>
+<dt>
+<code>capitalize-word (M-c)</code>
+<a name="index-capitalize_002dword-_0028M_002dc_0029">
+</a>
 </dt>
-<dd><p>Capitalize the current (or following) word.  With a negative argument,
+<dd>
+<p>Capitalize the current (or following) word.  With a negative argument,
 capitalize the previous word, but do not move the cursor.
 </p>
 </dd>
-<dt><code>overwrite-mode ()</code>
-<a name="index-overwrite_002dmode-_0028_0029"></a>
+<dt>
+<code>overwrite-mode ()</code>
+<a name="index-overwrite_002dmode-_0028_0029">
+</a>
 </dt>
-<dd><p>Toggle overwrite mode.  With an explicit positive numeric argument,
+<dd>
+<p>Toggle overwrite mode.  With an explicit positive numeric argument,
 switches to overwrite mode.  With an explicit non-positive numeric
 argument, switches to insert mode.  This command affects only
 <code>emacs</code> mode; <code>vi</code> mode does overwrite differently.

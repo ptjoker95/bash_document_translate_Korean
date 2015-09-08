@@ -64,15 +64,18 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Special-Builtins"></a>
+<a name="Special-Builtins">
+</a>
 <div class="header">
 <p>
 Previous: <a href="Modifying-Shell-Behavior.html#Modifying-Shell-Behavior" accesskey="p" rel="prev">Modifying Shell Behavior</a>, Up: <a href="Shell-Builtin-Commands.html#Shell-Builtin-Commands" accesskey="u" rel="up">Shell Builtin Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Special-Builtins-1"></a>
+<a name="Special-Builtins-1">
+</a>
 <h3 class="section">4.4 Special Builtins</h3>
-<a name="index-special-builtin-1"></a>
+<a name="index-special-builtin-1">
+</a>
 
 <p>For historical reasons, the <small>POSIX</small> standard has classified
 several builtin commands as <em>special</em>.
@@ -82,21 +85,26 @@ differ from other builtin commands in three respects:
 <ol>
 <li> Special builtins are found before shell functions during command lookup.
 
-</li><li> If a special builtin returns an error status, a non-interactive shell exits.
+</li>
+<li> If a special builtin returns an error status, a non-interactive shell exits.
 
-</li><li> Assignment statements preceding the command stay in effect in the shell
+</li>
+<li> Assignment statements preceding the command stay in effect in the shell
 environment after the command completes.
-</li></ol>
+</li>
+</ol>
 
 <p>When Bash is not executing in <small>POSIX</small> mode, these builtins behave no
 differently than the rest of the Bash builtin commands.
 The Bash <small>POSIX</small> mode is described in <a href="Bash-POSIX-Mode.html#Bash-POSIX-Mode">Bash POSIX Mode</a>. 
 </p>
 <p>These are the <small>POSIX</small> special builtins:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">break : . continue eval exec exit export readonly return set<!-- /@w -->
 shift trap unset<!-- /@w -->
-</pre></div>
+</pre>
+</div>
 
 
 

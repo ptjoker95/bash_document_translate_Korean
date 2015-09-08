@@ -64,13 +64,15 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Compilers-and-Options"></a>
+<a name="Compilers-and-Options">
+</a>
 <div class="header">
 <p>
 Next: <a href="Compiling-For-Multiple-Architectures.html#Compiling-For-Multiple-Architectures" accesskey="n" rel="next">Compiling For Multiple Architectures</a>, Previous: <a href="Basic-Installation.html#Basic-Installation" accesskey="p" rel="prev">Basic Installation</a>, Up: <a href="Installing-Bash.html#Installing-Bash" accesskey="u" rel="up">Installing Bash</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Compilers-and-Options-1"></a>
+<a name="Compilers-and-Options-1">
+</a>
 <h3 class="section">10.2 Compilers and Options</h3>
 
 <p>Some systems require unusual options for compilation or linking
@@ -81,13 +83,15 @@ can do that on the command line like this:
 </p>
 <div class="example">
 <pre class="example">CC=c89 CFLAGS=-O2 LIBS=-lposix ./configure
-</pre></div>
+</pre>
+</div>
 
 <p>On systems that have the <code>env</code> program, you can do it like this:
 </p>
 <div class="example">
 <pre class="example">env CPPFLAGS=-I/usr/local/include LDFLAGS=-s ./configure
-</pre></div>
+</pre>
+</div>
 
 <p>The configuration process uses GCC to build Bash if it
 is available.

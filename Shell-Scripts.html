@@ -64,15 +64,18 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Shell-Scripts"></a>
+<a name="Shell-Scripts">
+</a>
 <div class="header">
 <p>
 Previous: <a href="Executing-Commands.html#Executing-Commands" accesskey="p" rel="prev">Executing Commands</a>, Up: <a href="Basic-Shell-Features.html#Basic-Shell-Features" accesskey="u" rel="up">Basic Shell Features</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Shell-Scripts-1"></a>
+<a name="Shell-Scripts-1">
+</a>
 <h3 class="section">3.8 Shell Scripts</h3>
-<a name="index-shell-script"></a>
+<a name="index-shell-script">
+</a>
 
 <p>A shell script is a text file containing shell commands.  When such
 a file is used as the first non-option argument when invoking Bash,
@@ -94,13 +97,17 @@ are unset.
 to turn on the execute bit.  When Bash finds such a file while
 searching the <code>$PATH</code> for a command, it spawns a subshell to
 execute it.  In other words, executing
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">filename <var>arguments</var>
-</pre></div>
+</pre>
+</div>
 <p>is equivalent to executing
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">bash filename <var>arguments</var>
-</pre></div>
+</pre>
+</div>
 
 <p>if <code>filename</code> is an executable shell script.
 This subshell reinitializes itself, so that the effect is as if a

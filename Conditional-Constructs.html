@@ -64,23 +64,34 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Conditional-Constructs"></a>
+<a name="Conditional-Constructs">
+</a>
 <div class="header">
 <p>
 Next: <a href="Command-Grouping.html#Command-Grouping" accesskey="n" rel="next">Command Grouping</a>, Previous: <a href="Looping-Constructs.html#Looping-Constructs" accesskey="p" rel="prev">Looping Constructs</a>, Up: <a href="Compound-Commands.html#Compound-Commands" accesskey="u" rel="up">Compound Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Conditional-Constructs-1"></a>
+<a name="Conditional-Constructs-1">
+</a>
 <h4 class="subsubsection">3.2.4.2 Conditional Constructs</h4>
-<a name="index-commands_002c-conditional"></a>
+<a name="index-commands_002c-conditional">
+</a>
 
 <dl compact="compact">
-<dt><code>if</code></dt>
-<dd><a name="index-if"></a>
-<a name="index-then"></a>
-<a name="index-else"></a>
-<a name="index-elif"></a>
-<a name="index-fi"></a>
+<dt>
+<code>if</code>
+</dt>
+<dd>
+<a name="index-if">
+</a>
+<a name="index-then">
+</a>
+<a name="index-else">
+</a>
+<a name="index-elif">
+</a>
+<a name="index-fi">
+</a>
 <p>The syntax of the <code>if</code> command is:
 </p>
 <div class="example">
@@ -90,7 +101,8 @@ Next: <a href="Command-Grouping.html#Command-Grouping" accesskey="n" rel="next">
   <var>more-consequents</var>;]
 [else <var>alternate-consequents</var>;]
 fi
-</pre></div>
+</pre>
+</div>
 
 <p>The <var>test-commands</var> list is executed, and if its return status is zero,
 the <var>consequent-commands</var> list is executed.
@@ -98,24 +110,33 @@ If <var>test-commands</var> returns a non-zero status, each <code>elif</code> li
 is executed in turn, and if its exit status is zero,
 the corresponding <var>more-consequents</var> is executed and the   
 command completes.
-If &lsquo;<samp>else <var>alternate-consequents</var></samp>&rsquo; is present, and
+If &lsquo;<samp>else <var>alternate-consequents</var>
+</samp>&rsquo; is present, and
 the final command in the final <code>if</code> or <code>elif</code> clause
 has a non-zero exit status, then <var>alternate-consequents</var> is executed.
 The return status is the exit status of the last command executed, or
 zero if no condition tested true.
 </p>
 </dd>
-<dt><code>case</code></dt>
-<dd><a name="index-case"></a>
-<a name="index-in"></a>
-<a name="index-esac"></a>
+<dt>
+<code>case</code>
+</dt>
+<dd>
+<a name="index-case">
+</a>
+<a name="index-in">
+</a>
+<a name="index-esac">
+</a>
 <p>The syntax of the <code>case</code> command is:
 </p>
 <div class="example">
 <pre class="example">case <var>word</var> in [ [(] <var>pattern</var> [| <var>pattern</var>]&hellip;) <var>command-list</var> ;;]&hellip; esac
-</pre></div>
+</pre>
+</div>
 
-<p><code>case</code> will selectively execute the <var>command-list</var> corresponding to
+<p>
+<code>case</code> will selectively execute the <var>command-list</var> corresponding to
 the first <var>pattern</var> that matches <var>word</var>.
 If the shell option <code>nocasematch</code>
 (see the description of <code>shopt</code> in <a href="The-Shopt-Builtin.html#The-Shopt-Builtin">The Shopt Builtin</a>)
@@ -152,7 +173,8 @@ case $ANIMAL in
   *) echo -n &quot;an unknown number of&quot;;;
 esac
 echo &quot; legs.&quot;
-</pre></div>
+</pre>
+</div>
 
 
 <p>If the &lsquo;<samp>;;</samp>&rsquo; operator is used, no subsequent matches are attempted after
@@ -167,20 +189,26 @@ on a successful match.
 return status is the exit status of the <var>command-list</var> executed.
 </p>
 </dd>
-<dt><code>select</code></dt>
-<dd><a name="index-select"></a>
+<dt>
+<code>select</code>
+</dt>
+<dd>
+<a name="index-select">
+</a>
 
 <p>The <code>select</code> construct allows the easy generation of menus.
 It has almost the same syntax as the <code>for</code> command:
 </p>
 <div class="example">
 <pre class="example">select <var>name</var> [in <var>words</var> &hellip;]; do <var>commands</var>; done
-</pre></div>
+</pre>
+</div>
 
 <p>The list of words following <code>in</code> is expanded, generating a list
 of items.  The set of expanded words is printed on the standard
 error output stream, each preceded by a number.  If the
-&lsquo;<samp>in <var>words</var></samp>&rsquo; is omitted, the positional parameters are printed,
+&lsquo;<samp>in <var>words</var>
+</samp>&rsquo; is omitted, the positional parameters are printed,
 as if &lsquo;<samp>in &quot;$@&quot;</samp>&rsquo; had been specified.
 The <code>PS3</code> prompt is then displayed and a line is read from the
 standard input.
@@ -205,30 +233,43 @@ do
 	echo you picked $fname \($REPLY\)
 	break;
 done
-</pre></div>
+</pre>
+</div>
 
 </dd>
-<dt><code>((&hellip;))</code></dt>
-<dd><div class="example">
+<dt>
+<code>((&hellip;))</code>
+</dt>
+<dd>
+<div class="example">
 <pre class="example">(( <var>expression</var> ))
-</pre></div>
+</pre>
+</div>
 
 <p>The arithmetic <var>expression</var> is evaluated according to the rules
 described below (see <a href="Shell-Arithmetic.html#Shell-Arithmetic">Shell Arithmetic</a>).
 If the value of the expression is non-zero, the return status is 0;
 otherwise the return status is 1.  This is exactly equivalent to
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">let &quot;<var>expression</var>&quot;
-</pre></div>
+</pre>
+</div>
 <p>See <a href="Bash-Builtins.html#Bash-Builtins">Bash Builtins</a>, for a full description of the <code>let</code> builtin.
 </p>
 </dd>
-<dt><code>[[&hellip;]]</code></dt>
-<dd><a name="index-_005b_005b"></a>
-<a name="index-_005d_005d"></a>
+<dt>
+<code>[[&hellip;]]</code>
+</dt>
+<dd>
+<a name="index-_005b_005b">
+</a>
+<a name="index-_005d_005d">
+</a>
 <div class="example">
 <pre class="example">[[ <var>expression</var> ]]
-</pre></div>
+</pre>
+</div>
 
 <p>Return a status of 0 or 1 depending on the evaluation of
 the conditional expression <var>expression</var>.
@@ -288,9 +329,11 @@ string matching the <var>n</var>th parenthesized subexpression.
 if there is a sequence of characters in the value consisting of
 any number, including zero, of 
 space characters, zero or one instances of &lsquo;<samp>a</samp>&rsquo;, then a &lsquo;<samp>b</samp>&rsquo;:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">[[ $line =~ [[:space:]]*(a)?b ]]
-</pre></div>
+</pre>
+</div>
 
 <p>That means values like &lsquo;<samp>aab</samp>&rsquo; and &lsquo;<samp>  aaaaaab</samp>&rsquo; will match, as
 will a line containing a &lsquo;<samp>b</samp>&rsquo; anywhere in its value.
@@ -303,10 +346,12 @@ without using quotes, or to keep track of the quoting used by regular
 expressions while paying attention to the shell&rsquo;s quote removal.
 Using a shell variable to store the pattern decreases these problems.
 For example, the following is equivalent to the above:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">pattern='[[:space:]]*(a)?b'
 [[ $line =~ $pattern ]]
-</pre></div>
+</pre>
+</div>
 
 <p>If you want to match a character that&rsquo;s special to the regular expression
 grammar, it has to be quoted to remove its special meaning.
@@ -317,7 +362,8 @@ Shell programmers should take special care with backslashes, since backslashes
 are used both by the shell and regular expressions to remove the special
 meaning from the following character.
 The following two sets of commands are <em>not</em> equivalent:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">pattern='\.'
 
 [[ . =~ $pattern ]]
@@ -325,7 +371,8 @@ The following two sets of commands are <em>not</em> equivalent:
 
 [[ . =~ &quot;$pattern&quot; ]]
 [[ . =~ '\.' ]]
-</pre></div>
+</pre>
+</div>
 
 <p>The first two matches will succeed, but the second two will not, because
 in the second two the backslash will be part of the pattern to be matched.
@@ -339,28 +386,47 @@ pattern loses its special meaning of matching any single character.
 in decreasing order of precedence:
 </p>
 <dl compact="compact">
-<dt><code>( <var>expression</var> )</code></dt>
-<dd><p>Returns the value of <var>expression</var>.
+<dt>
+<code>( <var>expression</var> )</code>
+</dt>
+<dd>
+<p>Returns the value of <var>expression</var>.
 This may be used to override the normal precedence of operators.
 </p>
 </dd>
-<dt><code>! <var>expression</var></code></dt>
-<dd><p>True if <var>expression</var> is false.
+<dt>
+<code>! <var>expression</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>expression</var> is false.
 </p>
 </dd>
-<dt><code><var>expression1</var> &amp;&amp; <var>expression2</var></code></dt>
-<dd><p>True if both <var>expression1</var> and <var>expression2</var> are true.
+<dt>
+<code>
+<var>expression1</var> &amp;&amp; <var>expression2</var>
+</code>
+</dt>
+<dd>
+<p>True if both <var>expression1</var> and <var>expression2</var> are true.
 </p>
 </dd>
-<dt><code><var>expression1</var> || <var>expression2</var></code></dt>
-<dd><p>True if either <var>expression1</var> or <var>expression2</var> is true.
-</p></dd>
+<dt>
+<code>
+<var>expression1</var> || <var>expression2</var>
+</code>
+</dt>
+<dd>
+<p>True if either <var>expression1</var> or <var>expression2</var> is true.
+</p>
+</dd>
 </dl>
 
 <p>The <code>&amp;&amp;</code> and <code>||</code> operators do not evaluate <var>expression2</var> if the
 value of <var>expression1</var> is sufficient to determine the return
 value of the entire conditional expression.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <hr>

@@ -64,13 +64,15 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Conditional-Init-Constructs"></a>
+<a name="Conditional-Init-Constructs">
+</a>
 <div class="header">
 <p>
 Next: <a href="Sample-Init-File.html#Sample-Init-File" accesskey="n" rel="next">Sample Init File</a>, Previous: <a href="Readline-Init-File-Syntax.html#Readline-Init-File-Syntax" accesskey="p" rel="prev">Readline Init File Syntax</a>, Up: <a href="Readline-Init-File.html#Readline-Init-File" accesskey="u" rel="up">Readline Init File</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Conditional-Init-Constructs-1"></a>
+<a name="Conditional-Init-Constructs-1">
+</a>
 <h4 class="subsection">8.3.2 Conditional Init Constructs</h4>
 
 <p>Readline implements a facility similar in spirit to the conditional
@@ -79,15 +81,21 @@ bindings and variable settings to be performed as the result
 of tests.  There are four parser directives used.
 </p>
 <dl compact="compact">
-<dt><code>$if</code></dt>
-<dd><p>The <code>$if</code> construct allows bindings to be made based on the
+<dt>
+<code>$if</code>
+</dt>
+<dd>
+<p>The <code>$if</code> construct allows bindings to be made based on the
 editing mode, the terminal being used, or the application using
 Readline.  The text of the test extends to the end of the line;
 no characters are required to isolate it.
 </p>
 <dl compact="compact">
-<dt><code>mode</code></dt>
-<dd><p>The <code>mode=</code> form of the <code>$if</code> directive is used to test
+<dt>
+<code>mode</code>
+</dt>
+<dd>
+<p>The <code>mode=</code> form of the <code>$if</code> directive is used to test
 whether Readline is in <code>emacs</code> or <code>vi</code> mode.
 This may be used in conjunction
 with the &lsquo;<samp>set keymap</samp>&rsquo; command, for instance, to set bindings in
@@ -95,8 +103,11 @@ the <code>emacs-standard</code> and <code>emacs-ctlx</code> keymaps only if
 Readline is starting out in <code>emacs</code> mode.
 </p>
 </dd>
-<dt><code>term</code></dt>
-<dd><p>The <code>term=</code> form may be used to include terminal-specific
+<dt>
+<code>term</code>
+</dt>
+<dd>
+<p>The <code>term=</code> form may be used to include terminal-specific
 key bindings, perhaps to bind the key sequences output by the
 terminal&rsquo;s function keys.  The word on the right side of the
 &lsquo;<samp>=</samp>&rsquo; is tested against both the full name of the terminal and
@@ -105,41 +116,57 @@ allows <code>sun</code> to match both <code>sun</code> and <code>sun-cmd</code>,
 for instance.
 </p>
 </dd>
-<dt><code>application</code></dt>
-<dd><p>The <var>application</var> construct is used to include
+<dt>
+<code>application</code>
+</dt>
+<dd>
+<p>The <var>application</var> construct is used to include
 application-specific settings.  Each program using the Readline
 library sets the <var>application name</var>, and you can test for
 a particular value. 
 This could be used to bind key sequences to functions useful for
 a specific program.  For instance, the following command adds a
 key sequence that quotes the current or previous word in Bash:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">$if Bash
 # Quote the current or previous word
 &quot;\C-xq&quot;: &quot;\eb\&quot;\ef\&quot;&quot;
 $endif
-</pre></div>
+</pre>
+</div>
 </dd>
 </dl>
 
 </dd>
-<dt><code>$endif</code></dt>
-<dd><p>This command, as seen in the previous example, terminates an
+<dt>
+<code>$endif</code>
+</dt>
+<dd>
+<p>This command, as seen in the previous example, terminates an
 <code>$if</code> command.
 </p>
 </dd>
-<dt><code>$else</code></dt>
-<dd><p>Commands in this branch of the <code>$if</code> directive are executed if
+<dt>
+<code>$else</code>
+</dt>
+<dd>
+<p>Commands in this branch of the <code>$if</code> directive are executed if
 the test fails.
 </p>
 </dd>
-<dt><code>$include</code></dt>
-<dd><p>This directive takes a single filename as an argument and reads commands
+<dt>
+<code>$include</code>
+</dt>
+<dd>
+<p>This directive takes a single filename as an argument and reads commands
 and bindings from that file.
 For example, the following directive reads from <samp>/etc/inputrc</samp>:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">$include /etc/inputrc
-</pre></div>
+</pre>
+</div>
 </dd>
 </dl>
 

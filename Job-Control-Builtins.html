@@ -64,21 +64,28 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Job-Control-Builtins"></a>
+<a name="Job-Control-Builtins">
+</a>
 <div class="header">
 <p>
 Next: <a href="Job-Control-Variables.html#Job-Control-Variables" accesskey="n" rel="next">Job Control Variables</a>, Previous: <a href="Job-Control-Basics.html#Job-Control-Basics" accesskey="p" rel="prev">Job Control Basics</a>, Up: <a href="Job-Control.html#Job-Control" accesskey="u" rel="up">Job Control</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Job-Control-Builtins-1"></a>
+<a name="Job-Control-Builtins-1">
+</a>
 <h3 class="section">7.2 Job Control Builtins</h3>
 
 <dl compact="compact">
-<dt><code>bg</code></dt>
-<dd><a name="index-bg"></a>
+<dt>
+<code>bg</code>
+</dt>
+<dd>
+<a name="index-bg">
+</a>
 <div class="example">
 <pre class="example">bg [<var>jobspec</var> &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>Resume each suspended job <var>jobspec</var> in the background, as if it
 had been started with &lsquo;<samp>&amp;</samp>&rsquo;.
@@ -89,11 +96,16 @@ enabled, or, when run with job control enabled, any
 that was started without job control.
 </p>
 </dd>
-<dt><code>fg</code></dt>
-<dd><a name="index-fg"></a>
+<dt>
+<code>fg</code>
+</dt>
+<dd>
+<a name="index-fg">
+</a>
 <div class="example">
 <pre class="example">fg [<var>jobspec</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Resume the job <var>jobspec</var> in the foreground and make it the current job.
 If <var>jobspec</var> is not supplied, the current job is used.
@@ -103,37 +115,58 @@ job control enabled, <var>jobspec</var> does not specify a valid job or
 <var>jobspec</var> specifies a job that was started without job control.
 </p>
 </dd>
-<dt><code>jobs</code></dt>
-<dd><a name="index-jobs"></a>
+<dt>
+<code>jobs</code>
+</dt>
+<dd>
+<a name="index-jobs">
+</a>
 <div class="example">
 <pre class="example">jobs [-lnprs] [<var>jobspec</var>]
 jobs -x <var>command</var> [<var>arguments</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>The first form lists the active jobs.  The options have the
 following meanings:
 </p>
 <dl compact="compact">
-<dt><code>-l</code></dt>
-<dd><p>List process <small>ID</small>s in addition to the normal information.
+<dt>
+<code>-l</code>
+</dt>
+<dd>
+<p>List process <small>ID</small>s in addition to the normal information.
 </p>
 </dd>
-<dt><code>-n</code></dt>
-<dd><p>Display information only about jobs that have changed status since
+<dt>
+<code>-n</code>
+</dt>
+<dd>
+<p>Display information only about jobs that have changed status since
 the user was last notified of their status.
 </p>
 </dd>
-<dt><code>-p</code></dt>
-<dd><p>List only the process <small>ID</small> of the job&rsquo;s process group leader.
+<dt>
+<code>-p</code>
+</dt>
+<dd>
+<p>List only the process <small>ID</small> of the job&rsquo;s process group leader.
 </p>
 </dd>
-<dt><code>-r</code></dt>
-<dd><p>Display only running jobs.
+<dt>
+<code>-r</code>
+</dt>
+<dd>
+<p>Display only running jobs.
 </p>
 </dd>
-<dt><code>-s</code></dt>
-<dd><p>Display only stopped jobs.
-</p></dd>
+<dt>
+<code>-s</code>
+</dt>
+<dd>
+<p>Display only stopped jobs.
+</p>
+</dd>
 </dl>
 
 <p>If <var>jobspec</var> is given,
@@ -147,12 +180,17 @@ corresponding process group <small>ID</small>, and executes <var>command</var>,
 passing it <var>argument</var>s, returning its exit status. 
 </p>
 </dd>
-<dt><code>kill</code></dt>
-<dd><a name="index-kill"></a>
+<dt>
+<code>kill</code>
+</dt>
+<dd>
+<a name="index-kill">
+</a>
 <div class="example">
 <pre class="example">kill [-s <var>sigspec</var>] [-n <var>signum</var>] [-<var>sigspec</var>] <var>jobspec</var> or <var>pid</var>
 kill -l [<var>exit_status</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Send a signal specified by <var>sigspec</var> or <var>signum</var> to the process
 named by job specification <var>jobspec</var> or process <small>ID</small> <var>pid</var>.
@@ -170,11 +208,16 @@ The return status is zero if at least one signal was successfully sent,
 or non-zero if an error occurs or an invalid option is encountered.
 </p>
 </dd>
-<dt><code>wait</code></dt>
-<dd><a name="index-wait"></a>
+<dt>
+<code>wait</code>
+</dt>
+<dd>
+<a name="index-wait">
+</a>
 <div class="example">
 <pre class="example">wait [-n] [<var>jobspec</var> or <var>pid</var> &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>Wait until the child process specified by each process <small>ID</small> <var>pid</var>
 or job specification <var>jobspec</var> exits and return the exit status of the
@@ -188,11 +231,16 @@ If neither <var>jobspec</var> nor <var>pid</var> specifies an active child proce
 of the shell, the return status is 127.
 </p>
 </dd>
-<dt><code>disown</code></dt>
-<dd><a name="index-disown"></a>
+<dt>
+<code>disown</code>
+</dt>
+<dd>
+<a name="index-disown">
+</a>
 <div class="example">
 <pre class="example">disown [-ar] [-h] [<var>jobspec</var> &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>Without options, remove each <var>jobspec</var> from the table of
 active jobs.
@@ -206,17 +254,23 @@ mark all jobs; the <samp>-r</samp> option without a <var>jobspec</var>
 argument restricts operation to running jobs.
 </p>
 </dd>
-<dt><code>suspend</code></dt>
-<dd><a name="index-suspend"></a>
+<dt>
+<code>suspend</code>
+</dt>
+<dd>
+<a name="index-suspend">
+</a>
 <div class="example">
 <pre class="example">suspend [-f]
-</pre></div>
+</pre>
+</div>
 
 <p>Suspend the execution of this shell until it receives a
 <code>SIGCONT</code> signal.
 A login shell cannot be suspended; the <samp>-f</samp>
 option can be used to override this and force the suspension.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <p>When job control is not active, the <code>kill</code> and <code>wait</code>

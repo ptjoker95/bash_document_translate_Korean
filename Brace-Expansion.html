@@ -64,16 +64,20 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Brace-Expansion"></a>
+<a name="Brace-Expansion">
+</a>
 <div class="header">
 <p>
 Next: <a href="Tilde-Expansion.html#Tilde-Expansion" accesskey="n" rel="next">Tilde Expansion</a>, Up: <a href="Shell-Expansions.html#Shell-Expansions" accesskey="u" rel="up">Shell Expansions</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Brace-Expansion-1"></a>
+<a name="Brace-Expansion-1">
+</a>
 <h4 class="subsection">3.5.1 Brace Expansion</h4>
-<a name="index-brace-expansion"></a>
-<a name="index-expansion_002c-brace"></a>
+<a name="index-brace-expansion">
+</a>
+<a name="index-expansion_002c-brace">
+</a>
 
 <p>Brace expansion is a mechanism by which arbitrary strings may be generated.
 This mechanism is similar to
@@ -91,10 +95,12 @@ to right.
 The results of each expanded string are not sorted; left to right order
 is preserved.
 For example,
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">bash$ echo a{d,c,b}e
 ade ace abe
-</pre></div>
+</pre>
+</div>
 
 <p>A sequence expression takes the form <code>{<var>x</var>..<var>y</var>[..<var>incr</var>]}</code>,
 where <var>x</var> and <var>y</var> are either integers or single characters,
@@ -134,13 +140,17 @@ is not considered eligible for brace expansion.
 <p>This construct is typically used as shorthand when the common
 prefix of the strings to be generated is longer than in the
 above example:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">mkdir /usr/local/src/bash/{old,new,dist,bugs}
-</pre></div>
+</pre>
+</div>
 <p>or
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">chown root /usr/{ucb/{ex,edit},lib/{ex?.?*,how_ex}}
-</pre></div>
+</pre>
+</div>
 
 <hr>
 <div class="header">

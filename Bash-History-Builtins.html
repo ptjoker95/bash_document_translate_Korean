@@ -64,26 +64,35 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Bash-History-Builtins"></a>
+<a name="Bash-History-Builtins">
+</a>
 <div class="header">
 <p>
 Next: <a href="History-Interaction.html#History-Interaction" accesskey="n" rel="next">History Interaction</a>, Previous: <a href="Bash-History-Facilities.html#Bash-History-Facilities" accesskey="p" rel="prev">Bash History Facilities</a>, Up: <a href="Using-History-Interactively.html#Using-History-Interactively" accesskey="u" rel="up">Using History Interactively</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Bash-History-Builtins-1"></a>
+<a name="Bash-History-Builtins-1">
+</a>
 <h3 class="section">9.2 Bash History Builtins</h3>
-<a name="index-history-builtins"></a>
+<a name="index-history-builtins">
+</a>
 
 <p>Bash provides two builtin commands which manipulate the
 history list and history file.
 </p>
 <dl compact="compact">
-<dt><code>fc</code></dt>
-<dd><a name="index-fc"></a>
+<dt>
+<code>fc</code>
+</dt>
+<dd>
+<a name="index-fc">
+</a>
 <div class="example">
-<pre class="example"><code>fc [-e <var>ename</var>] [-lnr] [<var>first</var>] [<var>last</var>]</code>
+<pre class="example">
+<code>fc [-e <var>ename</var>] [-lnr] [<var>first</var>] [<var>last</var>]</code>
 <code>fc -s [<var>pat</var>=<var>rep</var>] [<var>command</var>]</code>
-</pre></div>
+</pre>
+</div>
 
 <p>The first form selects a range of commands from <var>first</var> to
 <var>last</var> from the history list and displays or edits and re-executes
@@ -114,15 +123,20 @@ that typing &lsquo;<samp>r cc</samp>&rsquo; runs the last command beginning with
 and typing &lsquo;<samp>r</samp>&rsquo; re-executes the last command (see <a href="Aliases.html#Aliases">Aliases</a>).
 </p>
 </dd>
-<dt><code>history</code></dt>
-<dd><a name="index-history"></a>
+<dt>
+<code>history</code>
+</dt>
+<dd>
+<a name="index-history">
+</a>
 <div class="example">
 <pre class="example">history [<var>n</var>]
 history -c
 history -d <var>offset</var>
 history [-anrw] [<var>filename</var>]
 history -ps <var>arg</var>
-</pre></div>
+</pre>
+</div>
 
 <p>With no options, display the history list with line numbers.
 Lines prefixed with a &lsquo;<samp>*</samp>&rsquo; have been modified.
@@ -136,45 +150,70 @@ and the history line.
 <p>Options, if supplied, have the following meanings:
 </p>
 <dl compact="compact">
-<dt><code>-c</code></dt>
-<dd><p>Clear the history list.  This may be combined
+<dt>
+<code>-c</code>
+</dt>
+<dd>
+<p>Clear the history list.  This may be combined
 with the other options to replace the history list completely.
 </p>
 </dd>
-<dt><code>-d <var>offset</var></code></dt>
-<dd><p>Delete the history entry at position <var>offset</var>.
+<dt>
+<code>-d <var>offset</var>
+</code>
+</dt>
+<dd>
+<p>Delete the history entry at position <var>offset</var>.
 <var>offset</var> should be specified as it appears when the history is
 displayed.
 </p>
 </dd>
-<dt><code>-a</code></dt>
-<dd><p>Append the new
+<dt>
+<code>-a</code>
+</dt>
+<dd>
+<p>Append the new
 history lines (history lines entered since the beginning of the
 current Bash session) to the history file.
 </p>
 </dd>
-<dt><code>-n</code></dt>
-<dd><p>Append the history lines not already read from the history file
+<dt>
+<code>-n</code>
+</dt>
+<dd>
+<p>Append the history lines not already read from the history file
 to the current history list.  These are lines appended to the history
 file since the beginning of the current Bash session.
 </p>
 </dd>
-<dt><code>-r</code></dt>
-<dd><p>Read the history file and append its contents to
+<dt>
+<code>-r</code>
+</dt>
+<dd>
+<p>Read the history file and append its contents to
 the history list.
 </p>
 </dd>
-<dt><code>-w</code></dt>
-<dd><p>Write out the current history list to the history file.
+<dt>
+<code>-w</code>
+</dt>
+<dd>
+<p>Write out the current history list to the history file.
 </p>
 </dd>
-<dt><code>-p</code></dt>
-<dd><p>Perform history substitution on the <var>arg</var>s and display the result
+<dt>
+<code>-p</code>
+</dt>
+<dd>
+<p>Perform history substitution on the <var>arg</var>s and display the result
 on the standard output, without storing the results in the history list.
 </p>
 </dd>
-<dt><code>-s</code></dt>
-<dd><p>The <var>arg</var>s are added to the end of
+<dt>
+<code>-s</code>
+</dt>
+<dd>
+<p>The <var>arg</var>s are added to the end of
 the history list as a single entry.
 </p>
 </dd>

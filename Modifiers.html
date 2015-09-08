@@ -64,51 +64,78 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Modifiers"></a>
+<a name="Modifiers">
+</a>
 <div class="header">
 <p>
 Previous: <a href="Word-Designators.html#Word-Designators" accesskey="p" rel="prev">Word Designators</a>, Up: <a href="History-Interaction.html#History-Interaction" accesskey="u" rel="up">History Interaction</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Modifiers-1"></a>
+<a name="Modifiers-1">
+</a>
 <h4 class="subsection">9.3.3 Modifiers</h4>
 
 <p>After the optional word designator, you can add a sequence of one or more
 of the following modifiers, each preceded by a &lsquo;<samp>:</samp>&rsquo;.
 </p>
 <dl compact="compact">
-<dt><code>h</code></dt>
-<dd><p>Remove a trailing pathname component, leaving only the head.
+<dt>
+<code>h</code>
+</dt>
+<dd>
+<p>Remove a trailing pathname component, leaving only the head.
 </p>
 </dd>
-<dt><code>t</code></dt>
-<dd><p>Remove all leading pathname components, leaving the tail.
+<dt>
+<code>t</code>
+</dt>
+<dd>
+<p>Remove all leading pathname components, leaving the tail.
 </p>
 </dd>
-<dt><code>r</code></dt>
-<dd><p>Remove a trailing suffix of the form &lsquo;<samp>.<var>suffix</var></samp>&rsquo;, leaving
+<dt>
+<code>r</code>
+</dt>
+<dd>
+<p>Remove a trailing suffix of the form &lsquo;<samp>.<var>suffix</var>
+</samp>&rsquo;, leaving
 the basename.
 </p>
 </dd>
-<dt><code>e</code></dt>
-<dd><p>Remove all but the trailing suffix.
+<dt>
+<code>e</code>
+</dt>
+<dd>
+<p>Remove all but the trailing suffix.
 </p>
 </dd>
-<dt><code>p</code></dt>
-<dd><p>Print the new command but do not execute it.
+<dt>
+<code>p</code>
+</dt>
+<dd>
+<p>Print the new command but do not execute it.
 </p>
 </dd>
-<dt><code>q</code></dt>
-<dd><p>Quote the substituted words, escaping further substitutions.
+<dt>
+<code>q</code>
+</dt>
+<dd>
+<p>Quote the substituted words, escaping further substitutions.
 </p>
 </dd>
-<dt><code>x</code></dt>
-<dd><p>Quote the substituted words as with &lsquo;<samp>q</samp>&rsquo;,
+<dt>
+<code>x</code>
+</dt>
+<dd>
+<p>Quote the substituted words as with &lsquo;<samp>q</samp>&rsquo;,
 but break into words at spaces, tabs, and newlines.
 </p>
 </dd>
-<dt><code>s/<var>old</var>/<var>new</var>/</code></dt>
-<dd><p>Substitute <var>new</var> for the first occurrence of <var>old</var> in the
+<dt>
+<code>s/<var>old</var>/<var>new</var>/</code>
+</dt>
+<dd>
+<p>Substitute <var>new</var> for the first occurrence of <var>old</var> in the
 event line.  Any delimiter may be used in place of &lsquo;<samp>/</samp>&rsquo;.
 The delimiter may be quoted in <var>old</var> and <var>new</var>
 with a single backslash.  If &lsquo;<samp>&amp;</samp>&rsquo; appears in <var>new</var>,
@@ -117,19 +144,30 @@ the &lsquo;<samp>&amp;</samp>&rsquo;.  The final delimiter is optional if it is 
 character on the input line.
 </p>
 </dd>
-<dt><code>&amp;</code></dt>
-<dd><p>Repeat the previous substitution.
+<dt>
+<code>&amp;</code>
+</dt>
+<dd>
+<p>Repeat the previous substitution.
 </p>
 </dd>
-<dt><code>g</code></dt>
-<dt><code>a</code></dt>
-<dd><p>Cause changes to be applied over the entire event line.  Used in
+<dt>
+<code>g</code>
+</dt>
+<dt>
+<code>a</code>
+</dt>
+<dd>
+<p>Cause changes to be applied over the entire event line.  Used in
 conjunction with &lsquo;<samp>s</samp>&rsquo;, as in <code>gs/<var>old</var>/<var>new</var>/</code>,
 or with &lsquo;<samp>&amp;</samp>&rsquo;.
 </p>
 </dd>
-<dt><code>G</code></dt>
-<dd><p>Apply the following &lsquo;<samp>s</samp>&rsquo; modifier once to each word in the event.
+<dt>
+<code>G</code>
+</dt>
+<dd>
+<p>Apply the following &lsquo;<samp>s</samp>&rsquo; modifier once to each word in the event.
 </p>
 </dd>
 </dl>

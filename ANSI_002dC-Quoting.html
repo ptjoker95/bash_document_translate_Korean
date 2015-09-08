@@ -64,15 +64,18 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="ANSI_002dC-Quoting"></a>
+<a name="ANSI_002dC-Quoting">
+</a>
 <div class="header">
 <p>
 Next: <a href="Locale-Translation.html#Locale-Translation" accesskey="n" rel="next">Locale Translation</a>, Previous: <a href="Double-Quotes.html#Double-Quotes" accesskey="p" rel="prev">Double Quotes</a>, Up: <a href="Quoting.html#Quoting" accesskey="u" rel="up">Quoting</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="ANSI_002dC-Quoting-1"></a>
+<a name="ANSI_002dC-Quoting-1">
+</a>
 <h4 class="subsubsection">3.1.2.4 ANSI-C Quoting</h4>
-<a name="index-quoting_002c-ANSI"></a>
+<a name="index-quoting_002c-ANSI">
+</a>
 
 <p>Words of the form <code>$'<var>string</var>'</code> are treated specially.  The
 word expands to <var>string</var>, with backslash-escaped characters replaced
@@ -80,59 +83,130 @@ as specified by the ANSI C standard.  Backslash escape sequences, if
 present, are decoded as follows:
 </p>
 <dl compact="compact">
-<dt><code>\a</code></dt>
-<dd><p>alert (bell)
-</p></dd>
-<dt><code>\b</code></dt>
-<dd><p>backspace
-</p></dd>
-<dt><code>\e</code></dt>
-<dt><code>\E</code></dt>
-<dd><p>an escape character (not ANSI C)
-</p></dd>
-<dt><code>\f</code></dt>
-<dd><p>form feed
-</p></dd>
-<dt><code>\n</code></dt>
-<dd><p>newline
-</p></dd>
-<dt><code>\r</code></dt>
-<dd><p>carriage return
-</p></dd>
-<dt><code>\t</code></dt>
-<dd><p>horizontal tab
-</p></dd>
-<dt><code>\v</code></dt>
-<dd><p>vertical tab
-</p></dd>
-<dt><code>\\</code></dt>
-<dd><p>backslash
-</p></dd>
-<dt><code>\'</code></dt>
-<dd><p>single quote
-</p></dd>
-<dt><code>\&quot;</code></dt>
-<dd><p>double quote
-</p></dd>
-<dt><code>\<var>nnn</var></code></dt>
-<dd><p>the eight-bit character whose value is the octal value <var>nnn</var>
+<dt>
+<code>\a</code>
+</dt>
+<dd>
+<p>alert (bell)
+</p>
+</dd>
+<dt>
+<code>\b</code>
+</dt>
+<dd>
+<p>backspace
+</p>
+</dd>
+<dt>
+<code>\e</code>
+</dt>
+<dt>
+<code>\E</code>
+</dt>
+<dd>
+<p>an escape character (not ANSI C)
+</p>
+</dd>
+<dt>
+<code>\f</code>
+</dt>
+<dd>
+<p>form feed
+</p>
+</dd>
+<dt>
+<code>\n</code>
+</dt>
+<dd>
+<p>newline
+</p>
+</dd>
+<dt>
+<code>\r</code>
+</dt>
+<dd>
+<p>carriage return
+</p>
+</dd>
+<dt>
+<code>\t</code>
+</dt>
+<dd>
+<p>horizontal tab
+</p>
+</dd>
+<dt>
+<code>\v</code>
+</dt>
+<dd>
+<p>vertical tab
+</p>
+</dd>
+<dt>
+<code>\\</code>
+</dt>
+<dd>
+<p>backslash
+</p>
+</dd>
+<dt>
+<code>\'</code>
+</dt>
+<dd>
+<p>single quote
+</p>
+</dd>
+<dt>
+<code>\&quot;</code>
+</dt>
+<dd>
+<p>double quote
+</p>
+</dd>
+<dt>
+<code>\<var>nnn</var>
+</code>
+</dt>
+<dd>
+<p>the eight-bit character whose value is the octal value <var>nnn</var>
 (one to three digits)
-</p></dd>
-<dt><code>\x<var>HH</var></code></dt>
-<dd><p>the eight-bit character whose value is the hexadecimal value <var>HH</var>
+</p>
+</dd>
+<dt>
+<code>\x<var>HH</var>
+</code>
+</dt>
+<dd>
+<p>the eight-bit character whose value is the hexadecimal value <var>HH</var>
 (one or two hex digits)
-</p></dd>
-<dt><code>\u<var>HHHH</var></code></dt>
-<dd><p>the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value
+</p>
+</dd>
+<dt>
+<code>\u<var>HHHH</var>
+</code>
+</dt>
+<dd>
+<p>the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value
 <var>HHHH</var> (one to four hex digits)
-</p></dd>
-<dt><code>\U<var>HHHHHHHH</var></code></dt>
-<dd><p>the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value
+</p>
+</dd>
+<dt>
+<code>\U<var>HHHHHHHH</var>
+</code>
+</dt>
+<dd>
+<p>the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value
 <var>HHHHHHHH</var> (one to eight hex digits)
-</p></dd>
-<dt><code>\c<var>x</var></code></dt>
-<dd><p>a control-<var>x</var> character
-</p></dd>
+</p>
+</dd>
+<dt>
+<code>\c<var>x</var>
+</code>
+</dt>
+<dd>
+<p>a control-<var>x</var> character
+</p>
+</dd>
 </dl>
 
 <p>The expanded result is single-quoted, as if the dollar sign had not

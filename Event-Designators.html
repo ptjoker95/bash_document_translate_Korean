@@ -64,49 +64,74 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Event-Designators"></a>
+<a name="Event-Designators">
+</a>
 <div class="header">
 <p>
 Next: <a href="Word-Designators.html#Word-Designators" accesskey="n" rel="next">Word Designators</a>, Up: <a href="History-Interaction.html#History-Interaction" accesskey="u" rel="up">History Interaction</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Event-Designators-1"></a>
+<a name="Event-Designators-1">
+</a>
 <h4 class="subsection">9.3.1 Event Designators</h4>
-<a name="index-event-designators"></a>
+<a name="index-event-designators">
+</a>
 
 <p>An event designator is a reference to a command line entry in the
 history list.
 Unless the reference is absolute, events are relative to the current
 position in the history list.
-<a name="index-history-events"></a>
+<a name="index-history-events">
+</a>
 </p>
 <dl compact="compact">
-<dt><code>!</code></dt>
-<dd><p>Start a history substitution, except when followed by a space, tab,
+<dt>
+<code>!</code>
+</dt>
+<dd>
+<p>Start a history substitution, except when followed by a space, tab,
 the end of the line, &lsquo;<samp>=</samp>&rsquo; or &lsquo;<samp>(</samp>&rsquo; (when the
 <code>extglob</code> shell option is enabled using the <code>shopt</code> builtin).
 </p>
 </dd>
-<dt><code>!<var>n</var></code></dt>
-<dd><p>Refer to command line <var>n</var>.
+<dt>
+<code>!<var>n</var>
+</code>
+</dt>
+<dd>
+<p>Refer to command line <var>n</var>.
 </p>
 </dd>
-<dt><code>!-<var>n</var></code></dt>
-<dd><p>Refer to the command <var>n</var> lines back.
+<dt>
+<code>!-<var>n</var>
+</code>
+</dt>
+<dd>
+<p>Refer to the command <var>n</var> lines back.
 </p>
 </dd>
-<dt><code>!!</code></dt>
-<dd><p>Refer to the previous command.  This is a synonym for &lsquo;<samp>!-1</samp>&rsquo;.
+<dt>
+<code>!!</code>
+</dt>
+<dd>
+<p>Refer to the previous command.  This is a synonym for &lsquo;<samp>!-1</samp>&rsquo;.
 </p>
 </dd>
-<dt><code>!<var>string</var></code></dt>
-<dd><p>Refer to the most recent command
+<dt>
+<code>!<var>string</var>
+</code>
+</dt>
+<dd>
+<p>Refer to the most recent command
 preceding the current position in the history list
 starting with <var>string</var>.
 </p>
 </dd>
-<dt><code>!?<var>string</var>[?]</code></dt>
-<dd><p>Refer to the most recent command
+<dt>
+<code>!?<var>string</var>[?]</code>
+</dt>
+<dd>
+<p>Refer to the most recent command
 preceding the current position in the history list
 containing <var>string</var>.
 The trailing
@@ -114,14 +139,20 @@ The trailing
 a newline.
 </p>
 </dd>
-<dt><code>^<var>string1</var>^<var>string2</var>^</code></dt>
-<dd><p>Quick Substitution.  Repeat the last command, replacing <var>string1</var>
+<dt>
+<code>^<var>string1</var>^<var>string2</var>^</code>
+</dt>
+<dd>
+<p>Quick Substitution.  Repeat the last command, replacing <var>string1</var>
 with <var>string2</var>.  Equivalent to
 <code>!!:s/<var>string1</var>/<var>string2</var>/</code>.
 </p>
 </dd>
-<dt><code>!#</code></dt>
-<dd><p>The entire command line typed so far.
+<dt>
+<code>!#</code>
+</dt>
+<dd>
+<p>The entire command line typed so far.
 </p>
 </dd>
 </dl>

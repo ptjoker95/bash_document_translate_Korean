@@ -64,16 +64,20 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Tilde-Expansion"></a>
+<a name="Tilde-Expansion">
+</a>
 <div class="header">
 <p>
 Next: <a href="Shell-Parameter-Expansion.html#Shell-Parameter-Expansion" accesskey="n" rel="next">Shell Parameter Expansion</a>, Previous: <a href="Brace-Expansion.html#Brace-Expansion" accesskey="p" rel="prev">Brace Expansion</a>, Up: <a href="Shell-Expansions.html#Shell-Expansions" accesskey="u" rel="up">Shell Expansions</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Tilde-Expansion-1"></a>
+<a name="Tilde-Expansion-1">
+</a>
 <h4 class="subsection">3.5.2 Tilde Expansion</h4>
-<a name="index-tilde-expansion"></a>
-<a name="index-expansion_002c-tilde"></a>
+<a name="index-tilde-expansion">
+</a>
+<a name="index-expansion_002c-tilde">
+</a>
 
 <p>If a word begins with an unquoted tilde character (&lsquo;<samp>~</samp>&rsquo;), all of the
 characters up to the first unquoted slash (or all characters,
@@ -115,37 +119,72 @@ and the shell assigns the expanded value.
 <p>The following table shows how Bash treats unquoted tilde-prefixes:
 </p>
 <dl compact="compact">
-<dt><code>~</code></dt>
-<dd><p>The value of <code>$HOME</code>
-</p></dd>
-<dt><code>~/foo</code></dt>
-<dd><p><samp>$HOME/foo</samp>
+<dt>
+<code>~</code>
+</dt>
+<dd>
+<p>The value of <code>$HOME</code>
 </p>
 </dd>
-<dt><code>~fred/foo</code></dt>
-<dd><p>The subdirectory <code>foo</code> of the home directory of the user
+<dt>
+<code>~/foo</code>
+</dt>
+<dd>
+<p>
+<samp>$HOME/foo</samp>
+</p>
+</dd>
+<dt>
+<code>~fred/foo</code>
+</dt>
+<dd>
+<p>The subdirectory <code>foo</code> of the home directory of the user
 <code>fred</code>
 </p>
 </dd>
-<dt><code>~+/foo</code></dt>
-<dd><p><samp>$PWD/foo</samp>
+<dt>
+<code>~+/foo</code>
+</dt>
+<dd>
+<p>
+<samp>$PWD/foo</samp>
 </p>
 </dd>
-<dt><code>~-/foo</code></dt>
-<dd><p><samp>${OLDPWD-'~-'}/foo</samp>
+<dt>
+<code>~-/foo</code>
+</dt>
+<dd>
+<p>
+<samp>${OLDPWD-'~-'}/foo</samp>
 </p>
 </dd>
-<dt><code>~<var>N</var></code></dt>
-<dd><p>The string that would be displayed by &lsquo;<samp>dirs +<var>N</var></samp>&rsquo;
+<dt>
+<code>~<var>N</var>
+</code>
+</dt>
+<dd>
+<p>The string that would be displayed by &lsquo;<samp>dirs +<var>N</var>
+</samp>&rsquo;
 </p>
 </dd>
-<dt><code>~+<var>N</var></code></dt>
-<dd><p>The string that would be displayed by &lsquo;<samp>dirs +<var>N</var></samp>&rsquo;
+<dt>
+<code>~+<var>N</var>
+</code>
+</dt>
+<dd>
+<p>The string that would be displayed by &lsquo;<samp>dirs +<var>N</var>
+</samp>&rsquo;
 </p>
 </dd>
-<dt><code>~-<var>N</var></code></dt>
-<dd><p>The string that would be displayed by &lsquo;<samp>dirs -<var>N</var></samp>&rsquo;
-</p></dd>
+<dt>
+<code>~-<var>N</var>
+</code>
+</dt>
+<dd>
+<p>The string that would be displayed by &lsquo;<samp>dirs -<var>N</var>
+</samp>&rsquo;
+</p>
+</dd>
 </dl>
 
 <hr>

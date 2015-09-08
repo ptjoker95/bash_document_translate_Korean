@@ -64,15 +64,18 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Redirections"></a>
+<a name="Redirections">
+</a>
 <div class="header">
 <p>
 Next: <a href="Executing-Commands.html#Executing-Commands" accesskey="n" rel="next">Executing Commands</a>, Previous: <a href="Shell-Expansions.html#Shell-Expansions" accesskey="p" rel="prev">Shell Expansions</a>, Up: <a href="Basic-Shell-Features.html#Basic-Shell-Features" accesskey="u" rel="up">Basic Shell Features</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Redirections-1"></a>
+<a name="Redirections-1">
+</a>
 <h3 class="section">3.6 Redirections</h3>
-<a name="index-redirection"></a>
+<a name="index-redirection">
+</a>
 
 <p>Before a command is executed, its input and output
 may be <var>redirected</var>
@@ -111,14 +114,18 @@ If it expands to more than one word, Bash reports an error.
 </p>
 <p>Note that the order of redirections is significant.  For example,
 the command
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">ls &gt; <var>dirlist</var> 2&gt;&amp;1
-</pre></div>
+</pre>
+</div>
 <p>directs both standard output (file descriptor 1) and standard error
 (file descriptor 2) to the file <var>dirlist</var>, while the command
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">ls 2&gt;&amp;1 &gt; <var>dirlist</var>
-</pre></div>
+</pre>
+</div>
 <p>directs only the standard output to file <var>dirlist</var>,
 because the standard error was made a copy of the standard output
 before the standard output was redirected to <var>dirlist</var>.
@@ -127,33 +134,55 @@ before the standard output was redirected to <var>dirlist</var>.
 redirections, as described in the following table:
 </p>
 <dl compact="compact">
-<dt><code>/dev/fd/<var>fd</var></code></dt>
-<dd><p>If <var>fd</var> is a valid integer, file descriptor <var>fd</var> is duplicated.
+<dt>
+<code>/dev/fd/<var>fd</var>
+</code>
+</dt>
+<dd>
+<p>If <var>fd</var> is a valid integer, file descriptor <var>fd</var> is duplicated.
 </p>
 </dd>
-<dt><code>/dev/stdin</code></dt>
-<dd><p>File descriptor 0 is duplicated.
+<dt>
+<code>/dev/stdin</code>
+</dt>
+<dd>
+<p>File descriptor 0 is duplicated.
 </p>
 </dd>
-<dt><code>/dev/stdout</code></dt>
-<dd><p>File descriptor 1 is duplicated.
+<dt>
+<code>/dev/stdout</code>
+</dt>
+<dd>
+<p>File descriptor 1 is duplicated.
 </p>
 </dd>
-<dt><code>/dev/stderr</code></dt>
-<dd><p>File descriptor 2 is duplicated.
+<dt>
+<code>/dev/stderr</code>
+</dt>
+<dd>
+<p>File descriptor 2 is duplicated.
 </p>
 </dd>
-<dt><code>/dev/tcp/<var>host</var>/<var>port</var></code></dt>
-<dd><p>If <var>host</var> is a valid hostname or Internet address, and <var>port</var>
+<dt>
+<code>/dev/tcp/<var>host</var>/<var>port</var>
+</code>
+</dt>
+<dd>
+<p>If <var>host</var> is a valid hostname or Internet address, and <var>port</var>
 is an integer port number or service name, Bash attempts to open
 the corresponding TCP socket.
 </p>
 </dd>
-<dt><code>/dev/udp/<var>host</var>/<var>port</var></code></dt>
-<dd><p>If <var>host</var> is a valid hostname or Internet address, and <var>port</var>
+<dt>
+<code>/dev/udp/<var>host</var>/<var>port</var>
+</code>
+</dt>
+<dd>
+<p>If <var>host</var> is a valid hostname or Internet address, and <var>port</var>
 is an integer port number or service name, Bash attempts to open 
 the corresponding UDP socket.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <p>A failure to open or create a file causes the redirection to fail.
@@ -162,7 +191,8 @@ the corresponding UDP socket.
 care, as they may conflict with file descriptors the shell uses
 internally.
 </p>
-<a name="Redirecting-Input"></a>
+<a name="Redirecting-Input">
+</a>
 <h4 class="subsection">3.6.1 Redirecting Input</h4>
 <p>Redirection of input causes the file whose name results from
 the expansion of <var>word</var>
@@ -171,11 +201,14 @@ or the standard input (file descriptor 0) if <code>n</code>
 is not specified.
 </p>
 <p>The general format for redirecting input is:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">[<var>n</var>]&lt;<var>word</var>
-</pre></div>
+</pre>
+</div>
 
-<a name="Redirecting-Output"></a>
+<a name="Redirecting-Output">
+</a>
 <h4 class="subsection">3.6.2 Redirecting Output</h4>
 <p>Redirection of output causes the file whose name results from
 the expansion of <var>word</var>
@@ -185,9 +218,11 @@ is not specified.  If the file does not exist it is created;
 if it does exist it is truncated to zero size.
 </p>
 <p>The general format for redirecting output is:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">[<var>n</var>]&gt;[|]<var>word</var>
-</pre></div>
+</pre>
+</div>
 
 <p>If the redirection operator is &lsquo;<samp>&gt;</samp>&rsquo;, and the <code>noclobber</code>
 option to the <code>set</code> builtin has been enabled, the redirection
@@ -197,7 +232,8 @@ If the redirection operator is &lsquo;<samp>&gt;|</samp>&rsquo;, or the redirect
 &lsquo;<samp>&gt;</samp>&rsquo; and the <code>noclobber</code> option is not enabled, the redirection
 is attempted even if the file named by <var>word</var> exists.
 </p>
-<a name="Appending-Redirected-Output"></a>
+<a name="Appending-Redirected-Output">
+</a>
 <h4 class="subsection">3.6.3 Appending Redirected Output</h4>
 <p>Redirection of output in this fashion
 causes the file whose name results from
@@ -207,11 +243,14 @@ or the standard output (file descriptor 1) if <var>n</var>
 is not specified.  If the file does not exist it is created.
 </p>
 <p>The general format for appending output is:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">[<var>n</var>]&gt;&gt;<var>word</var>
-</pre></div>
+</pre>
+</div>
 
-<a name="Redirecting-Standard-Output-and-Standard-Error"></a>
+<a name="Redirecting-Standard-Output-and-Standard-Error">
+</a>
 <h4 class="subsection">3.6.4 Redirecting Standard Output and Standard Error</h4>
 <p>This construct allows both the
 standard output (file descriptor 1) and
@@ -221,23 +260,30 @@ expansion of <var>word</var>.
 </p>
 <p>There are two formats for redirecting standard output and
 standard error:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">&amp;&gt;<var>word</var>
-</pre></div>
+</pre>
+</div>
 <p>and
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">&gt;&amp;<var>word</var>
-</pre></div>
+</pre>
+</div>
 <p>Of the two forms, the first is preferred.
 This is semantically equivalent to
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">&gt;<var>word</var> 2&gt;&amp;1
-</pre></div>
+</pre>
+</div>
 <p>When using the second form, <var>word</var> may not expand to a number or
 &lsquo;<samp>-</samp>&rsquo;.  If it does, other redirection operators apply
 (see Duplicating File Descriptors below) for compatibility reasons.
 </p>
-<a name="Appending-Standard-Output-and-Standard-Error"></a>
+<a name="Appending-Standard-Output-and-Standard-Error">
+</a>
 <h4 class="subsection">3.6.5 Appending Standard Output and Standard Error</h4>
 <p>This construct allows both the
 standard output (file descriptor 1) and
@@ -246,16 +292,21 @@ to be appended to the file whose name is the
 expansion of <var>word</var>.
 </p>
 <p>The format for appending standard output and standard error is:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">&amp;&gt;&gt;<var>word</var>
-</pre></div>
+</pre>
+</div>
 <p>This is semantically equivalent to
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">&gt;&gt;<var>word</var> 2&gt;&amp;1
-</pre></div>
+</pre>
+</div>
 <p>(see Duplicating File Descriptors below).
 </p>
-<a name="Here-Documents"></a>
+<a name="Here-Documents">
+</a>
 <h4 class="subsection">3.6.6 Here Documents</h4>
 <p>This type of redirection instructs the shell to read input from the
 current source until a line containing only <var>word</var>
@@ -264,11 +315,13 @@ the lines read up to that point are then used as the standard
 input for a command.
 </p>
 <p>The format of here-documents is:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">&lt;&lt;[-]<var>word</var>
         <var>here-document</var>
 <var>delimiter</var>
-</pre></div>
+</pre>
+</div>
 
 <p>No parameter and variable expansion, command substitution,
 arithmetic expansion, or filename expansion is performed on
@@ -288,12 +341,15 @@ line containing <var>delimiter</var>.
 This allows here-documents within shell scripts to be indented in a
 natural fashion.
 </p>
-<a name="Here-Strings"></a>
+<a name="Here-Strings">
+</a>
 <h4 class="subsection">3.6.7 Here Strings</h4>
 <p>A variant of here documents, the format is:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">&lt;&lt;&lt; <var>word</var>
-</pre></div>
+</pre>
+</div>
 
 <p>The <var>word</var> undergoes
 brace expansion, tilde expansion, parameter and variable expansion,
@@ -302,12 +358,15 @@ Pathname expansion and word splitting are not performed.
 The result is supplied as a single string to the command on its
 standard input.
 </p>
-<a name="Duplicating-File-Descriptors"></a>
+<a name="Duplicating-File-Descriptors">
+</a>
 <h4 class="subsection">3.6.8 Duplicating File Descriptors</h4>
 <p>The redirection operator
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">[<var>n</var>]&lt;&amp;<var>word</var>
-</pre></div>
+</pre>
+</div>
 <p>is used to duplicate input file descriptors.
 If <var>word</var>
 expands to one or more digits, the file descriptor denoted by <var>n</var>
@@ -319,9 +378,11 @@ evaluates to &lsquo;<samp>-</samp>&rsquo;, file descriptor <var>n</var> is close
 If <var>n</var> is not specified, the standard input (file descriptor 0) is used.
 </p>
 <p>The operator
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">[<var>n</var>]&gt;&amp;<var>word</var>
-</pre></div>
+</pre>
+</div>
 <p>is used similarly to duplicate output file descriptors.  If
 <var>n</var> is not specified, the standard output (file descriptor 1) is used.
 If the digits in <var>word</var> do not specify a file descriptor open for
@@ -332,29 +393,37 @@ As a special case, if <var>n</var> is omitted, and <var>word</var> does not
 expand to one or more digits or &lsquo;<samp>-</samp>&rsquo;, the standard output and standard
 error are redirected as described previously.
 </p>
-<a name="Moving-File-Descriptors"></a>
+<a name="Moving-File-Descriptors">
+</a>
 <h4 class="subsection">3.6.9 Moving File Descriptors</h4>
 <p>The redirection operator
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">[<var>n</var>]&lt;&amp;<var>digit</var>-
-</pre></div>
+</pre>
+</div>
 <p>moves the file descriptor <var>digit</var> to file descriptor <var>n</var>,
 or the standard input (file descriptor 0) if <var>n</var> is not specified.
 <var>digit</var> is closed after being duplicated to <var>n</var>.
 </p>
 <p>Similarly, the redirection operator
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">[<var>n</var>]&gt;&amp;<var>digit</var>-
-</pre></div>
+</pre>
+</div>
 <p>moves the file descriptor <var>digit</var> to file descriptor <var>n</var>,
 or the standard output (file descriptor 1) if <var>n</var> is not specified.
 </p>
-<a name="Opening-File-Descriptors-for-Reading-and-Writing"></a>
+<a name="Opening-File-Descriptors-for-Reading-and-Writing">
+</a>
 <h4 class="subsection">3.6.10 Opening File Descriptors for Reading and Writing</h4>
 <p>The redirection operator
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">[<var>n</var>]&lt;&gt;<var>word</var>
-</pre></div>
+</pre>
+</div>
 <p>causes the file whose name is the expansion of <var>word</var>
 to be opened for both reading and writing on file descriptor
 <var>n</var>, or on file descriptor 0 if <var>n</var>

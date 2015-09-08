@@ -64,15 +64,18 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Looping-Constructs"></a>
+<a name="Looping-Constructs">
+</a>
 <div class="header">
 <p>
 Next: <a href="Conditional-Constructs.html#Conditional-Constructs" accesskey="n" rel="next">Conditional Constructs</a>, Up: <a href="Compound-Commands.html#Compound-Commands" accesskey="u" rel="up">Compound Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Looping-Constructs-1"></a>
+<a name="Looping-Constructs-1">
+</a>
 <h4 class="subsubsection">3.2.4.1 Looping Constructs</h4>
-<a name="index-commands_002c-looping"></a>
+<a name="index-commands_002c-looping">
+</a>
 
 <p>Bash supports the following looping constructs.
 </p>
@@ -80,15 +83,22 @@ Next: <a href="Conditional-Constructs.html#Conditional-Constructs" accesskey="n"
 command&rsquo;s syntax, it may be replaced with one or more newlines.
 </p>
 <dl compact="compact">
-<dt><code>until</code></dt>
-<dd><a name="index-until"></a>
-<a name="index-do"></a>
-<a name="index-done"></a>
+<dt>
+<code>until</code>
+</dt>
+<dd>
+<a name="index-until">
+</a>
+<a name="index-do">
+</a>
+<a name="index-done">
+</a>
 <p>The syntax of the <code>until</code> command is:
 </p>
 <div class="example">
 <pre class="example">until <var>test-commands</var>; do <var>consequent-commands</var>; done
-</pre></div>
+</pre>
+</div>
 
 <p>Execute <var>consequent-commands</var> as long as
 <var>test-commands</var> has an exit status which is not zero.
@@ -96,13 +106,18 @@ The return status is the exit status of the last command executed
 in <var>consequent-commands</var>, or zero if none was executed.
 </p>
 </dd>
-<dt><code>while</code></dt>
-<dd><a name="index-while"></a>
+<dt>
+<code>while</code>
+</dt>
+<dd>
+<a name="index-while">
+</a>
 <p>The syntax of the <code>while</code> command is:
 </p>
 <div class="example">
 <pre class="example">while <var>test-commands</var>; do <var>consequent-commands</var>; done
-</pre></div>
+</pre>
+</div>
 
 <p>Execute <var>consequent-commands</var> as long as
 <var>test-commands</var> has an exit status of zero.
@@ -110,17 +125,23 @@ The return status is the exit status of the last command executed
 in <var>consequent-commands</var>, or zero if none was executed.
 </p>
 </dd>
-<dt><code>for</code></dt>
-<dd><a name="index-for"></a>
+<dt>
+<code>for</code>
+</dt>
+<dd>
+<a name="index-for">
+</a>
 <p>The syntax of the <code>for</code> command is:
 </p>
 <div class="example">
 <pre class="example">for <var>name</var> [ [in [<var>words</var> &hellip;] ] ; ] do <var>commands</var>; done
-</pre></div>
+</pre>
+</div>
 
 <p>Expand <var>words</var>, and execute <var>commands</var> once for each member
 in the resultant list, with <var>name</var> bound to the current member.
-If &lsquo;<samp>in <var>words</var></samp>&rsquo; is not present, the <code>for</code> command
+If &lsquo;<samp>in <var>words</var>
+</samp>&rsquo; is not present, the <code>for</code> command
 executes the <var>commands</var> once for each positional parameter that is
 set, as if &lsquo;<samp>in &quot;$@&quot;</samp>&rsquo; had been specified
 (see <a href="Special-Parameters.html#Special-Parameters">Special Parameters</a>).
@@ -132,7 +153,8 @@ executed, and the return status is zero.
 </p>
 <div class="example">
 <pre class="example">for (( <var>expr1</var> ; <var>expr2</var> ; <var>expr3</var> )) ; do <var>commands</var> ; done
-</pre></div>
+</pre>
+</div>
 
 <p>First, the arithmetic expression <var>expr1</var> is evaluated according
 to the rules described below (see <a href="Shell-Arithmetic.html#Shell-Arithmetic">Shell Arithmetic</a>).
@@ -143,7 +165,8 @@ executed and the arithmetic expression <var>expr3</var> is evaluated.
 If any expression is omitted, it behaves as if it evaluates to 1.
 The return value is the exit status of the last command in <var>commands</var>
 that is executed, or false if any of the expressions is invalid.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <p>The <code>break</code> and <code>continue</code> builtins (see <a href="Bourne-Shell-Builtins.html#Bourne-Shell-Builtins">Bourne Shell Builtins</a>)

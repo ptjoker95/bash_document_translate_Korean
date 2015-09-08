@@ -64,15 +64,18 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Lists"></a>
+<a name="Lists">
+</a>
 <div class="header">
 <p>
 Next: <a href="Compound-Commands.html#Compound-Commands" accesskey="n" rel="next">Compound Commands</a>, Previous: <a href="Pipelines.html#Pipelines" accesskey="p" rel="prev">Pipelines</a>, Up: <a href="Shell-Commands.html#Shell-Commands" accesskey="u" rel="up">Shell Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Lists-of-Commands"></a>
+<a name="Lists-of-Commands">
+</a>
 <h4 class="subsection">3.2.3 Lists of Commands</h4>
-<a name="index-commands_002c-lists"></a>
+<a name="index-commands_002c-lists">
+</a>
 
 <p>A <code>list</code> is a sequence of one or more pipelines separated by one
 of the operators &lsquo;<samp>;</samp>&rsquo;, &lsquo;<samp>&amp;</samp>&rsquo;, &lsquo;<samp>&amp;&amp;</samp>&rsquo;, or &lsquo;<samp>||</samp>&rsquo;,
@@ -99,25 +102,34 @@ explicit redirections, is redirected from <code>/dev/null</code>.
 waits for each command to terminate in turn.  The return status is the
 exit status of the last command executed.
 </p>
-<p><small>AND</small> and <small>OR</small> lists are sequences of one or more pipelines
+<p>
+<small>AND</small> and <small>OR</small> lists are sequences of one or more pipelines
 separated by the control operators &lsquo;<samp>&amp;&amp;</samp>&rsquo; and &lsquo;<samp>||</samp>&rsquo;,
 respectively.  <small>AND</small> and <small>OR</small> lists are executed with left
 associativity.
 </p>
 <p>An <small>AND</small> list has the form
-</p><div class="example">
-<pre class="example"><var>command1</var> &amp;&amp; <var>command2</var>
-</pre></div>
+</p>
+<div class="example">
+<pre class="example">
+<var>command1</var> &amp;&amp; <var>command2</var>
+</pre>
+</div>
 
-<p><var>command2</var> is executed if, and only if, <var>command1</var>
+<p>
+<var>command2</var> is executed if, and only if, <var>command1</var>
 returns an exit status of zero.
 </p>
 <p>An <small>OR</small> list has the form
-</p><div class="example">
-<pre class="example"><var>command1</var> || <var>command2</var>
-</pre></div>
+</p>
+<div class="example">
+<pre class="example">
+<var>command1</var> || <var>command2</var>
+</pre>
+</div>
 
-<p><var>command2</var> is executed if, and only if, <var>command1</var>
+<p>
+<var>command2</var> is executed if, and only if, <var>command1</var>
 returns a non-zero exit status.
 </p>
 <p>The return status of

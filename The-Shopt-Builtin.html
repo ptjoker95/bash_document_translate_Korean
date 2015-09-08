@@ -64,23 +64,30 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="The-Shopt-Builtin"></a>
+<a name="The-Shopt-Builtin">
+</a>
 <div class="header">
 <p>
 Previous: <a href="The-Set-Builtin.html#The-Set-Builtin" accesskey="p" rel="prev">The Set Builtin</a>, Up: <a href="Modifying-Shell-Behavior.html#Modifying-Shell-Behavior" accesskey="u" rel="up">Modifying Shell Behavior</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="The-Shopt-Builtin-1"></a>
+<a name="The-Shopt-Builtin-1">
+</a>
 <h4 class="subsection">4.3.2 The Shopt Builtin</h4>
 
 <p>This builtin allows you to change additional shell optional behavior.
 </p>
 <dl compact="compact">
-<dt><code>shopt</code></dt>
-<dd><a name="index-shopt"></a>
+<dt>
+<code>shopt</code>
+</dt>
+<dd>
+<a name="index-shopt">
+</a>
 <div class="example">
 <pre class="example">shopt [-pqsu] [-o] [<var>optname</var> &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>Toggle the values of settings controlling optional shell behavior.
 The settings can be either those listed below, or, if the
@@ -93,27 +100,40 @@ may be reused as input.
 Other options have the following meanings:
 </p>
 <dl compact="compact">
-<dt><code>-s</code></dt>
-<dd><p>Enable (set) each <var>optname</var>.
+<dt>
+<code>-s</code>
+</dt>
+<dd>
+<p>Enable (set) each <var>optname</var>.
 </p>
 </dd>
-<dt><code>-u</code></dt>
-<dd><p>Disable (unset) each <var>optname</var>.
+<dt>
+<code>-u</code>
+</dt>
+<dd>
+<p>Disable (unset) each <var>optname</var>.
 </p>
 </dd>
-<dt><code>-q</code></dt>
-<dd><p>Suppresses normal output; the return status
+<dt>
+<code>-q</code>
+</dt>
+<dd>
+<p>Suppresses normal output; the return status
 indicates whether the <var>optname</var> is set or unset.
 If multiple <var>optname</var> arguments are given with <samp>-q</samp>,
 the return status is zero if all <var>optnames</var> are enabled;
 non-zero otherwise.
 </p>
 </dd>
-<dt><code>-o</code></dt>
-<dd><p>Restricts the values of
+<dt>
+<code>-o</code>
+</dt>
+<dd>
+<p>Restricts the values of
 <var>optname</var> to be those defined for the <samp>-o</samp> option to the
 <code>set</code> builtin (see <a href="The-Set-Builtin.html#The-Set-Builtin">The Set Builtin</a>).
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <p>If either <samp>-s</samp> or <samp>-u</samp>
@@ -129,21 +149,31 @@ the return status is zero unless an <var>optname</var> is not a valid shell
 option.
 </p>
 <p>The list of <code>shopt</code> options is:
-</p><dl compact="compact">
-<dt><code>autocd</code></dt>
-<dd><p>If set, a command name that is the name of a directory is executed as if
+</p>
+<dl compact="compact">
+<dt>
+<code>autocd</code>
+</dt>
+<dd>
+<p>If set, a command name that is the name of a directory is executed as if
 it were the argument to the <code>cd</code> command.
 This option is only used by interactive shells.
 </p>
 </dd>
-<dt><code>cdable_vars</code></dt>
-<dd><p>If this is set, an argument to the <code>cd</code> builtin command that
+<dt>
+<code>cdable_vars</code>
+</dt>
+<dd>
+<p>If this is set, an argument to the <code>cd</code> builtin command that
 is not a directory is assumed to be the name of a variable whose
 value is the directory to change to.
 </p>
 </dd>
-<dt><code>cdspell</code></dt>
-<dd><p>If set, minor errors in the spelling of a directory component in a
+<dt>
+<code>cdspell</code>
+</dt>
+<dd>
+<p>If set, minor errors in the spelling of a directory component in a
 <code>cd</code> command will be corrected.
 The errors checked for are transposed characters,
 a missing character, and a character too many.
@@ -152,35 +182,50 @@ and the command proceeds.
 This option is only used by interactive shells.
 </p>
 </dd>
-<dt><code>checkhash</code></dt>
-<dd><p>If this is set, Bash checks that a command found in the hash
+<dt>
+<code>checkhash</code>
+</dt>
+<dd>
+<p>If this is set, Bash checks that a command found in the hash
 table exists before trying to execute it.  If a hashed command no
 longer exists, a normal path search is performed.
 </p>
 </dd>
-<dt><code>checkjobs</code></dt>
-<dd><p>If set, Bash lists the status of any stopped and running jobs before
+<dt>
+<code>checkjobs</code>
+</dt>
+<dd>
+<p>If set, Bash lists the status of any stopped and running jobs before
 exiting an interactive shell.  If any jobs are running, this causes
 the exit to be deferred until a second exit is attempted without an
 intervening command (see <a href="Job-Control.html#Job-Control">Job Control</a>).
 The shell always postpones exiting if any jobs are stopped.
 </p>
 </dd>
-<dt><code>checkwinsize</code></dt>
-<dd><p>If set, Bash checks the window size after each command
+<dt>
+<code>checkwinsize</code>
+</dt>
+<dd>
+<p>If set, Bash checks the window size after each command
  and, if necessary, updates the values of    
 <code>LINES</code> and <code>COLUMNS</code>.
 </p>
 </dd>
-<dt><code>cmdhist</code></dt>
-<dd><p>If set, Bash
+<dt>
+<code>cmdhist</code>
+</dt>
+<dd>
+<p>If set, Bash
 attempts to save all lines of a multiple-line
 command in the same history entry.  This allows
 easy re-editing of multi-line commands.
 </p>
 </dd>
-<dt><code>compat31</code></dt>
-<dd><p>If set, Bash
+<dt>
+<code>compat31</code>
+</dt>
+<dd>
+<p>If set, Bash
 changes its behavior to that of version 3.1 with respect to quoted
 arguments to the conditional command&rsquo;s &lsquo;<samp>=~</samp>&rsquo; operator
 and with respect to locale-specific
@@ -190,15 +235,21 @@ Bash versions prior to bash-4.1 use ASCII collation and strcmp(3);
 bash-4.1 and later use the current locale&rsquo;s collation sequence and strcoll(3).
 </p>
 </dd>
-<dt><code>compat32</code></dt>
-<dd><p>If set, Bash
+<dt>
+<code>compat32</code>
+</dt>
+<dd>
+<p>If set, Bash
 changes its behavior to that of version 3.2 with respect to locale-specific
 string comparison when using the <code>[[</code>
 conditional command&rsquo;s &lsquo;<samp>&lt;</samp>&rsquo; and &lsquo;<samp>&gt;</samp>&rsquo; operators (see previous item).
 </p>
 </dd>
-<dt><code>compat40</code></dt>
-<dd><p>If set, Bash
+<dt>
+<code>compat40</code>
+</dt>
+<dd>
+<p>If set, Bash
 changes its behavior to that of version 4.0 with respect to locale-specific
 string comparison when using the <code>[[</code>
 conditional command&rsquo;s &lsquo;<samp>&lt;</samp>&rsquo; and &lsquo;<samp>&gt;</samp>&rsquo; operators (see description
@@ -208,22 +259,31 @@ Bash versions 4.0 and later interrupt the list as if the shell received the
 interrupt; previous versions continue with the next command in the list.
 </p>
 </dd>
-<dt><code>compat41</code></dt>
-<dd><p>If set, Bash, when in <small>POSIX</small> mode, treats a single quote in a double-quoted
+<dt>
+<code>compat41</code>
+</dt>
+<dd>
+<p>If set, Bash, when in <small>POSIX</small> mode, treats a single quote in a double-quoted
 parameter expansion as a special character.  The single quotes must match
 (an even number) and the characters between the single quotes are considered
 quoted.  This is the behavior of <small>POSIX</small> mode through version 4.1.
 The default Bash behavior remains as in previous versions.
 </p>
 </dd>
-<dt><code>compat42</code></dt>
-<dd><p>If set, Bash
+<dt>
+<code>compat42</code>
+</dt>
+<dd>
+<p>If set, Bash
 does not process the replacement string in the pattern substitution word
 expansion using quote removal.
 </p>
 </dd>
-<dt><code>complete_fullquote</code></dt>
-<dd><p>If set, Bash
+<dt>
+<code>complete_fullquote</code>
+</dt>
+<dd>
+<p>If set, Bash
 quotes all shell metacharacters in filenames and directory names when
 performing completion.
 If not set, Bash
@@ -240,93 +300,132 @@ This variable is set by default, which is the default Bash behavior in
 versions through 4.2.
 </p>
 </dd>
-<dt><code>direxpand</code></dt>
-<dd><p>If set, Bash
+<dt>
+<code>direxpand</code>
+</dt>
+<dd>
+<p>If set, Bash
 replaces directory names with the results of word expansion when performing
 filename completion.  This changes the contents of the readline editing
 buffer.
 If not set, Bash attempts to preserve what the user typed.
 </p>
 </dd>
-<dt><code>dirspell</code></dt>
-<dd><p>If set, Bash
+<dt>
+<code>dirspell</code>
+</dt>
+<dd>
+<p>If set, Bash
 attempts spelling correction on directory names during word completion 
 if the directory name initially supplied does not exist.
 </p>
 </dd>
-<dt><code>dotglob</code></dt>
-<dd><p>If set, Bash includes filenames beginning with a &lsquo;.&rsquo; in
+<dt>
+<code>dotglob</code>
+</dt>
+<dd>
+<p>If set, Bash includes filenames beginning with a &lsquo;.&rsquo; in
 the results of filename expansion.
 </p>
 </dd>
-<dt><code>execfail</code></dt>
-<dd><p>If this is set, a non-interactive shell will not exit if
+<dt>
+<code>execfail</code>
+</dt>
+<dd>
+<p>If this is set, a non-interactive shell will not exit if
 it cannot execute the file specified as an argument to the <code>exec</code>
 builtin command.  An interactive shell does not exit if <code>exec</code>
 fails.
 </p>
 </dd>
-<dt><code>expand_aliases</code></dt>
-<dd><p>If set, aliases are expanded as described below under Aliases,
+<dt>
+<code>expand_aliases</code>
+</dt>
+<dd>
+<p>If set, aliases are expanded as described below under Aliases,
 <a href="Aliases.html#Aliases">Aliases</a>.
 This option is enabled by default for interactive shells.
 </p>
 </dd>
-<dt><code>extdebug</code></dt>
-<dd><p>If set, behavior intended for use by debuggers is enabled:
+<dt>
+<code>extdebug</code>
+</dt>
+<dd>
+<p>If set, behavior intended for use by debuggers is enabled:
 </p>
 <ol>
 <li> The <samp>-F</samp> option to the <code>declare</code> builtin (see <a href="Bash-Builtins.html#Bash-Builtins">Bash Builtins</a>)
 displays the source file name and line number corresponding to each function
 name supplied as an argument.
 
-</li><li> If the command run by the <code>DEBUG</code> trap returns a non-zero value, the
+</li>
+<li> If the command run by the <code>DEBUG</code> trap returns a non-zero value, the
 next command is skipped and not executed.
 
-</li><li> If the command run by the <code>DEBUG</code> trap returns a value of 2, and the
+</li>
+<li> If the command run by the <code>DEBUG</code> trap returns a value of 2, and the
 shell is executing in a subroutine (a shell function or a shell script
 executed by the <code>.</code> or <code>source</code> builtins), a call to
 <code>return</code> is simulated.
 
-</li><li> <code>BASH_ARGC</code> and <code>BASH_ARGV</code> are updated as described in their
+</li>
+<li> <code>BASH_ARGC</code> and <code>BASH_ARGV</code> are updated as described in their
 descriptions (see <a href="Bash-Variables.html#Bash-Variables">Bash Variables</a>).
 
-</li><li> Function tracing is enabled:  command substitution, shell functions, and
+</li>
+<li> Function tracing is enabled:  command substitution, shell functions, and
 subshells invoked with <code>( <var>command</var> )</code> inherit the
 <code>DEBUG</code> and <code>RETURN</code> traps.
 
-</li><li> Error tracing is enabled:  command substitution, shell functions, and
+</li>
+<li> Error tracing is enabled:  command substitution, shell functions, and
 subshells invoked with <code>( <var>command</var> )</code> inherit the
 <code>ERR</code> trap.
-</li></ol>
+</li>
+</ol>
 
 </dd>
-<dt><code>extglob</code></dt>
-<dd><p>If set, the extended pattern matching features described above
+<dt>
+<code>extglob</code>
+</dt>
+<dd>
+<p>If set, the extended pattern matching features described above
 (see <a href="Pattern-Matching.html#Pattern-Matching">Pattern Matching</a>) are enabled.
 </p>
 </dd>
-<dt><code>extquote</code></dt>
-<dd><p>If set, <code>$'<var>string</var>'</code> and <code>$&quot;<var>string</var>&quot;</code> quoting is  
+<dt>
+<code>extquote</code>
+</dt>
+<dd>
+<p>If set, <code>$'<var>string</var>'</code> and <code>$&quot;<var>string</var>&quot;</code> quoting is  
 performed within <code>${<var>parameter</var>}</code> expansions                     
 enclosed in double quotes.  This option is enabled by default. 
 </p>
 </dd>
-<dt><code>failglob</code></dt>
-<dd><p>If set, patterns which fail to match filenames during filename expansion
+<dt>
+<code>failglob</code>
+</dt>
+<dd>
+<p>If set, patterns which fail to match filenames during filename expansion
 result in an expansion error.
 </p>
 </dd>
-<dt><code>force_fignore</code></dt>
-<dd><p>If set, the suffixes specified by the <code>FIGNORE</code> shell variable
+<dt>
+<code>force_fignore</code>
+</dt>
+<dd>
+<p>If set, the suffixes specified by the <code>FIGNORE</code> shell variable
 cause words to be ignored when performing word completion even if
 the ignored words are the only possible completions.
 See <a href="Bash-Variables.html#Bash-Variables">Bash Variables</a>, for a description of <code>FIGNORE</code>.
 This option is enabled by default.
 </p>
 </dd>
-<dt><code>globasciiranges</code></dt>
-<dd><p>If set, range expressions used in pattern matching bracket expressions
+<dt>
+<code>globasciiranges</code>
+</dt>
+<dd>
+<p>If set, range expressions used in pattern matching bracket expressions
 (see <a href="Pattern-Matching.html#Pattern-Matching">Pattern Matching</a>)
 behave as if in the traditional C locale when performing
 comparisons.  That is, the current locale&rsquo;s collating sequence
@@ -335,137 +434,203 @@ is not taken into account, so
 and upper-case and lower-case ASCII characters will collate together.   
 </p>
 </dd>
-<dt><code>globstar</code></dt>
-<dd><p>If set, the pattern &lsquo;<samp>**</samp>&rsquo; used in a filename expansion context will
+<dt>
+<code>globstar</code>
+</dt>
+<dd>
+<p>If set, the pattern &lsquo;<samp>**</samp>&rsquo; used in a filename expansion context will
 match all files and zero or more directories and subdirectories.
 If the pattern is followed by a &lsquo;<samp>/</samp>&rsquo;, only directories and
 subdirectories match.
 </p>
 </dd>
-<dt><code>gnu_errfmt</code></dt>
-<dd><p>If set, shell error messages are written in the standard <small>GNU</small> error
+<dt>
+<code>gnu_errfmt</code>
+</dt>
+<dd>
+<p>If set, shell error messages are written in the standard <small>GNU</small> error
 message format.
 </p>
 </dd>
-<dt><code>histappend</code></dt>
-<dd><p>If set, the history list is appended to the file named by the value
+<dt>
+<code>histappend</code>
+</dt>
+<dd>
+<p>If set, the history list is appended to the file named by the value
 of the <code>HISTFILE</code>
 variable when the shell exits, rather than overwriting the file.
 </p>
 </dd>
-<dt><code>histreedit</code></dt>
-<dd><p>If set, and Readline
+<dt>
+<code>histreedit</code>
+</dt>
+<dd>
+<p>If set, and Readline
 is being used, a user is given the opportunity to re-edit a
 failed history substitution.
 </p>
 </dd>
-<dt><code>histverify</code></dt>
-<dd><p>If set, and Readline
+<dt>
+<code>histverify</code>
+</dt>
+<dd>
+<p>If set, and Readline
 is being used, the results of history substitution are not immediately
 passed to the shell parser.  Instead, the resulting line is loaded into
 the Readline editing buffer, allowing further modification.
 </p>
 </dd>
-<dt><code>hostcomplete</code></dt>
-<dd><p>If set, and Readline is being used, Bash will attempt to perform
+<dt>
+<code>hostcomplete</code>
+</dt>
+<dd>
+<p>If set, and Readline is being used, Bash will attempt to perform
 hostname completion when a word containing a &lsquo;<samp>@</samp>&rsquo; is being
 completed (see <a href="Commands-For-Completion.html#Commands-For-Completion">Commands For Completion</a>).  This option is enabled
 by default.
 </p>
 </dd>
-<dt><code>huponexit</code></dt>
-<dd><p>If set, Bash will send <code>SIGHUP</code> to all jobs when an interactive
+<dt>
+<code>huponexit</code>
+</dt>
+<dd>
+<p>If set, Bash will send <code>SIGHUP</code> to all jobs when an interactive
 login shell exits (see <a href="Signals.html#Signals">Signals</a>).
 </p>
 </dd>
-<dt><code>interactive_comments</code></dt>
-<dd><p>Allow a word beginning with &lsquo;<samp>#</samp>&rsquo;
+<dt>
+<code>interactive_comments</code>
+</dt>
+<dd>
+<p>Allow a word beginning with &lsquo;<samp>#</samp>&rsquo;
 to cause that word and all remaining characters on that
 line to be ignored in an interactive shell.
 This option is enabled by default.
 </p>
 </dd>
-<dt><code>lastpipe</code></dt>
-<dd><p>If set, and job control is not active, the shell runs the last command of
+<dt>
+<code>lastpipe</code>
+</dt>
+<dd>
+<p>If set, and job control is not active, the shell runs the last command of
 a pipeline not executed in the background in the current shell environment.
 </p>
 </dd>
-<dt><code>lithist</code></dt>
-<dd><p>If enabled, and the <code>cmdhist</code>
+<dt>
+<code>lithist</code>
+</dt>
+<dd>
+<p>If enabled, and the <code>cmdhist</code>
 option is enabled, multi-line commands are saved to the history with
 embedded newlines rather than using semicolon separators where possible.
 </p>
 </dd>
-<dt><code>login_shell</code></dt>
-<dd><p>The shell sets this option if it is started as a login shell
+<dt>
+<code>login_shell</code>
+</dt>
+<dd>
+<p>The shell sets this option if it is started as a login shell
 (see <a href="Invoking-Bash.html#Invoking-Bash">Invoking Bash</a>).
 The value may not be changed.
 </p>
 </dd>
-<dt><code>mailwarn</code></dt>
-<dd><p>If set, and a file that Bash is checking for mail has been  
+<dt>
+<code>mailwarn</code>
+</dt>
+<dd>
+<p>If set, and a file that Bash is checking for mail has been  
 accessed since the last time it was checked, the message
 <code>&quot;The mail in <var>mailfile</var> has been read&quot;</code> is displayed.
 </p>
 </dd>
-<dt><code>no_empty_cmd_completion</code></dt>
-<dd><p>If set, and Readline is being used, Bash will not attempt to search
+<dt>
+<code>no_empty_cmd_completion</code>
+</dt>
+<dd>
+<p>If set, and Readline is being used, Bash will not attempt to search
 the <code>PATH</code> for possible completions when completion is attempted
 on an empty line.
 </p>
 </dd>
-<dt><code>nocaseglob</code></dt>
-<dd><p>If set, Bash matches filenames in a case-insensitive fashion when
+<dt>
+<code>nocaseglob</code>
+</dt>
+<dd>
+<p>If set, Bash matches filenames in a case-insensitive fashion when
 performing filename expansion.
 </p>
 </dd>
-<dt><code>nocasematch</code></dt>
-<dd><p>If set, Bash matches patterns in a case-insensitive fashion when
+<dt>
+<code>nocasematch</code>
+</dt>
+<dd>
+<p>If set, Bash matches patterns in a case-insensitive fashion when
 performing matching while executing <code>case</code> or <code>[[</code>
 conditional commands.
 </p>
 </dd>
-<dt><code>nullglob</code></dt>
-<dd><p>If set, Bash allows filename patterns which match no
+<dt>
+<code>nullglob</code>
+</dt>
+<dd>
+<p>If set, Bash allows filename patterns which match no
 files to expand to a null string, rather than themselves.
 </p>
 </dd>
-<dt><code>progcomp</code></dt>
-<dd><p>If set, the programmable completion facilities
+<dt>
+<code>progcomp</code>
+</dt>
+<dd>
+<p>If set, the programmable completion facilities
 (see <a href="Programmable-Completion.html#Programmable-Completion">Programmable Completion</a>) are enabled.
 This option is enabled by default.
 </p>
 </dd>
-<dt><code>promptvars</code></dt>
-<dd><p>If set, prompt strings undergo
+<dt>
+<code>promptvars</code>
+</dt>
+<dd>
+<p>If set, prompt strings undergo
 parameter expansion, command substitution, arithmetic
 expansion, and quote removal after being expanded
 as described below (see <a href="Controlling-the-Prompt.html#Controlling-the-Prompt">Controlling the Prompt</a>).
 This option is enabled by default.
 </p>
 </dd>
-<dt><code>restricted_shell</code></dt>
-<dd><p>The shell sets this option if it is started in restricted mode
+<dt>
+<code>restricted_shell</code>
+</dt>
+<dd>
+<p>The shell sets this option if it is started in restricted mode
 (see <a href="The-Restricted-Shell.html#The-Restricted-Shell">The Restricted Shell</a>).
 The value may not be changed.
 This is not reset when the startup files are executed, allowing
 the startup files to discover whether or not a shell is restricted.
 </p>
 </dd>
-<dt><code>shift_verbose</code></dt>
-<dd><p>If this is set, the <code>shift</code>
+<dt>
+<code>shift_verbose</code>
+</dt>
+<dd>
+<p>If this is set, the <code>shift</code>
 builtin prints an error message when the shift count exceeds the
 number of positional parameters.
 </p>
 </dd>
-<dt><code>sourcepath</code></dt>
-<dd><p>If set, the <code>source</code> builtin uses the value of <code>PATH</code>
+<dt>
+<code>sourcepath</code>
+</dt>
+<dd>
+<p>If set, the <code>source</code> builtin uses the value of <code>PATH</code>
 to find the directory containing the file supplied as an argument.
 This option is enabled by default.
 </p>
 </dd>
-<dt><code>xpg_echo</code></dt>
-<dd><p>If set, the <code>echo</code> builtin expands backslash-escape sequences
+<dt>
+<code>xpg_echo</code>
+</dt>
+<dd>
+<p>If set, the <code>echo</code> builtin expands backslash-escape sequences
 by default.
 </p>
 </dd>
@@ -475,7 +640,8 @@ by default.
 are enabled, non-zero otherwise.
 When setting or unsetting options, the return status is zero unless an
 <var>optname</var> is not a valid shell option.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <hr>

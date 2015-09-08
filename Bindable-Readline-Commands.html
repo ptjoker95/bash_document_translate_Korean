@@ -64,39 +64,77 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Bindable-Readline-Commands"></a>
+<a name="Bindable-Readline-Commands">
+</a>
 <div class="header">
 <p>
 Next: <a href="Readline-vi-Mode.html#Readline-vi-Mode" accesskey="n" rel="next">Readline vi Mode</a>, Previous: <a href="Readline-Init-File.html#Readline-Init-File" accesskey="p" rel="prev">Readline Init File</a>, Up: <a href="Command-Line-Editing.html#Command-Line-Editing" accesskey="u" rel="up">Command Line Editing</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Bindable-Readline-Commands-1"></a>
+<a name="Bindable-Readline-Commands-1">
+</a>
 <h3 class="section">8.4 Bindable Readline Commands</h3>
 
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="Commands-For-Moving.html#Commands-For-Moving" accesskey="1">Commands For Moving</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Moving about the line.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Commands-For-History.html#Commands-For-History" accesskey="2">Commands For History</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Getting at previous lines.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Commands-For-Text.html#Commands-For-Text" accesskey="3">Commands For Text</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Commands for changing text.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Commands-For-Killing.html#Commands-For-Killing" accesskey="4">Commands For Killing</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Commands for killing and yanking.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Numeric-Arguments.html#Numeric-Arguments" accesskey="5">Numeric Arguments</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Specifying numeric arguments, repeat counts.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Commands-For-Completion.html#Commands-For-Completion" accesskey="6">Commands For Completion</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Getting Readline to do the typing for you.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Keyboard-Macros.html#Keyboard-Macros" accesskey="7">Keyboard Macros</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Saving and re-executing typed characters
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Miscellaneous-Commands.html#Miscellaneous-Commands" accesskey="8">Miscellaneous Commands</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Other miscellaneous commands.
-</td></tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Commands-For-Moving.html#Commands-For-Moving" accesskey="1">Commands For Moving</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">Moving about the line.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Commands-For-History.html#Commands-For-History" accesskey="2">Commands For History</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">Getting at previous lines.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Commands-For-Text.html#Commands-For-Text" accesskey="3">Commands For Text</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">Commands for changing text.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Commands-For-Killing.html#Commands-For-Killing" accesskey="4">Commands For Killing</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">Commands for killing and yanking.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Numeric-Arguments.html#Numeric-Arguments" accesskey="5">Numeric Arguments</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">Specifying numeric arguments, repeat counts.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Commands-For-Completion.html#Commands-For-Completion" accesskey="6">Commands For Completion</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">Getting Readline to do the typing for you.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Keyboard-Macros.html#Keyboard-Macros" accesskey="7">Keyboard Macros</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">Saving and re-executing typed characters
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Miscellaneous-Commands.html#Miscellaneous-Commands" accesskey="8">Miscellaneous Commands</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">Other miscellaneous commands.
+</td>
+</tr>
 </table>
 
 <p>This section describes Readline commands that may be bound to key
 sequences.
 You can list your key bindings by executing
-<code>bind&nbsp;<span class="nolinebreak">-P</span></code><!-- /@w --> or, for a more terse format, suitable for an
-<var>inputrc</var> file, <code>bind&nbsp;<span class="nolinebreak">-p</span></code><!-- /@w -->.  (See <a href="Bash-Builtins.html#Bash-Builtins">Bash Builtins</a>.)
+<code>bind&nbsp;<span class="nolinebreak">-P</span>
+</code>
+<!-- /@w --> or, for a more terse format, suitable for an
+<var>inputrc</var> file, <code>bind&nbsp;<span class="nolinebreak">-p</span>
+</code>
+<!-- /@w -->.  (See <a href="Bash-Builtins.html#Bash-Builtins">Bash Builtins</a>.)
 Command names without an accompanying key sequence are unbound by default.
 </p>
 <p>In the following descriptions, <em>point</em> refers to the current cursor

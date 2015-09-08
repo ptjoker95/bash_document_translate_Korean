@@ -64,55 +64,72 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Bourne-Shell-Variables"></a>
+<a name="Bourne-Shell-Variables">
+</a>
 <div class="header">
 <p>
 Next: <a href="Bash-Variables.html#Bash-Variables" accesskey="n" rel="next">Bash Variables</a>, Up: <a href="Shell-Variables.html#Shell-Variables" accesskey="u" rel="up">Shell Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Bourne-Shell-Variables-1"></a>
+<a name="Bourne-Shell-Variables-1">
+</a>
 <h3 class="section">5.1 Bourne Shell Variables</h3>
 
 <p>Bash uses certain shell variables in the same way as the Bourne shell.
 In some cases, Bash assigns a default value to the variable.
 </p>
 <dl compact="compact">
-<dt><code>CDPATH</code>
-<a name="index-CDPATH"></a>
+<dt>
+<code>CDPATH</code>
+<a name="index-CDPATH">
+</a>
 </dt>
-<dd><p>A colon-separated list of directories used as a search path for
+<dd>
+<p>A colon-separated list of directories used as a search path for
 the <code>cd</code> builtin command.
 </p>
 </dd>
-<dt><code>HOME</code>
-<a name="index-HOME"></a>
+<dt>
+<code>HOME</code>
+<a name="index-HOME">
+</a>
 </dt>
-<dd><p>The current user&rsquo;s home directory; the default for the <code>cd</code> builtin
+<dd>
+<p>The current user&rsquo;s home directory; the default for the <code>cd</code> builtin
 command.
 The value of this variable is also used by tilde expansion
 (see <a href="Tilde-Expansion.html#Tilde-Expansion">Tilde Expansion</a>).
 </p>
 </dd>
-<dt><code>IFS</code>
-<a name="index-IFS"></a>
+<dt>
+<code>IFS</code>
+<a name="index-IFS">
+</a>
 </dt>
-<dd><p>A list of characters that separate fields; used when the shell splits
+<dd>
+<p>A list of characters that separate fields; used when the shell splits
 words as part of expansion.
 </p>
 </dd>
-<dt><code>MAIL</code>
-<a name="index-MAIL"></a>
+<dt>
+<code>MAIL</code>
+<a name="index-MAIL">
+</a>
 </dt>
-<dd><p>If this parameter is set to a filename or directory name
+<dd>
+<p>If this parameter is set to a filename or directory name
 and the <code>MAILPATH</code> variable
 is not set, Bash informs the user of the arrival of mail in
 the specified file or Maildir-format directory.
 </p>
 </dd>
-<dt><code>MAILPATH</code>
-<a name="index-MAILPATH"></a>
+<dt>
+<code>MAILPATH</code>
+<a name="index-MAILPATH">
+</a>
 </dt>
-<dd><p>A colon-separated list of filenames which the shell periodically checks
+<dd>
+<p>A colon-separated list of filenames which the shell periodically checks
 for new mail.
 Each list entry can specify the message that is printed when new mail
 arrives in the mail file by separating the filename from the message with
@@ -121,22 +138,31 @@ When used in the text of the message, <code>$_</code> expands to the name of
 the current mail file.
 </p>
 </dd>
-<dt><code>OPTARG</code>
-<a name="index-OPTARG"></a>
+<dt>
+<code>OPTARG</code>
+<a name="index-OPTARG">
+</a>
 </dt>
-<dd><p>The value of the last option argument processed by the <code>getopts</code> builtin.
+<dd>
+<p>The value of the last option argument processed by the <code>getopts</code> builtin.
 </p>
 </dd>
-<dt><code>OPTIND</code>
-<a name="index-OPTIND"></a>
+<dt>
+<code>OPTIND</code>
+<a name="index-OPTIND">
+</a>
 </dt>
-<dd><p>The index of the last option argument processed by the <code>getopts</code> builtin.
+<dd>
+<p>The index of the last option argument processed by the <code>getopts</code> builtin.
 </p>
 </dd>
-<dt><code>PATH</code>
-<a name="index-PATH"></a>
+<dt>
+<code>PATH</code>
+<a name="index-PATH">
+</a>
 </dt>
-<dd><p>A colon-separated list of directories in which the shell looks for
+<dd>
+<p>A colon-separated list of directories in which the shell looks for
 commands.
 A zero-length (null) directory name in the value of <code>PATH</code> indicates the
 current directory.
@@ -145,18 +171,24 @@ or trailing colon.
 </p>
 
 </dd>
-<dt><code>PS1</code>
-<a name="index-PS1"></a>
+<dt>
+<code>PS1</code>
+<a name="index-PS1">
+</a>
 </dt>
-<dd><p>The primary prompt string.  The default value is &lsquo;<samp>\s-\v\$ </samp>&rsquo;.
+<dd>
+<p>The primary prompt string.  The default value is &lsquo;<samp>\s-\v\$ </samp>&rsquo;.
 See <a href="Controlling-the-Prompt.html#Controlling-the-Prompt">Controlling the Prompt</a>, for the complete list of escape
 sequences that are expanded before <code>PS1</code> is displayed.
 </p>
 </dd>
-<dt><code>PS2</code>
-<a name="index-PS2"></a>
+<dt>
+<code>PS2</code>
+<a name="index-PS2">
+</a>
 </dt>
-<dd><p>The secondary prompt string.  The default value is &lsquo;<samp>&gt; </samp>&rsquo;.
+<dd>
+<p>The secondary prompt string.  The default value is &lsquo;<samp>&gt; </samp>&rsquo;.
 </p>
 </dd>
 </dl>

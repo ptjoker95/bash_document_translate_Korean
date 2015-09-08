@@ -64,34 +64,48 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Bourne-Shell-Builtins"></a>
+<a name="Bourne-Shell-Builtins">
+</a>
 <div class="header">
 <p>
 Next: <a href="Bash-Builtins.html#Bash-Builtins" accesskey="n" rel="next">Bash Builtins</a>, Up: <a href="Shell-Builtin-Commands.html#Shell-Builtin-Commands" accesskey="u" rel="up">Shell Builtin Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Bourne-Shell-Builtins-1"></a>
+<a name="Bourne-Shell-Builtins-1">
+</a>
 <h3 class="section">4.1 Bourne Shell Builtins</h3>
 
 <p>The following shell builtin commands are inherited from the Bourne Shell.
 These commands are implemented as specified by the <small>POSIX</small> standard.
 </p>
 <dl compact="compact">
-<dt><code>:    <span class="roman">(a colon)</span></code></dt>
-<dd><a name="index-_003a"></a>
+<dt>
+<code>:    <span class="roman">(a colon)</span>
+</code>
+</dt>
+<dd>
+<a name="index-_003a">
+</a>
 <div class="example">
 <pre class="example">: [<var>arguments</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Do nothing beyond expanding <var>arguments</var> and performing redirections.
 The return status is zero.
 </p>
 </dd>
-<dt><code>.    <span class="roman">(a period)</span></code></dt>
-<dd><a name="index-_002e"></a>
+<dt>
+<code>.    <span class="roman">(a period)</span>
+</code>
+</dt>
+<dd>
+<a name="index-_002e">
+</a>
 <div class="example">
 <pre class="example">. <var>filename</var> [<var>arguments</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Read and execute commands from the <var>filename</var> argument in the
 current shell context.  If <var>filename</var> does not contain a slash,
@@ -107,11 +121,16 @@ cannot be read, the return status is non-zero.
 This builtin is equivalent to <code>source</code>.
 </p>
 </dd>
-<dt><code>break</code></dt>
-<dd><a name="index-break"></a>
+<dt>
+<code>break</code>
+</dt>
+<dd>
+<a name="index-break">
+</a>
 <div class="example">
 <pre class="example">break [<var>n</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Exit from a <code>for</code>, <code>while</code>, <code>until</code>, or <code>select</code> loop.
 If <var>n</var> is supplied, the <var>n</var>th enclosing loop is exited.
@@ -119,11 +138,16 @@ If <var>n</var> is supplied, the <var>n</var>th enclosing loop is exited.
 The return status is zero unless <var>n</var> is not greater than or equal to 1.
 </p>
 </dd>
-<dt><code>cd</code></dt>
-<dd><a name="index-cd"></a>
+<dt>
+<code>cd</code>
+</dt>
+<dd>
+<a name="index-cd">
+</a>
 <div class="example">
 <pre class="example">cd [-L|[-P [-e]] [-@] [<var>directory</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Change the current working directory to <var>directory</var>.
 If <var>directory</var> is not supplied, the value of the <code>HOME</code>
@@ -168,11 +192,16 @@ written to the standard output.
 non-zero otherwise.
 </p>
 </dd>
-<dt><code>continue</code></dt>
-<dd><a name="index-continue"></a>
+<dt>
+<code>continue</code>
+</dt>
+<dd>
+<a name="index-continue">
+</a>
 <div class="example">
 <pre class="example">continue [<var>n</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Resume the next iteration of an enclosing <code>for</code>, <code>while</code>,
 <code>until</code>, or <code>select</code> loop.
@@ -182,11 +211,16 @@ is resumed.
 The return status is zero unless <var>n</var> is not greater than or equal to 1.
 </p>
 </dd>
-<dt><code>eval</code></dt>
-<dd><a name="index-eval"></a>
+<dt>
+<code>eval</code>
+</dt>
+<dd>
+<a name="index-eval">
+</a>
 <div class="example">
 <pre class="example">eval [<var>arguments</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>The arguments are concatenated together into a single command, which is
 then read and executed, and its exit status returned as the exit status
@@ -195,11 +229,16 @@ If there are no arguments or only empty arguments, the return status is
 zero.
 </p>
 </dd>
-<dt><code>exec</code></dt>
-<dd><a name="index-exec"></a>
+<dt>
+<code>exec</code>
+</dt>
+<dd>
+<a name="index-exec">
+</a>
 <div class="example">
 <pre class="example">exec [-cl] [-a <var>name</var>] [<var>command</var> [<var>arguments</var>]]
-</pre></div>
+</pre>
+</div>
 
 <p>If <var>command</var>
 is supplied, it replaces the shell without creating a new process.
@@ -220,22 +259,32 @@ the current shell environment.  If there are no redirection errors, the
 return status is zero; otherwise the return status is non-zero.
 </p>
 </dd>
-<dt><code>exit</code></dt>
-<dd><a name="index-exit"></a>
+<dt>
+<code>exit</code>
+</dt>
+<dd>
+<a name="index-exit">
+</a>
 <div class="example">
 <pre class="example">exit [<var>n</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Exit the shell, returning a status of <var>n</var> to the shell&rsquo;s parent.
 If <var>n</var> is omitted, the exit status is that of the last command executed.
 Any trap on <code>EXIT</code> is executed before the shell terminates.
 </p>
 </dd>
-<dt><code>export</code></dt>
-<dd><a name="index-export"></a>
+<dt>
+<code>export</code>
+</dt>
+<dd>
+<a name="index-export">
+</a>
 <div class="example">
 <pre class="example">export [-fn] [-p] [<var>name</var>[=<var>value</var>]]
-</pre></div>
+</pre>
+</div>
 
 <p>Mark each <var>name</var> to be passed to child processes
 in the environment.  If the <samp>-f</samp> option is supplied, the <var>name</var>s
@@ -252,13 +301,19 @@ the names is not a valid shell variable name, or <samp>-f</samp> is supplied
 with a name that is not a shell function.
 </p>
 </dd>
-<dt><code>getopts</code></dt>
-<dd><a name="index-getopts"></a>
+<dt>
+<code>getopts</code>
+</dt>
+<dd>
+<a name="index-getopts">
+</a>
 <div class="example">
 <pre class="example">getopts <var>optstring</var> <var>name</var> [<var>args</var>]
-</pre></div>
+</pre>
+</div>
 
-<p><code>getopts</code> is used by shell scripts to parse positional parameters.
+<p>
+<code>getopts</code> is used by shell scripts to parse positional parameters.
 <var>optstring</var> contains the option characters to be recognized; if a
 character is followed by a colon, the option is expected to have an
 argument, which should be separated from it by whitespace.
@@ -282,11 +337,13 @@ return value greater than zero.
 <code>OPTIND</code> is set to the index of the first non-option argument,
 and <var>name</var> is set to &lsquo;<samp>?</samp>&rsquo;.
 </p>
-<p><code>getopts</code>
+<p>
+<code>getopts</code>
 normally parses the positional parameters, but if more arguments are
 given in <var>args</var>, <code>getopts</code> parses those instead.
 </p>
-<p><code>getopts</code> can report errors in two ways.  If the first character of
+<p>
+<code>getopts</code> can report errors in two ways.  If the first character of
 <var>optstring</var> is a colon, <var>silent</var>
 error reporting is used.  In normal operation, diagnostic messages
 are printed when invalid options or missing option arguments are
@@ -308,11 +365,16 @@ If <code>getopts</code> is silent, then a colon (&lsquo;<samp>:</samp>&rsquo;) i
 <var>name</var> and <code>OPTARG</code> is set to the option character found.
 </p>
 </dd>
-<dt><code>hash</code></dt>
-<dd><a name="index-hash"></a>
+<dt>
+<code>hash</code>
+</dt>
+<dd>
+<a name="index-hash">
+</a>
 <div class="example">
 <pre class="example">hash [-r] [-p <var>filename</var>] [-dt] [<var>name</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Each time <code>hash</code> is invoked, it remembers the full pathnames of the
 commands specified as <var>name</var> arguments,
@@ -337,11 +399,16 @@ The return status is zero unless a <var>name</var> is not found or an invalid
 option is supplied.
 </p>
 </dd>
-<dt><code>pwd</code></dt>
-<dd><a name="index-pwd"></a>
+<dt>
+<code>pwd</code>
+</dt>
+<dd>
+<a name="index-pwd">
+</a>
 <div class="example">
 <pre class="example">pwd [-LP]
-</pre></div>
+</pre>
+</div>
 
 <p>Print the absolute pathname of the current working directory.
 If the <samp>-P</samp> option is supplied, the pathname printed will not
@@ -353,11 +420,16 @@ determining the name of the current directory or an invalid option
 is supplied.
 </p>
 </dd>
-<dt><code>readonly</code></dt>
-<dd><a name="index-readonly"></a>
+<dt>
+<code>readonly</code>
+</dt>
+<dd>
+<a name="index-readonly">
+</a>
 <div class="example">
 <pre class="example">readonly [-aAf] [-p] [<var>name</var>[=<var>value</var>]] &hellip;
-</pre></div>
+</pre>
+</div>
 
 <p>Mark each <var>name</var> as readonly.
 The values of these names may not be changed by subsequent assignment.
@@ -380,11 +452,16 @@ the <var>name</var> arguments is not a valid shell variable or function name,
 or the <samp>-f</samp> option is supplied with a name that is not a shell function.
 </p>
 </dd>
-<dt><code>return</code></dt>
-<dd><a name="index-return"></a>
+<dt>
+<code>return</code>
+</dt>
+<dd>
+<a name="index-return">
+</a>
 <div class="example">
 <pre class="example">return [<var>n</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Cause a shell function to stop executing and return the value <var>n</var>
 to its caller.
@@ -404,11 +481,16 @@ argument or is used outside a function
 and not during the execution of a script by <code>.</code> or <code>source</code>.
 </p>
 </dd>
-<dt><code>shift</code></dt>
-<dd><a name="index-shift"></a>
+<dt>
+<code>shift</code>
+</dt>
+<dd>
+<a name="index-shift">
+</a>
 <div class="example">
 <pre class="example">shift [<var>n</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Shift the positional parameters to the left by <var>n</var>.
 The positional parameters from <var>n</var>+1 &hellip; <code>$#</code> are
@@ -423,13 +505,21 @@ The return status is zero unless <var>n</var> is greater than <code>$#</code> or
 less than zero, non-zero otherwise.
 </p>
 </dd>
-<dt><code>test</code></dt>
-<dt><code>[</code></dt>
-<dd><a name="index-test"></a>
-<a name="index-_005b"></a>
+<dt>
+<code>test</code>
+</dt>
+<dt>
+<code>[</code>
+</dt>
+<dd>
+<a name="index-test">
+</a>
+<a name="index-_005b">
+</a>
 <div class="example">
 <pre class="example">test <var>expr</var>
-</pre></div>
+</pre>
+</div>
 
 <p>Evaluate a conditional express
 ion <var>expr</var> and return a status of 0
@@ -449,22 +539,40 @@ The evaluation depends on the number of arguments; see below.
 Operator precedence is used when there are five or more arguments.
 </p>
 <dl compact="compact">
-<dt><code>! <var>expr</var></code></dt>
-<dd><p>True if <var>expr</var> is false.
+<dt>
+<code>! <var>expr</var>
+</code>
+</dt>
+<dd>
+<p>True if <var>expr</var> is false.
 </p>
 </dd>
-<dt><code>( <var>expr</var> )</code></dt>
-<dd><p>Returns the value of <var>expr</var>.
+<dt>
+<code>( <var>expr</var> )</code>
+</dt>
+<dd>
+<p>Returns the value of <var>expr</var>.
 This may be used to override the normal precedence of operators.
 </p>
 </dd>
-<dt><code><var>expr1</var> -a <var>expr2</var></code></dt>
-<dd><p>True if both <var>expr1</var> and <var>expr2</var> are true.
+<dt>
+<code>
+<var>expr1</var> -a <var>expr2</var>
+</code>
+</dt>
+<dd>
+<p>True if both <var>expr1</var> and <var>expr2</var> are true.
 </p>
 </dd>
-<dt><code><var>expr1</var> -o <var>expr2</var></code></dt>
-<dd><p>True if either <var>expr1</var> or <var>expr2</var> is true.
-</p></dd>
+<dt>
+<code>
+<var>expr1</var> -o <var>expr2</var>
+</code>
+</dt>
+<dd>
+<p>True if either <var>expr1</var> or <var>expr2</var> is true.
+</p>
+</dd>
 </dl>
 
 <p>The <code>test</code> and <code>[</code> builtins evaluate conditional
@@ -472,15 +580,18 @@ expressions using a set of rules based on the number of arguments.
 </p>
 <dl compact="compact">
 <dt>0 arguments</dt>
-<dd><p>The expression is false.
+<dd>
+<p>The expression is false.
 </p>
 </dd>
 <dt>1 argument</dt>
-<dd><p>The expression is true if and only if the argument is not null.
+<dd>
+<p>The expression is true if and only if the argument is not null.
 </p>
 </dd>
 <dt>2 arguments</dt>
-<dd><p>If the first argument is &lsquo;<samp>!</samp>&rsquo;, the expression is true if and
+<dd>
+<p>If the first argument is &lsquo;<samp>!</samp>&rsquo;, the expression is true if and
 only if the second argument is null.
 If the first argument is one of the unary conditional operators
 (see <a href="Bash-Conditional-Expressions.html#Bash-Conditional-Expressions">Bash Conditional Expressions</a>), the expression
@@ -490,7 +601,8 @@ false.
 </p>
 </dd>
 <dt>3 arguments</dt>
-<dd><p>The following conditions are applied in the order listed.
+<dd>
+<p>The following conditions are applied in the order listed.
 If the second argument is one of the binary conditional
 operators (see <a href="Bash-Conditional-Expressions.html#Bash-Conditional-Expressions">Bash Conditional Expressions</a>), the
 result of the expression is the result of the binary test using the
@@ -506,37 +618,50 @@ Otherwise, the expression is false.
 </p>
 </dd>
 <dt>4 arguments</dt>
-<dd><p>If the first argument is &lsquo;<samp>!</samp>&rsquo;, the result is the negation of
+<dd>
+<p>If the first argument is &lsquo;<samp>!</samp>&rsquo;, the result is the negation of
 the three-argument expression composed of the remaining arguments.
 Otherwise, the expression is parsed and evaluated according to 
 precedence using the rules listed above.
 </p>
 </dd>
 <dt>5 or more arguments</dt>
-<dd><p>The expression is parsed and evaluated according to precedence
+<dd>
+<p>The expression is parsed and evaluated according to precedence
 using the rules listed above.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <p>When used with <code>test</code> or &lsquo;<samp>[</samp>&rsquo;, the &lsquo;<samp>&lt;</samp>&rsquo; and &lsquo;<samp>&gt;</samp>&rsquo;
 operators sort lexicographically using ASCII ordering.
 </p>
 </dd>
-<dt><code>times</code></dt>
-<dd><a name="index-times"></a>
+<dt>
+<code>times</code>
+</dt>
+<dd>
+<a name="index-times">
+</a>
 <div class="example">
 <pre class="example">times
-</pre></div>
+</pre>
+</div>
 
 <p>Print out the user and system times used by the shell and its children.
 The return status is zero.
 </p>
 </dd>
-<dt><code>trap</code></dt>
-<dd><a name="index-trap"></a>
+<dt>
+<code>trap</code>
+</dt>
+<dd>
+<a name="index-trap">
+</a>
 <div class="example">
 <pre class="example">trap [-lp] [<var>arg</var>] [<var>sigspec</var> &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>The commands in <var>arg</var> are to be read and executed when the
 shell receives signal <var>sigspec</var>.  If <var>arg</var> is absent (and
@@ -594,11 +719,16 @@ values in a subshell or subshell environment when one is created.
 valid signal.
 </p>
 </dd>
-<dt><code>umask</code></dt>
-<dd><a name="index-umask"></a>
+<dt>
+<code>umask</code>
+</dt>
+<dd>
+<a name="index-umask">
+</a>
 <div class="example">
 <pre class="example">umask [-p] [-S] [<var>mode</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Set the shell process&rsquo;s file creation mask to <var>mode</var>.  If
 <var>mode</var> begins with a digit, it is interpreted as an octal number;
@@ -617,11 +747,16 @@ of the umask is subtracted from <code>7</code>.  Thus, a umask of <code>022</cod
 results in permissions of <code>755</code>.
 </p>
 </dd>
-<dt><code>unset</code></dt>
-<dd><a name="index-unset"></a>
+<dt>
+<code>unset</code>
+</dt>
+<dd>
+<a name="index-unset">
+</a>
 <div class="example">
 <pre class="example">unset [-fnv] [<var>name</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Remove each variable or function <var>name</var>.
 If the <samp>-v</samp> option is given, each
@@ -637,7 +772,8 @@ there is no variable by that name, any function with that name is
 unset.
 Readonly variables and functions may not be unset.
 The return status is zero unless a <var>name</var> is readonly.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <hr>

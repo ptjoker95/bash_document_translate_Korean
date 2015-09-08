@@ -64,51 +64,97 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Shell-Expansions"></a>
+<a name="Shell-Expansions">
+</a>
 <div class="header">
 <p>
 Next: <a href="Redirections.html#Redirections" accesskey="n" rel="next">Redirections</a>, Previous: <a href="Shell-Parameters.html#Shell-Parameters" accesskey="p" rel="prev">Shell Parameters</a>, Up: <a href="Basic-Shell-Features.html#Basic-Shell-Features" accesskey="u" rel="up">Basic Shell Features</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Shell-Expansions-1"></a>
+<a name="Shell-Expansions-1">
+</a>
 <h3 class="section">3.5 Shell Expansions</h3>
-<a name="index-expansion"></a>
+<a name="index-expansion">
+</a>
 
 <p>Expansion is performed on the command line after it has been split into
 <code>token</code>s.  There are seven kinds of expansion performed:
 </p>
 <ul>
 <li> brace expansion
-</li><li> tilde expansion
-</li><li> parameter and variable expansion
-</li><li> command substitution
-</li><li> arithmetic expansion
-</li><li> word splitting
-</li><li> filename expansion
-</li></ul>
+</li>
+<li> tilde expansion
+</li>
+<li> parameter and variable expansion
+</li>
+<li> command substitution
+</li>
+<li> arithmetic expansion
+</li>
+<li> word splitting
+</li>
+<li> filename expansion
+</li>
+</ul>
 
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="Brace-Expansion.html#Brace-Expansion" accesskey="1">Brace Expansion</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Expansion of expressions within braces.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Tilde-Expansion.html#Tilde-Expansion" accesskey="2">Tilde Expansion</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Expansion of the ~ character.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Shell-Parameter-Expansion.html#Shell-Parameter-Expansion" accesskey="3">Shell Parameter Expansion</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How Bash expands variables to their values.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Command-Substitution.html#Command-Substitution" accesskey="4">Command Substitution</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Using the output of a command as an argument.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Arithmetic-Expansion.html#Arithmetic-Expansion" accesskey="5">Arithmetic Expansion</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How to use arithmetic in shell expansions.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Process-Substitution.html#Process-Substitution" accesskey="6">Process Substitution</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">A way to write and read to and from a
+<tr>
+<td align="left" valign="top">&bull; <a href="Brace-Expansion.html#Brace-Expansion" accesskey="1">Brace Expansion</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">Expansion of expressions within braces.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Tilde-Expansion.html#Tilde-Expansion" accesskey="2">Tilde Expansion</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">Expansion of the ~ character.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Shell-Parameter-Expansion.html#Shell-Parameter-Expansion" accesskey="3">Shell Parameter Expansion</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">How Bash expands variables to their values.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Command-Substitution.html#Command-Substitution" accesskey="4">Command Substitution</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">Using the output of a command as an argument.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Arithmetic-Expansion.html#Arithmetic-Expansion" accesskey="5">Arithmetic Expansion</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">How to use arithmetic in shell expansions.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Process-Substitution.html#Process-Substitution" accesskey="6">Process Substitution</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">A way to write and read to and from a
 				command.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Word-Splitting.html#Word-Splitting" accesskey="7">Word Splitting</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How the results of expansion are split into separate
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Word-Splitting.html#Word-Splitting" accesskey="7">Word Splitting</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">How the results of expansion are split into separate
 			arguments.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Filename-Expansion.html#Filename-Expansion" accesskey="8">Filename Expansion</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">A shorthand for specifying filenames matching patterns.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Quote-Removal.html#Quote-Removal" accesskey="9">Quote Removal</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How and when quote characters are removed from
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Filename-Expansion.html#Filename-Expansion" accesskey="8">Filename Expansion</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">A shorthand for specifying filenames matching patterns.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Quote-Removal.html#Quote-Removal" accesskey="9">Quote Removal</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">How and when quote characters are removed from
 			words.
-</td></tr>
+</td>
+</tr>
 </table>
 
 <p>The order of expansions is:

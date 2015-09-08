@@ -64,23 +64,36 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Shell-Parameters"></a>
+<a name="Shell-Parameters">
+</a>
 <div class="header">
 <p>
 Next: <a href="Shell-Expansions.html#Shell-Expansions" accesskey="n" rel="next">Shell Expansions</a>, Previous: <a href="Shell-Functions.html#Shell-Functions" accesskey="p" rel="prev">Shell Functions</a>, Up: <a href="Basic-Shell-Features.html#Basic-Shell-Features" accesskey="u" rel="up">Basic Shell Features</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Shell-Parameters-1"></a>
+<a name="Shell-Parameters-1">
+</a>
 <h3 class="section">3.4 Shell Parameters</h3>
-<a name="index-parameters"></a>
-<a name="index-variable_002c-shell"></a>
-<a name="index-shell-variable"></a>
+<a name="index-parameters">
+</a>
+<a name="index-variable_002c-shell">
+</a>
+<a name="index-shell-variable">
+</a>
 
 <table class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="Positional-Parameters.html#Positional-Parameters" accesskey="1">Positional Parameters</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The shell&rsquo;s command-line arguments.
-</td></tr>
-<tr><td align="left" valign="top">&bull; <a href="Special-Parameters.html#Special-Parameters" accesskey="2">Special Parameters</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Parameters denoted by special characters.
-</td></tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Positional-Parameters.html#Positional-Parameters" accesskey="1">Positional Parameters</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">The shell&rsquo;s command-line arguments.
+</td>
+</tr>
+<tr>
+<td align="left" valign="top">&bull; <a href="Special-Parameters.html#Special-Parameters" accesskey="2">Special Parameters</a>:</td>
+<td>&nbsp;&nbsp;</td>
+<td align="left" valign="top">Parameters denoted by special characters.
+</td>
+</tr>
 </table>
 
 <p>A <var>parameter</var> is an entity that stores values.
@@ -96,9 +109,12 @@ a valid value.  Once a variable is set, it may be unset only by using
 the <code>unset</code> builtin command.
 </p>
 <p>A variable may be assigned to by a statement of the form
-</p><div class="example">
-<pre class="example"><var>name</var>=[<var>value</var>]
-</pre></div>
+</p>
+<div class="example">
+<pre class="example">
+<var>name</var>=[<var>value</var>]
+</pre>
+</div>
 <p>If <var>value</var>
 is not given, the variable is assigned the null string.  All
 <var>value</var>s undergo tilde expansion, parameter and variable expansion,
@@ -146,9 +162,11 @@ A nameref is commonly used within shell functions to refer to a variable
 whose name is passed as an argument to the function.
 For instance, if a variable name is passed to a shell function as its first
 argument, running
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">declare -n ref=$1
-</pre></div>
+</pre>
+</div>
 <p>inside the function creates a nameref variable <var>ref</var> whose value is
 the variable name passed as the first argument.
 References and assignments to <var>ref</var> are treated as references and

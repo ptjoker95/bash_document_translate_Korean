@@ -64,15 +64,18 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Command-Execution-Environment"></a>
+<a name="Command-Execution-Environment">
+</a>
 <div class="header">
 <p>
 Next: <a href="Environment.html#Environment" accesskey="n" rel="next">Environment</a>, Previous: <a href="Command-Search-and-Execution.html#Command-Search-and-Execution" accesskey="p" rel="prev">Command Search and Execution</a>, Up: <a href="Executing-Commands.html#Executing-Commands" accesskey="u" rel="up">Executing Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Command-Execution-Environment-1"></a>
+<a name="Command-Execution-Environment-1">
+</a>
 <h4 class="subsection">3.7.3 Command Execution Environment</h4>
-<a name="index-execution-environment"></a>
+<a name="index-execution-environment">
+</a>
 
 <p>The shell has an <var>execution environment</var>, which consists of the
 following:
@@ -81,32 +84,42 @@ following:
 <li> open files inherited by the shell at invocation, as modified by
 redirections supplied to the <code>exec</code> builtin
 
-</li><li> the current working directory as set by <code>cd</code>, <code>pushd</code>, or
+</li>
+<li> the current working directory as set by <code>cd</code>, <code>pushd</code>, or
 <code>popd</code>, or inherited by the shell at invocation
 
-</li><li> the file creation mode mask as set by <code>umask</code> or inherited from
+</li>
+<li> the file creation mode mask as set by <code>umask</code> or inherited from
 the shell&rsquo;s parent
 
-</li><li> current traps set by <code>trap</code>
+</li>
+<li> current traps set by <code>trap</code>
 
-</li><li> shell parameters that are set by variable assignment or with <code>set</code>
+</li>
+<li> shell parameters that are set by variable assignment or with <code>set</code>
 or inherited from the shell&rsquo;s parent in the environment
 
-</li><li> shell functions defined during execution or inherited from the shell&rsquo;s
+</li>
+<li> shell functions defined during execution or inherited from the shell&rsquo;s
 parent in the environment
 
-</li><li> options enabled at invocation (either by default or with command-line
+</li>
+<li> options enabled at invocation (either by default or with command-line
 arguments) or by <code>set</code>
 
-</li><li> options enabled by <code>shopt</code> (see <a href="The-Shopt-Builtin.html#The-Shopt-Builtin">The Shopt Builtin</a>)
+</li>
+<li> options enabled by <code>shopt</code> (see <a href="The-Shopt-Builtin.html#The-Shopt-Builtin">The Shopt Builtin</a>)
 
-</li><li> shell aliases defined with <code>alias</code> (see <a href="Aliases.html#Aliases">Aliases</a>)
+</li>
+<li> shell aliases defined with <code>alias</code> (see <a href="Aliases.html#Aliases">Aliases</a>)
 
-</li><li> various process <small>ID</small>s, including those of background jobs
+</li>
+<li> various process <small>ID</small>s, including those of background jobs
 (see <a href="Lists.html#Lists">Lists</a>), the value of <code>$$</code>, and the value of
 <code>$PPID</code>
 
-</li></ul>
+</li>
+</ul>
 
 <p>When a simple command other than a builtin or shell function
 is to be executed, it
@@ -118,17 +131,22 @@ from the shell.
 <li> the shell&rsquo;s open files, plus any modifications and additions specified
 by redirections to the command
 
-</li><li> the current working directory
+</li>
+<li> the current working directory
 
-</li><li> the file creation mode mask
+</li>
+<li> the file creation mode mask
 
-</li><li> shell variables and functions marked for export, along with variables
+</li>
+<li> shell variables and functions marked for export, along with variables
 exported for the command, passed in the environment (see <a href="Environment.html#Environment">Environment</a>)
 
-</li><li> traps caught by the shell are reset to the values inherited from the
+</li>
+<li> traps caught by the shell are reset to the values inherited from the
 shell&rsquo;s parent, and traps ignored by the shell are ignored
 
-</li></ul>
+</li>
+</ul>
 
 <p>A command invoked in this separate environment cannot affect the
 shell&rsquo;s execution environment. 

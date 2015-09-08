@@ -64,13 +64,15 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Word-Designators"></a>
+<a name="Word-Designators">
+</a>
 <div class="header">
 <p>
 Next: <a href="Modifiers.html#Modifiers" accesskey="n" rel="next">Modifiers</a>, Previous: <a href="Event-Designators.html#Event-Designators" accesskey="p" rel="prev">Event Designators</a>, Up: <a href="History-Interaction.html#History-Interaction" accesskey="u" rel="up">History Interaction</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Word-Designators-1"></a>
+<a name="Word-Designators-1">
+</a>
 <h4 class="subsection">9.3.2 Word Designators</h4>
 
 <p>Word designators are used to select desired words from the event.
@@ -83,61 +85,109 @@ inserted into the current line separated by single spaces.
 <p>For example,
 </p>
 <dl compact="compact">
-<dt><code>!!</code></dt>
-<dd><p>designates the preceding command.  When you type this, the preceding
+<dt>
+<code>!!</code>
+</dt>
+<dd>
+<p>designates the preceding command.  When you type this, the preceding
 command is repeated in toto.
 </p>
 </dd>
-<dt><code>!!:$</code></dt>
-<dd><p>designates the last argument of the preceding command.  This may be
+<dt>
+<code>!!:$</code>
+</dt>
+<dd>
+<p>designates the last argument of the preceding command.  This may be
 shortened to <code>!$</code>.
 </p>
 </dd>
-<dt><code>!fi:2</code></dt>
-<dd><p>designates the second argument of the most recent command starting with
+<dt>
+<code>!fi:2</code>
+</dt>
+<dd>
+<p>designates the second argument of the most recent command starting with
 the letters <code>fi</code>.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <p>Here are the word designators:
 </p> 
 <dl compact="compact">
-<dt><code>0 (zero)</code></dt>
-<dd><p>The <code>0</code>th word.  For many applications, this is the command word.
+<dt>
+<code>0 (zero)</code>
+</dt>
+<dd>
+<p>The <code>0</code>th word.  For many applications, this is the command word.
 </p>
 </dd>
-<dt><code><var>n</var></code></dt>
-<dd><p>The <var>n</var>th word.
+<dt>
+<code>
+<var>n</var>
+</code>
+</dt>
+<dd>
+<p>The <var>n</var>th word.
 </p>
 </dd>
-<dt><code>^</code></dt>
-<dd><p>The first argument; that is, word 1.
+<dt>
+<code>^</code>
+</dt>
+<dd>
+<p>The first argument; that is, word 1.
 </p>
 </dd>
-<dt><code>$</code></dt>
-<dd><p>The last argument.
+<dt>
+<code>$</code>
+</dt>
+<dd>
+<p>The last argument.
 </p>
 </dd>
-<dt><code>%</code></dt>
-<dd><p>The word matched by the most recent &lsquo;<samp>?<var>string</var>?</samp>&rsquo; search.
+<dt>
+<code>%</code>
+</dt>
+<dd>
+<p>The word matched by the most recent &lsquo;<samp>?<var>string</var>?</samp>&rsquo; search.
 </p>
 </dd>
-<dt><code><var>x</var>-<var>y</var></code></dt>
-<dd><p>A range of words; &lsquo;<samp>-<var>y</var></samp>&rsquo; abbreviates &lsquo;<samp>0-<var>y</var></samp>&rsquo;.
+<dt>
+<code>
+<var>x</var>-<var>y</var>
+</code>
+</dt>
+<dd>
+<p>A range of words; &lsquo;<samp>-<var>y</var>
+</samp>&rsquo; abbreviates &lsquo;<samp>0-<var>y</var>
+</samp>&rsquo;.
 </p>
 </dd>
-<dt><code>*</code></dt>
-<dd><p>All of the words, except the <code>0</code>th.  This is a synonym for &lsquo;<samp>1-$</samp>&rsquo;.
+<dt>
+<code>*</code>
+</dt>
+<dd>
+<p>All of the words, except the <code>0</code>th.  This is a synonym for &lsquo;<samp>1-$</samp>&rsquo;.
 It is not an error to use &lsquo;<samp>*</samp>&rsquo; if there is just one word in the event;
 the empty string is returned in that case.
 </p>
 </dd>
-<dt><code><var>x</var>*</code></dt>
-<dd><p>Abbreviates &lsquo;<samp><var>x</var>-$</samp>&rsquo;
+<dt>
+<code>
+<var>x</var>*</code>
+</dt>
+<dd>
+<p>Abbreviates &lsquo;<samp>
+<var>x</var>-$</samp>&rsquo;
 </p>
 </dd>
-<dt><code><var>x</var>-</code></dt>
-<dd><p>Abbreviates &lsquo;<samp><var>x</var>-$</samp>&rsquo; like &lsquo;<samp><var>x</var>*</samp>&rsquo;, but omits the last word.
+<dt>
+<code>
+<var>x</var>-</code>
+</dt>
+<dd>
+<p>Abbreviates &lsquo;<samp>
+<var>x</var>-$</samp>&rsquo; like &lsquo;<samp>
+<var>x</var>*</samp>&rsquo;, but omits the last word.
 </p>
 </dd>
 </dl>

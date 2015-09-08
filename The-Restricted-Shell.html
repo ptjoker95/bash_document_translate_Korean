@@ -64,15 +64,18 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="The-Restricted-Shell"></a>
+<a name="The-Restricted-Shell">
+</a>
 <div class="header">
 <p>
 Next: <a href="Bash-POSIX-Mode.html#Bash-POSIX-Mode" accesskey="n" rel="next">Bash POSIX Mode</a>, Previous: <a href="Controlling-the-Prompt.html#Controlling-the-Prompt" accesskey="p" rel="prev">Controlling the Prompt</a>, Up: <a href="Bash-Features.html#Bash-Features" accesskey="u" rel="up">Bash Features</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="The-Restricted-Shell-1"></a>
+<a name="The-Restricted-Shell-1">
+</a>
 <h3 class="section">6.10 The Restricted Shell</h3>
-<a name="index-restricted-shell"></a>
+<a name="index-restricted-shell">
+</a>
 
 <p>If Bash is started with the name <code>rbash</code>, or the
 <samp>--restricted</samp>
@@ -86,24 +89,37 @@ with the exception that the following are disallowed or not performed:
 </p>
 <ul>
 <li> Changing directories with the <code>cd</code> builtin.
-</li><li> Setting or unsetting the values of the <code>SHELL</code>, <code>PATH</code>,
+</li>
+<li> Setting or unsetting the values of the <code>SHELL</code>, <code>PATH</code>,
 <code>ENV</code>, or <code>BASH_ENV</code> variables.
-</li><li> Specifying command names containing slashes.
-</li><li> Specifying a filename containing a slash as an argument to the <code>.</code>
+</li>
+<li> Specifying command names containing slashes.
+</li>
+<li> Specifying a filename containing a slash as an argument to the <code>.</code>
 builtin command.
-</li><li> Specifying a filename containing a slash as an argument to the <samp>-p</samp>
+</li>
+<li> Specifying a filename containing a slash as an argument to the <samp>-p</samp>
 option to the <code>hash</code> builtin command.
-</li><li> Importing function definitions from the shell environment at startup.
-</li><li> Parsing the value of <code>SHELLOPTS</code> from the shell environment at startup.
-</li><li> Redirecting output using the &lsquo;<samp>&gt;</samp>&rsquo;, &lsquo;<samp>&gt;|</samp>&rsquo;, &lsquo;<samp>&lt;&gt;</samp>&rsquo;, &lsquo;<samp>&gt;&amp;</samp>&rsquo;,
+</li>
+<li> Importing function definitions from the shell environment at startup.
+</li>
+<li> Parsing the value of <code>SHELLOPTS</code> from the shell environment at startup.
+</li>
+<li> Redirecting output using the &lsquo;<samp>&gt;</samp>&rsquo;, &lsquo;<samp>&gt;|</samp>&rsquo;, &lsquo;<samp>&lt;&gt;</samp>&rsquo;, &lsquo;<samp>&gt;&amp;</samp>&rsquo;,
 &lsquo;<samp>&amp;&gt;</samp>&rsquo;, and &lsquo;<samp>&gt;&gt;</samp>&rsquo; redirection operators.
-</li><li> Using the <code>exec</code> builtin to replace the shell with another command.
-</li><li> Adding or deleting builtin commands with the
+</li>
+<li> Using the <code>exec</code> builtin to replace the shell with another command.
+</li>
+<li> Adding or deleting builtin commands with the
 <samp>-f</samp> and <samp>-d</samp> options to the <code>enable</code> builtin.
-</li><li> Using the <code>enable</code> builtin command to enable disabled shell builtins.
-</li><li> Specifying the <samp>-p</samp> option to the <code>command</code> builtin.
-</li><li> Turning off restricted mode with &lsquo;<samp>set +r</samp>&rsquo; or &lsquo;<samp>set +o restricted</samp>&rsquo;.
-</li></ul>
+</li>
+<li> Using the <code>enable</code> builtin command to enable disabled shell builtins.
+</li>
+<li> Specifying the <samp>-p</samp> option to the <code>command</code> builtin.
+</li>
+<li> Turning off restricted mode with &lsquo;<samp>set +r</samp>&rsquo; or &lsquo;<samp>set +o restricted</samp>&rsquo;.
+</li>
+</ul>
 
 <p>These restrictions are enforced after any startup files are read.
 </p>

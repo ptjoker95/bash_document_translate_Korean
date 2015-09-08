@@ -64,13 +64,15 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Bash-Builtins"></a>
+<a name="Bash-Builtins">
+</a>
 <div class="header">
 <p>
 Next: <a href="Modifying-Shell-Behavior.html#Modifying-Shell-Behavior" accesskey="n" rel="next">Modifying Shell Behavior</a>, Previous: <a href="Bourne-Shell-Builtins.html#Bourne-Shell-Builtins" accesskey="p" rel="prev">Bourne Shell Builtins</a>, Up: <a href="Shell-Builtin-Commands.html#Shell-Builtin-Commands" accesskey="u" rel="up">Shell Builtin Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Bash-Builtin-Commands"></a>
+<a name="Bash-Builtin-Commands">
+</a>
 <h3 class="section">4.2 Bash Builtin Commands</h3>
 
 <p>This section describes builtin commands which are unique to
@@ -78,11 +80,16 @@ or have been extended in Bash.
 Some of these commands are specified in the <small>POSIX</small> standard.
 </p>
 <dl compact="compact">
-<dt><code>alias</code></dt>
-<dd><a name="index-alias"></a>
+<dt>
+<code>alias</code>
+</dt>
+<dd>
+<a name="index-alias">
+</a>
 <div class="example">
 <pre class="example">alias [-p] [<var>name</var>[=<var>value</var>] &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>Without arguments or with the <samp>-p</samp> option, <code>alias</code> prints
 the list of aliases on the standard output in a form that allows
@@ -93,8 +100,12 @@ and value of the alias is printed.
 Aliases are described in <a href="Aliases.html#Aliases">Aliases</a>.
 </p>
 </dd>
-<dt><code>bind</code></dt>
-<dd><a name="index-bind"></a>
+<dt>
+<code>bind</code>
+</dt>
+<dd>
+<a name="index-bind">
+</a>
 <div class="example">
 <pre class="example">bind [-m <var>keymap</var>] [-lpsvPSVX]
 bind [-m <var>keymap</var>] [-q <var>function</var>] [-u <var>function</var>] [-r <var>keyseq</var>]
@@ -102,7 +113,8 @@ bind [-m <var>keymap</var>] -f <var>filename</var>
 bind [-m <var>keymap</var>] -x <var>keyseq:shell-command</var>
 bind [-m <var>keymap</var>] <var>keyseq:function-name</var>
 bind <var>readline-command</var>
-</pre></div>
+</pre>
+</div>
 
 <p>Display current Readline (see <a href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>)
 key and function bindings,
@@ -116,8 +128,12 @@ but each binding or command must be passed as a separate argument;  e.g.,
 <p>Options, if supplied, have the following meanings:
 </p>
 <dl compact="compact">
-<dt><code>-m <var>keymap</var></code></dt>
-<dd><p>Use <var>keymap</var> as the keymap to be affected by
+<dt>
+<code>-m <var>keymap</var>
+</code>
+</dt>
+<dd>
+<p>Use <var>keymap</var> as the keymap to be affected by
 the subsequent bindings.  Acceptable <var>keymap</var>
 names are
 <code>emacs</code>,
@@ -132,56 +148,97 @@ names are
 <code>emacs</code> is equivalent to <code>emacs-standard</code>.
 </p>
 </dd>
-<dt><code>-l</code></dt>
-<dd><p>List the names of all Readline functions.
+<dt>
+<code>-l</code>
+</dt>
+<dd>
+<p>List the names of all Readline functions.
 </p>
 </dd>
-<dt><code>-p</code></dt>
-<dd><p>Display Readline function names and bindings in such a way that they
+<dt>
+<code>-p</code>
+</dt>
+<dd>
+<p>Display Readline function names and bindings in such a way that they
 can be used as input or in a Readline initialization file.
 </p>
 </dd>
-<dt><code>-P</code></dt>
-<dd><p>List current Readline function names and bindings.
+<dt>
+<code>-P</code>
+</dt>
+<dd>
+<p>List current Readline function names and bindings.
 </p>
 </dd>
-<dt><code>-v</code></dt>
-<dd><p>Display Readline variable names and values in such a way that they
+<dt>
+<code>-v</code>
+</dt>
+<dd>
+<p>Display Readline variable names and values in such a way that they
 can be used as input or in a Readline initialization file.
 </p>
 </dd>
-<dt><code>-V</code></dt>
-<dd><p>List current Readline variable names and values.
+<dt>
+<code>-V</code>
+</dt>
+<dd>
+<p>List current Readline variable names and values.
 </p>
 </dd>
-<dt><code>-s</code></dt>
-<dd><p>Display Readline key sequences bound to macros and the strings they output
+<dt>
+<code>-s</code>
+</dt>
+<dd>
+<p>Display Readline key sequences bound to macros and the strings they output
 in such a way that they can be used as input or in a Readline
 initialization file.
 </p>
 </dd>
-<dt><code>-S</code></dt>
-<dd><p>Display Readline key sequences bound to macros and the strings they output.
+<dt>
+<code>-S</code>
+</dt>
+<dd>
+<p>Display Readline key sequences bound to macros and the strings they output.
 </p>
 </dd>
-<dt><code>-f <var>filename</var></code></dt>
-<dd><p>Read key bindings from <var>filename</var>.
+<dt>
+<code>-f <var>filename</var>
+</code>
+</dt>
+<dd>
+<p>Read key bindings from <var>filename</var>.
 </p>
 </dd>
-<dt><code>-q <var>function</var></code></dt>
-<dd><p>Query about which keys invoke the named <var>function</var>.
+<dt>
+<code>-q <var>function</var>
+</code>
+</dt>
+<dd>
+<p>Query about which keys invoke the named <var>function</var>.
 </p>
 </dd>
-<dt><code>-u <var>function</var></code></dt>
-<dd><p>Unbind all keys bound to the named <var>function</var>.
+<dt>
+<code>-u <var>function</var>
+</code>
+</dt>
+<dd>
+<p>Unbind all keys bound to the named <var>function</var>.
 </p>
 </dd>
-<dt><code>-r <var>keyseq</var></code></dt>
-<dd><p>Remove any current binding for <var>keyseq</var>.
+<dt>
+<code>-r <var>keyseq</var>
+</code>
+</dt>
+<dd>
+<p>Remove any current binding for <var>keyseq</var>.
 </p>
 </dd>
-<dt><code>-x <var>keyseq:shell-command</var></code></dt>
-<dd><p>Cause <var>shell-command</var> to be executed whenever <var>keyseq</var> is
+<dt>
+<code>-x <var>keyseq:shell-command</var>
+</code>
+</dt>
+<dd>
+<p>Cause <var>shell-command</var> to be executed whenever <var>keyseq</var> is
 entered.
 When <var>shell-command</var> is executed, the shell sets the
 <code>READLINE_LINE</code> variable to the contents of the Readline line
@@ -192,21 +249,30 @@ If the executed command changes the value of <code>READLINE_LINE</code> or
 editing state.
 </p>
 </dd>
-<dt><code>-X</code></dt>
-<dd><p>List all key sequences bound to shell commands and the associated commands
+<dt>
+<code>-X</code>
+</dt>
+<dd>
+<p>List all key sequences bound to shell commands and the associated commands
 in a format that can be reused as input.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <p>The return status is zero unless an invalid option is supplied or an
 error occurs.
 </p>
 </dd>
-<dt><code>builtin</code></dt>
-<dd><a name="index-builtin"></a>
+<dt>
+<code>builtin</code>
+</dt>
+<dd>
+<a name="index-builtin">
+</a>
 <div class="example">
 <pre class="example">builtin [<var>shell-builtin</var> [<var>args</var>]]
-</pre></div>
+</pre>
+</div>
 
 <p>Run a shell builtin, passing it <var>args</var>, and return its exit status.
 This is useful when defining a shell function with the same
@@ -216,11 +282,16 @@ The return status is non-zero if <var>shell-builtin</var> is not a shell
 builtin command.
 </p>
 </dd>
-<dt><code>caller</code></dt>
-<dd><a name="index-caller"></a>
+<dt>
+<code>caller</code>
+</dt>
+<dd>
+<a name="index-caller">
+</a>
 <div class="example">
 <pre class="example">caller [<var>expr</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Returns the context of any active subroutine call (a shell function or
 a script executed with the <code>.</code> or <code>source</code> builtins).
@@ -238,11 +309,16 @@ call or <var>expr</var> does not correspond to a valid position in the
 call stack.
 </p>
 </dd>
-<dt><code>command</code></dt>
-<dd><a name="index-command"></a>
+<dt>
+<code>command</code>
+</dt>
+<dd>
+<a name="index-command">
+</a>
 <div class="example">
 <pre class="example">command [-pVv] <var>command</var> [<var>arguments</var> &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>Runs <var>command</var> with <var>arguments</var> ignoring any shell function
 named <var>command</var>.
@@ -265,11 +341,16 @@ a more verbose description.  In this case, the return status is
 zero if <var>command</var> is found, and non-zero if not.
 </p>
 </dd>
-<dt><code>declare</code></dt>
-<dd><a name="index-declare"></a>
+<dt>
+<code>declare</code>
+</dt>
+<dd>
+<a name="index-declare">
+</a>
 <div class="example">
 <pre class="example">declare [-aAfFgilnrtux] [-p] [<var>name</var>[=<var>value</var>] &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>Declare variables and give them attributes.  If no <var>name</var>s
 are given, then display the values of variables instead. 
@@ -301,32 +382,50 @@ It is ignored in all other cases.
 the specified attributes or to give variables attributes:
 </p>
 <dl compact="compact">
-<dt><code>-a</code></dt>
-<dd><p>Each <var>name</var> is an indexed array variable (see <a href="Arrays.html#Arrays">Arrays</a>).
+<dt>
+<code>-a</code>
+</dt>
+<dd>
+<p>Each <var>name</var> is an indexed array variable (see <a href="Arrays.html#Arrays">Arrays</a>).
 </p>
 </dd>
-<dt><code>-A</code></dt>
-<dd><p>Each <var>name</var> is an associative array variable (see <a href="Arrays.html#Arrays">Arrays</a>).
+<dt>
+<code>-A</code>
+</dt>
+<dd>
+<p>Each <var>name</var> is an associative array variable (see <a href="Arrays.html#Arrays">Arrays</a>).
 </p>
 </dd>
-<dt><code>-f</code></dt>
-<dd><p>Use function names only.
+<dt>
+<code>-f</code>
+</dt>
+<dd>
+<p>Use function names only.
 </p>
 </dd>
-<dt><code>-i</code></dt>
-<dd><p>The variable is to be treated as
+<dt>
+<code>-i</code>
+</dt>
+<dd>
+<p>The variable is to be treated as
 an integer; arithmetic evaluation (see <a href="Shell-Arithmetic.html#Shell-Arithmetic">Shell Arithmetic</a>) is
 performed when the variable is assigned a value.
 </p>
 </dd>
-<dt><code>-l</code></dt>
-<dd><p>When the variable is assigned a value, all upper-case characters are
+<dt>
+<code>-l</code>
+</dt>
+<dd>
+<p>When the variable is assigned a value, all upper-case characters are
 converted to lower-case.
 The upper-case attribute is disabled.
 </p>
 </dd>
-<dt><code>-n</code></dt>
-<dd><p>Give each <var>name</var> the <var>nameref</var> attribute, making
+<dt>
+<code>-n</code>
+</dt>
+<dd>
+<p>Give each <var>name</var> the <var>nameref</var> attribute, making
 it a name reference to another variable.
 That other variable is defined by the value of <var>name</var>.
 All references and assignments to <var>name</var>, except for changing the
@@ -335,28 +434,41 @@ All references and assignments to <var>name</var>, except for changing the
 The <samp>-n</samp> attribute cannot be applied to array variables.
 </p>
 </dd>
-<dt><code>-r</code></dt>
-<dd><p>Make <var>name</var>s readonly.  These names cannot then be assigned values
+<dt>
+<code>-r</code>
+</dt>
+<dd>
+<p>Make <var>name</var>s readonly.  These names cannot then be assigned values
 by subsequent assignment statements or unset.
 </p>
 </dd>
-<dt><code>-t</code></dt>
-<dd><p>Give each <var>name</var> the <code>trace</code> attribute.
+<dt>
+<code>-t</code>
+</dt>
+<dd>
+<p>Give each <var>name</var> the <code>trace</code> attribute.
 Traced functions inherit the <code>DEBUG</code> and <code>RETURN</code> traps from
 the calling shell.
 The trace attribute has no special meaning for variables.
 </p>
 </dd>
-<dt><code>-u</code></dt>
-<dd><p>When the variable is assigned a value, all lower-case characters are
+<dt>
+<code>-u</code>
+</dt>
+<dd>
+<p>When the variable is assigned a value, all lower-case characters are
 converted to upper-case.
 The lower-case attribute is disabled.
 </p>
 </dd>
-<dt><code>-x</code></dt>
-<dd><p>Mark each <var>name</var> for export to subsequent commands via
+<dt>
+<code>-x</code>
+</dt>
+<dd>
+<p>Mark each <var>name</var> for export to subsequent commands via
 the environment.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <p>Using &lsquo;<samp>+</samp>&rsquo; instead of &lsquo;<samp>-</samp>&rsquo; turns off the attribute instead,
@@ -383,11 +495,16 @@ an attempt is made to turn off array status for an array variable,
 or an attempt is made to display a non-existent function with <samp>-f</samp>.
 </p>
 </dd>
-<dt><code>echo</code></dt>
-<dd><a name="index-echo"></a>
+<dt>
+<code>echo</code>
+</dt>
+<dd>
+<a name="index-echo">
+</a>
 <div class="example">
 <pre class="example">echo [-neE] [<var>arg</var> &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>Output the <var>arg</var>s, separated by spaces, terminated with a
 newline.
@@ -402,63 +519,132 @@ dynamically determine whether or not <code>echo</code> expands these
 escape characters by default.
 <code>echo</code> does not interpret <samp>--</samp> to mean the end of options.
 </p>
-<p><code>echo</code> interprets the following escape sequences:
-</p><dl compact="compact">
-<dt><code>\a</code></dt>
-<dd><p>alert (bell)
-</p></dd>
-<dt><code>\b</code></dt>
-<dd><p>backspace
-</p></dd>
-<dt><code>\c</code></dt>
-<dd><p>suppress further output
-</p></dd>
-<dt><code>\e</code></dt>
-<dt><code>\E</code></dt>
-<dd><p>escape
-</p></dd>
-<dt><code>\f</code></dt>
-<dd><p>form feed
-</p></dd>
-<dt><code>\n</code></dt>
-<dd><p>new line
-</p></dd>
-<dt><code>\r</code></dt>
-<dd><p>carriage return
-</p></dd>
-<dt><code>\t</code></dt>
-<dd><p>horizontal tab
-</p></dd>
-<dt><code>\v</code></dt>
-<dd><p>vertical tab
-</p></dd>
-<dt><code>\\</code></dt>
-<dd><p>backslash
-</p></dd>
-<dt><code>\0<var>nnn</var></code></dt>
-<dd><p>the eight-bit character whose value is the octal value <var>nnn</var>
+<p>
+<code>echo</code> interprets the following escape sequences:
+</p>
+<dl compact="compact">
+<dt>
+<code>\a</code>
+</dt>
+<dd>
+<p>alert (bell)
+</p>
+</dd>
+<dt>
+<code>\b</code>
+</dt>
+<dd>
+<p>backspace
+</p>
+</dd>
+<dt>
+<code>\c</code>
+</dt>
+<dd>
+<p>suppress further output
+</p>
+</dd>
+<dt>
+<code>\e</code>
+</dt>
+<dt>
+<code>\E</code>
+</dt>
+<dd>
+<p>escape
+</p>
+</dd>
+<dt>
+<code>\f</code>
+</dt>
+<dd>
+<p>form feed
+</p>
+</dd>
+<dt>
+<code>\n</code>
+</dt>
+<dd>
+<p>new line
+</p>
+</dd>
+<dt>
+<code>\r</code>
+</dt>
+<dd>
+<p>carriage return
+</p>
+</dd>
+<dt>
+<code>\t</code>
+</dt>
+<dd>
+<p>horizontal tab
+</p>
+</dd>
+<dt>
+<code>\v</code>
+</dt>
+<dd>
+<p>vertical tab
+</p>
+</dd>
+<dt>
+<code>\\</code>
+</dt>
+<dd>
+<p>backslash
+</p>
+</dd>
+<dt>
+<code>\0<var>nnn</var>
+</code>
+</dt>
+<dd>
+<p>the eight-bit character whose value is the octal value <var>nnn</var>
 (zero to three octal digits)
-</p></dd>
-<dt><code>\x<var>HH</var></code></dt>
-<dd><p>the eight-bit character whose value is the hexadecimal value <var>HH</var>
+</p>
+</dd>
+<dt>
+<code>\x<var>HH</var>
+</code>
+</dt>
+<dd>
+<p>the eight-bit character whose value is the hexadecimal value <var>HH</var>
 (one or two hex digits)
-</p></dd>
-<dt><code>\u<var>HHHH</var></code></dt>
-<dd><p>the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value
+</p>
+</dd>
+<dt>
+<code>\u<var>HHHH</var>
+</code>
+</dt>
+<dd>
+<p>the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value
 <var>HHHH</var> (one to four hex digits)
-</p></dd>
-<dt><code>\U<var>HHHHHHHH</var></code></dt>
-<dd><p>the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value
+</p>
+</dd>
+<dt>
+<code>\U<var>HHHHHHHH</var>
+</code>
+</dt>
+<dd>
+<p>the Unicode (ISO/IEC 10646) character whose value is the hexadecimal value
 <var>HHHHHHHH</var> (one to eight hex digits)
-</p></dd>
+</p>
+</dd>
 </dl>
 
 </dd>
-<dt><code>enable</code></dt>
-<dd><a name="index-enable"></a>
+<dt>
+<code>enable</code>
+</dt>
+<dd>
+<a name="index-enable">
+</a>
 <div class="example">
 <pre class="example">enable [-a] [-dnps] [-f <var>filename</var>] [<var>name</var> &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>Enable and disable builtin shell commands.
 Disabling a builtin allows a disk command which has the same name
@@ -488,11 +674,16 @@ a special builtin (see <a href="Special-Builtins.html#Special-Builtins">Special 
 or there is an error loading a new builtin from a shared object.
 </p>
 </dd>
-<dt><code>help</code></dt>
-<dd><a name="index-help"></a>
+<dt>
+<code>help</code>
+</dt>
+<dd>
+<a name="index-help">
+</a>
 <div class="example">
 <pre class="example">help [-dms] [<var>pattern</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Display helpful information about builtin commands.
 If <var>pattern</var> is specified, <code>help</code> gives detailed help
@@ -502,25 +693,42 @@ the builtins is printed.
 <p>Options, if supplied, have the following meanings:
 </p>
 <dl compact="compact">
-<dt><code>-d</code></dt>
-<dd><p>Display a short description of each <var>pattern</var>
-</p></dd>
-<dt><code>-m</code></dt>
-<dd><p>Display the description of each <var>pattern</var> in a manpage-like format
-</p></dd>
-<dt><code>-s</code></dt>
-<dd><p>Display only a short usage synopsis for each <var>pattern</var>
-</p></dd>
+<dt>
+<code>-d</code>
+</dt>
+<dd>
+<p>Display a short description of each <var>pattern</var>
+</p>
+</dd>
+<dt>
+<code>-m</code>
+</dt>
+<dd>
+<p>Display the description of each <var>pattern</var> in a manpage-like format
+</p>
+</dd>
+<dt>
+<code>-s</code>
+</dt>
+<dd>
+<p>Display only a short usage synopsis for each <var>pattern</var>
+</p>
+</dd>
 </dl>
 
 <p>The return status is zero unless no command matches <var>pattern</var>.
 </p>
 </dd>
-<dt><code>let</code></dt>
-<dd><a name="index-let"></a>
+<dt>
+<code>let</code>
+</dt>
+<dd>
+<a name="index-let">
+</a>
 <div class="example">
 <pre class="example">let <var>expression</var> [<var>expression</var> &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>The <code>let</code> builtin allows arithmetic to be performed on shell
 variables.  Each <var>expression</var> is evaluated according to the
@@ -529,11 +737,16 @@ last <var>expression</var> evaluates to 0, <code>let</code> returns 1;
 otherwise 0 is returned.
 </p>
 </dd>
-<dt><code>local</code></dt>
-<dd><a name="index-local"></a>
+<dt>
+<code>local</code>
+</dt>
+<dd>
+<a name="index-local">
+</a>
 <div class="example">
 <pre class="example">local [<var>option</var>] <var>name</var>[=<var>value</var>] &hellip;
-</pre></div>
+</pre>
+</div>
 
 <p>For each argument, a local variable named <var>name</var> is created,
 and assigned <var>value</var>.
@@ -545,22 +758,32 @@ a function, an invalid <var>name</var> is supplied, or <var>name</var> is a
 readonly variable.
 </p>
 </dd>
-<dt><code>logout</code></dt>
-<dd><a name="index-logout"></a>
+<dt>
+<code>logout</code>
+</dt>
+<dd>
+<a name="index-logout">
+</a>
 <div class="example">
 <pre class="example">logout [<var>n</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Exit a login shell, returning a status of <var>n</var> to the shell&rsquo;s
 parent.
 </p>
 </dd>
-<dt><code>mapfile</code></dt>
-<dd><a name="index-mapfile"></a>
+<dt>
+<code>mapfile</code>
+</dt>
+<dd>
+<a name="index-mapfile">
+</a>
 <div class="example">
 <pre class="example">mapfile [-n <var>count</var>] [-O <var>origin</var>] [-s <var>count</var>] [-t] [-u <var>fd</var>]
     [-C <var>callback</var>] [-c <var>quantum</var>] [<var>array</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Read lines from the standard input into the indexed array variable <var>array</var>,
 or from file descriptor <var>fd</var>
@@ -569,29 +792,57 @@ The variable <code>MAPFILE</code> is the default <var>array</var>.
 Options, if supplied, have the following meanings:
 </p>
 <dl compact="compact">
-<dt><code>-n</code></dt>
-<dd><p>Copy at most <var>count</var> lines.  If <var>count</var> is 0, all lines are copied.
-</p></dd>
-<dt><code>-O</code></dt>
-<dd><p>Begin assigning to <var>array</var> at index <var>origin</var>.
+<dt>
+<code>-n</code>
+</dt>
+<dd>
+<p>Copy at most <var>count</var> lines.  If <var>count</var> is 0, all lines are copied.
+</p>
+</dd>
+<dt>
+<code>-O</code>
+</dt>
+<dd>
+<p>Begin assigning to <var>array</var> at index <var>origin</var>.
 The default index is 0.
-</p></dd>
-<dt><code>-s</code></dt>
-<dd><p>Discard the first <var>count</var> lines read.
-</p></dd>
-<dt><code>-t</code></dt>
-<dd><p>Remove a trailing newline from each line read.
-</p></dd>
-<dt><code>-u</code></dt>
-<dd><p>Read lines from file descriptor <var>fd</var> instead of the standard input.
-</p></dd>
-<dt><code>-C</code></dt>
-<dd><p>Evaluate <var>callback</var> each time <var>quantum</var>P lines are read.
+</p>
+</dd>
+<dt>
+<code>-s</code>
+</dt>
+<dd>
+<p>Discard the first <var>count</var> lines read.
+</p>
+</dd>
+<dt>
+<code>-t</code>
+</dt>
+<dd>
+<p>Remove a trailing newline from each line read.
+</p>
+</dd>
+<dt>
+<code>-u</code>
+</dt>
+<dd>
+<p>Read lines from file descriptor <var>fd</var> instead of the standard input.
+</p>
+</dd>
+<dt>
+<code>-C</code>
+</dt>
+<dd>
+<p>Evaluate <var>callback</var> each time <var>quantum</var>P lines are read.
 The <samp>-c</samp> option specifies <var>quantum</var>.
-</p></dd>
-<dt><code>-c</code></dt>
-<dd><p>Specify the number of lines read between each call to <var>callback</var>.
-</p></dd>
+</p>
+</dd>
+<dt>
+<code>-c</code>
+</dt>
+<dd>
+<p>Specify the number of lines read between each call to <var>callback</var>.
+</p>
+</dd>
 </dl>
 
 <p>If <samp>-C</samp> is specified without <samp>-c</samp>, 
@@ -605,16 +856,22 @@ array element is assigned.
 <p>If not supplied with an explicit origin, <code>mapfile</code> will clear <var>array</var>
 before assigning to it.
 </p>
-<p><code>mapfile</code> returns successfully unless an invalid option or option
+<p>
+<code>mapfile</code> returns successfully unless an invalid option or option
 argument is supplied, <var>array</var> is invalid or unassignable, or <var>array</var>
 is not an indexed array.
 </p>
 </dd>
-<dt><code>printf</code></dt>
-<dd><a name="index-printf"></a>
+<dt>
+<code>printf</code>
+</dt>
+<dd>
+<a name="index-printf">
+</a>
 <div class="example">
 <pre class="example">printf [-v <var>var</var>] <var>format</var> [<var>arguments</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Write the formatted <var>arguments</var> to the standard output under the
 control of the <var>format</var>.
@@ -630,19 +887,30 @@ In addition to the standard <code>printf(1)</code> formats, <code>printf</code>
 interprets the following extensions:
 </p>
 <dl compact="compact">
-<dt><code>%b</code></dt>
-<dd><p>Causes <code>printf</code> to expand backslash escape sequences in the
+<dt>
+<code>%b</code>
+</dt>
+<dd>
+<p>Causes <code>printf</code> to expand backslash escape sequences in the
 corresponding <var>argument</var>,
 except that &lsquo;<samp>\c</samp>&rsquo; terminates output, backslashes in
 &lsquo;<samp>\'</samp>&rsquo;, &lsquo;<samp>\&quot;</samp>&rsquo;, and &lsquo;<samp>\?</samp>&rsquo; are not removed, and octal escapes
 beginning with &lsquo;<samp>\0</samp>&rsquo; may contain up to four digits.
-</p></dd>
-<dt><code>%q</code></dt>
-<dd><p>Causes <code>printf</code> to output the
+</p>
+</dd>
+<dt>
+<code>%q</code>
+</dt>
+<dd>
+<p>Causes <code>printf</code> to output the
 corresponding <var>argument</var> in a format that can be reused as shell input.
-</p></dd>
-<dt><code>%(<var>datefmt</var>)T</code></dt>
-<dd><p>Causes <code>printf</code> to output the date-time string resulting from using
+</p>
+</dd>
+<dt>
+<code>%(<var>datefmt</var>)T</code>
+</dt>
+<dd>
+<p>Causes <code>printf</code> to output the date-time string resulting from using
 <var>datefmt</var> as a format string for <code>strftime</code>(3).
 The corresponding <var>argument</var> is an integer representing the number of
 seconds since the epoch.
@@ -650,7 +918,8 @@ Two special argument values may be used: -1 represents the current
 time, and -2 represents the time the shell was invoked.
 If no argument is specified, conversion behaves as if -1 had been given.
 This is an exception to the usual <code>printf</code> behavior.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <p>Arguments to non-string format specifiers are treated as C language constants,
@@ -665,12 +934,17 @@ appropriate, had been supplied.  The return value is zero on success,
 non-zero on failure.
 </p>
 </dd>
-<dt><code>read</code></dt>
-<dd><a name="index-read"></a>
+<dt>
+<code>read</code>
+</dt>
+<dd>
+<a name="index-read">
+</a>
 <div class="example">
 <pre class="example">read [-ers] [-a <var>aname</var>] [-d <var>delim</var>] [-i <var>text</var>] [-n <var>nchars</var>]
     [-N <var>nchars</var>] [-p <var>prompt</var>] [-t <var>timeout</var>] [-u <var>fd</var>] [<var>name</var> &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>One line is read from the standard input, or from the file descriptor
 <var>fd</var> supplied as an argument to the <samp>-u</samp> option, and the first word
@@ -694,37 +968,62 @@ or an invalid file descriptor is supplied as the argument to <samp>-u</samp>.
 <p>Options, if supplied, have the following meanings:
 </p>
 <dl compact="compact">
-<dt><code>-a <var>aname</var></code></dt>
-<dd><p>The words are assigned to sequential indices of the array variable
+<dt>
+<code>-a <var>aname</var>
+</code>
+</dt>
+<dd>
+<p>The words are assigned to sequential indices of the array variable
 <var>aname</var>, starting at 0.
 All elements are removed from <var>aname</var> before the assignment.
 Other <var>name</var> arguments are ignored.
 </p>
 </dd>
-<dt><code>-d <var>delim</var></code></dt>
-<dd><p>The first character of <var>delim</var> is used to terminate the input line,
+<dt>
+<code>-d <var>delim</var>
+</code>
+</dt>
+<dd>
+<p>The first character of <var>delim</var> is used to terminate the input line,
 rather than newline.
 </p>
 </dd>
-<dt><code>-e</code></dt>
-<dd><p>Readline (see <a href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>) is used to obtain the line.
+<dt>
+<code>-e</code>
+</dt>
+<dd>
+<p>Readline (see <a href="Command-Line-Editing.html#Command-Line-Editing">Command Line Editing</a>) is used to obtain the line.
 Readline uses the current (or default, if line editing was not previously
 active) editing settings.
 </p>
 </dd>
-<dt><code>-i <var>text</var></code></dt>
-<dd><p>If Readline is being used to read the line, <var>text</var> is placed into
+<dt>
+<code>-i <var>text</var>
+</code>
+</dt>
+<dd>
+<p>If Readline is being used to read the line, <var>text</var> is placed into
 the editing buffer before editing begins.
 </p>
 </dd>
-<dt><code>-n <var>nchars</var></code></dt>
-<dd><p><code>read</code> returns after reading <var>nchars</var> characters rather than
+<dt>
+<code>-n <var>nchars</var>
+</code>
+</dt>
+<dd>
+<p>
+<code>read</code> returns after reading <var>nchars</var> characters rather than
 waiting for a complete line of input, but honor a delimiter if fewer
 than <var>nchars</var> characters are read before the delimiter.
 </p>
 </dd>
-<dt><code>-N <var>nchars</var></code></dt>
-<dd><p><code>read</code> returns after reading exactly <var>nchars</var> characters rather
+<dt>
+<code>-N <var>nchars</var>
+</code>
+</dt>
+<dd>
+<p>
+<code>read</code> returns after reading exactly <var>nchars</var> characters rather
 than waiting for a complete line of input, unless EOF is encountered or
 <code>read</code> times out.
 Delimiter characters encountered in the input are
@@ -732,26 +1031,40 @@ not treated specially and do not cause <code>read</code> to return until
 <var>nchars</var> characters are read.
 </p>
 </dd>
-<dt><code>-p <var>prompt</var></code></dt>
-<dd><p>Display <var>prompt</var>, without a trailing newline, before attempting
+<dt>
+<code>-p <var>prompt</var>
+</code>
+</dt>
+<dd>
+<p>Display <var>prompt</var>, without a trailing newline, before attempting
 to read any input.
 The prompt is displayed only if input is coming from a terminal.
 </p>
 </dd>
-<dt><code>-r</code></dt>
-<dd><p>If this option is given, backslash does not act as an escape character.
+<dt>
+<code>-r</code>
+</dt>
+<dd>
+<p>If this option is given, backslash does not act as an escape character.
 The backslash is considered to be part of the line.
 In particular, a backslash-newline pair may not be used as a line
 continuation.
 </p>
 </dd>
-<dt><code>-s</code></dt>
-<dd><p>Silent mode.  If input is coming from a terminal, characters are
+<dt>
+<code>-s</code>
+</dt>
+<dd>
+<p>Silent mode.  If input is coming from a terminal, characters are
 not echoed.
 </p>
 </dd>
-<dt><code>-t <var>timeout</var></code></dt>
-<dd><p>Cause <code>read</code> to time out and return failure if a complete line of
+<dt>
+<code>-t <var>timeout</var>
+</code>
+</dt>
+<dd>
+<p>Cause <code>read</code> to time out and return failure if a complete line of
 input (or a specified number of characters)
 is not read within <var>timeout</var> seconds.
 <var>timeout</var>  may be a decimal number with a fractional portion following
@@ -767,18 +1080,28 @@ the specified file descriptor, non-zero otherwise.
 The exit status is greater than 128 if the timeout is exceeded.
 </p>
 </dd>
-<dt><code>-u <var>fd</var></code></dt>
-<dd><p>Read input from file descriptor <var>fd</var>.
-</p></dd>
+<dt>
+<code>-u <var>fd</var>
+</code>
+</dt>
+<dd>
+<p>Read input from file descriptor <var>fd</var>.
+</p>
+</dd>
 </dl>
 
 </dd>
-<dt><code>readarray</code></dt>
-<dd><a name="index-readarray"></a>
+<dt>
+<code>readarray</code>
+</dt>
+<dd>
+<a name="index-readarray">
+</a>
 <div class="example">
 <pre class="example">readarray [-n <var>count</var>] [-O <var>origin</var>] [-s <var>count</var>] [-t] [-u <var>fd</var>]
     [-C <var>callback</var>] [-c <var>quantum</var>] [<var>array</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Read lines from the standard input into the indexed array variable <var>array</var>,
 or from file descriptor <var>fd</var>
@@ -787,20 +1110,30 @@ if the <samp>-u</samp> option is supplied.
 <p>A synonym for <code>mapfile</code>.
 </p>
 </dd>
-<dt><code>source</code></dt>
-<dd><a name="index-source"></a>
+<dt>
+<code>source</code>
+</dt>
+<dd>
+<a name="index-source">
+</a>
 <div class="example">
 <pre class="example">source <var>filename</var>
-</pre></div>
+</pre>
+</div>
 
 <p>A synonym for <code>.</code> (see <a href="Bourne-Shell-Builtins.html#Bourne-Shell-Builtins">Bourne Shell Builtins</a>).
 </p>
 </dd>
-<dt><code>type</code></dt>
-<dd><a name="index-type"></a>
+<dt>
+<code>type</code>
+</dt>
+<dd>
+<a name="index-type">
+</a>
 <div class="example">
 <pre class="example">type [-afptP] [<var>name</var> &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>For each <var>name</var>, indicate how it would be interpreted if used as a
 command name.
@@ -835,113 +1168,188 @@ shell functions, as with the <code>command</code> builtin.
 if any are not found.
 </p>
 </dd>
-<dt><code>typeset</code></dt>
-<dd><a name="index-typeset"></a>
+<dt>
+<code>typeset</code>
+</dt>
+<dd>
+<a name="index-typeset">
+</a>
 <div class="example">
 <pre class="example">typeset [-afFgrxilnrtux] [-p] [<var>name</var>[=<var>value</var>] &hellip;]
-</pre></div>
+</pre>
+</div>
 
 <p>The <code>typeset</code> command is supplied for compatibility with the Korn
 shell.
 It is a synonym for the <code>declare</code> builtin command.
 </p>
 </dd>
-<dt><code>ulimit</code></dt>
-<dd><a name="index-ulimit"></a>
+<dt>
+<code>ulimit</code>
+</dt>
+<dd>
+<a name="index-ulimit">
+</a>
 <div class="example">
 <pre class="example">ulimit [-abcdefilmnpqrstuvxHST] [<var>limit</var>]
-</pre></div>
+</pre>
+</div>
 
-<p><code>ulimit</code> provides control over the resources available to processes
+<p>
+<code>ulimit</code> provides control over the resources available to processes
 started by the shell, on systems that allow such control.  If an
 option is given, it is interpreted as follows:
 </p>
 <dl compact="compact">
-<dt><code>-S</code></dt>
-<dd><p>Change and report the soft limit associated with a resource.
+<dt>
+<code>-S</code>
+</dt>
+<dd>
+<p>Change and report the soft limit associated with a resource.
 </p>
 </dd>
-<dt><code>-H</code></dt>
-<dd><p>Change and report the hard limit associated with a resource.
+<dt>
+<code>-H</code>
+</dt>
+<dd>
+<p>Change and report the hard limit associated with a resource.
 </p>
 </dd>
-<dt><code>-a</code></dt>
-<dd><p>All current limits are reported.
+<dt>
+<code>-a</code>
+</dt>
+<dd>
+<p>All current limits are reported.
 </p>
 </dd>
-<dt><code>-b</code></dt>
-<dd><p>The maximum socket buffer size.
+<dt>
+<code>-b</code>
+</dt>
+<dd>
+<p>The maximum socket buffer size.
 </p>
 </dd>
-<dt><code>-c</code></dt>
-<dd><p>The maximum size of core files created.
+<dt>
+<code>-c</code>
+</dt>
+<dd>
+<p>The maximum size of core files created.
 </p>
 </dd>
-<dt><code>-d</code></dt>
-<dd><p>The maximum size of a process&rsquo;s data segment.
+<dt>
+<code>-d</code>
+</dt>
+<dd>
+<p>The maximum size of a process&rsquo;s data segment.
 </p>
 </dd>
-<dt><code>-e</code></dt>
-<dd><p>The maximum scheduling priority (&quot;nice&quot;).
+<dt>
+<code>-e</code>
+</dt>
+<dd>
+<p>The maximum scheduling priority (&quot;nice&quot;).
 </p>
 </dd>
-<dt><code>-f</code></dt>
-<dd><p>The maximum size of files written by the shell and its children.
+<dt>
+<code>-f</code>
+</dt>
+<dd>
+<p>The maximum size of files written by the shell and its children.
 </p>
 </dd>
-<dt><code>-i</code></dt>
-<dd><p>The maximum number of pending signals.
+<dt>
+<code>-i</code>
+</dt>
+<dd>
+<p>The maximum number of pending signals.
 </p>
 </dd>
-<dt><code>-l</code></dt>
-<dd><p>The maximum size that may be locked into memory.
+<dt>
+<code>-l</code>
+</dt>
+<dd>
+<p>The maximum size that may be locked into memory.
 </p>
 </dd>
-<dt><code>-m</code></dt>
-<dd><p>The maximum resident set size (many systems do not honor this limit).
+<dt>
+<code>-m</code>
+</dt>
+<dd>
+<p>The maximum resident set size (many systems do not honor this limit).
 </p>
 </dd>
-<dt><code>-n</code></dt>
-<dd><p>The maximum number of open file descriptors (most systems do not
+<dt>
+<code>-n</code>
+</dt>
+<dd>
+<p>The maximum number of open file descriptors (most systems do not
 allow this value to be set).
 </p>
 </dd>
-<dt><code>-p</code></dt>
-<dd><p>The pipe buffer size.
+<dt>
+<code>-p</code>
+</dt>
+<dd>
+<p>The pipe buffer size.
 </p>
 </dd>
-<dt><code>-q</code></dt>
-<dd><p>The maximum number of bytes in POSIX message queues.
+<dt>
+<code>-q</code>
+</dt>
+<dd>
+<p>The maximum number of bytes in POSIX message queues.
 </p>
 </dd>
-<dt><code>-r</code></dt>
-<dd><p>The maximum real-time scheduling priority.
+<dt>
+<code>-r</code>
+</dt>
+<dd>
+<p>The maximum real-time scheduling priority.
 </p>
 </dd>
-<dt><code>-s</code></dt>
-<dd><p>The maximum stack size.
+<dt>
+<code>-s</code>
+</dt>
+<dd>
+<p>The maximum stack size.
 </p>
 </dd>
-<dt><code>-t</code></dt>
-<dd><p>The maximum amount of cpu time in seconds.
+<dt>
+<code>-t</code>
+</dt>
+<dd>
+<p>The maximum amount of cpu time in seconds.
 </p>
 </dd>
-<dt><code>-u</code></dt>
-<dd><p>The maximum number of processes available to a single user.
+<dt>
+<code>-u</code>
+</dt>
+<dd>
+<p>The maximum number of processes available to a single user.
 </p>
 </dd>
-<dt><code>-v</code></dt>
-<dd><p>The maximum amount of virtual memory available to the shell, and, on
+<dt>
+<code>-v</code>
+</dt>
+<dd>
+<p>The maximum amount of virtual memory available to the shell, and, on
 some systems, to its children.
 </p>
 </dd>
-<dt><code>-x</code></dt>
-<dd><p>The maximum number of file locks.
+<dt>
+<code>-x</code>
+</dt>
+<dd>
+<p>The maximum number of file locks.
 </p>
 </dd>
-<dt><code>-T</code></dt>
-<dd><p>The maximum number of threads.
-</p></dd>
+<dt>
+<code>-T</code>
+</dt>
+<dd>
+<p>The maximum number of threads.
+</p>
+</dd>
 </dl>
 
 <p>If <var>limit</var> is given, and the <samp>-a</samp> option is not used,
@@ -964,16 +1372,22 @@ which is in units of 512-byte blocks; and <samp>-T</samp>, <samp>-b</samp>,
 or an error occurs while setting a new limit.
 </p>
 </dd>
-<dt><code>unalias</code></dt>
-<dd><a name="index-unalias"></a>
+<dt>
+<code>unalias</code>
+</dt>
+<dd>
+<a name="index-unalias">
+</a>
 <div class="example">
 <pre class="example">unalias [-a] [<var>name</var> &hellip; ]
-</pre></div>
+</pre>
+</div>
 
 <p>Remove each <var>name</var> from the list of aliases.  If <samp>-a</samp> is
 supplied, all aliases are removed.
 Aliases are described in <a href="Aliases.html#Aliases">Aliases</a>.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <hr>

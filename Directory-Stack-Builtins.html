@@ -64,60 +64,98 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Directory-Stack-Builtins"></a>
+<a name="Directory-Stack-Builtins">
+</a>
 <div class="header">
 <p>
 Up: <a href="The-Directory-Stack.html#The-Directory-Stack" accesskey="u" rel="up">The Directory Stack</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Directory-Stack-Builtins-1"></a>
+<a name="Directory-Stack-Builtins-1">
+</a>
 <h4 class="subsection">6.8.1 Directory Stack Builtins</h4>
 
 <dl compact="compact">
-<dt><code>dirs</code></dt>
-<dd><a name="index-dirs"></a>
+<dt>
+<code>dirs</code>
+</dt>
+<dd>
+<a name="index-dirs">
+</a>
 <div class="example">
 <pre class="example">dirs [-clpv] [+<var>N</var> | -<var>N</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Display the list of currently remembered directories.  Directories
 are added to the list with the <code>pushd</code> command; the
 <code>popd</code> command removes directories from the list.
 </p>
 <dl compact="compact">
-<dt><code>-c</code></dt>
-<dd><p>Clears the directory stack by deleting all of the elements.
-</p></dd>
-<dt><code>-l</code></dt>
-<dd><p>Produces a listing using full pathnames;
+<dt>
+<code>-c</code>
+</dt>
+<dd>
+<p>Clears the directory stack by deleting all of the elements.
+</p>
+</dd>
+<dt>
+<code>-l</code>
+</dt>
+<dd>
+<p>Produces a listing using full pathnames;
 the default listing format uses a tilde to denote the home directory.
-</p></dd>
-<dt><code>-p</code></dt>
-<dd><p>Causes <code>dirs</code> to print the directory stack with one entry per
+</p>
+</dd>
+<dt>
+<code>-p</code>
+</dt>
+<dd>
+<p>Causes <code>dirs</code> to print the directory stack with one entry per
 line.
-</p></dd>
-<dt><code>-v</code></dt>
-<dd><p>Causes <code>dirs</code> to print the directory stack with one entry per
+</p>
+</dd>
+<dt>
+<code>-v</code>
+</dt>
+<dd>
+<p>Causes <code>dirs</code> to print the directory stack with one entry per
 line, prefixing each entry with its index in the stack.
-</p></dd>
-<dt><code>+<var>N</var></code></dt>
-<dd><p>Displays the <var>N</var>th directory (counting from the left of the
+</p>
+</dd>
+<dt>
+<code>+<var>N</var>
+</code>
+</dt>
+<dd>
+<p>Displays the <var>N</var>th directory (counting from the left of the
 list printed by <code>dirs</code> when invoked without options), starting
 with zero.
-</p></dd>
-<dt><code>-<var>N</var></code></dt>
-<dd><p>Displays the <var>N</var>th directory (counting from the right of the
+</p>
+</dd>
+<dt>
+<code>-<var>N</var>
+</code>
+</dt>
+<dd>
+<p>Displays the <var>N</var>th directory (counting from the right of the
 list printed by <code>dirs</code> when invoked without options), starting
 with zero.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 </dd>
-<dt><code>popd</code></dt>
-<dd><a name="index-popd"></a>
+<dt>
+<code>popd</code>
+</dt>
+<dd>
+<a name="index-popd">
+</a>
 <div class="example">
 <pre class="example">popd [-n] [+<var>N</var> | -<var>N</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Remove the top entry from the directory stack, and <code>cd</code>
 to the new top directory.
@@ -128,51 +166,90 @@ elements are numbered from 0 starting at the first directory listed with
 <code>dirs</code>; that is, <code>popd</code> is equivalent to <code>popd +0</code>.
 </p>
 <dl compact="compact">
-<dt><code>-n</code></dt>
-<dd><p>Suppresses the normal change of directory when removing directories
+<dt>
+<code>-n</code>
+</dt>
+<dd>
+<p>Suppresses the normal change of directory when removing directories
 from the stack, so that only the stack is manipulated.
-</p></dd>
-<dt><code>+<var>N</var></code></dt>
-<dd><p>Removes the <var>N</var>th directory (counting from the left of the
+</p>
+</dd>
+<dt>
+<code>+<var>N</var>
+</code>
+</dt>
+<dd>
+<p>Removes the <var>N</var>th directory (counting from the left of the
 list printed by <code>dirs</code>), starting with zero.
-</p></dd>
-<dt><code>-<var>N</var></code></dt>
-<dd><p>Removes the <var>N</var>th directory (counting from the right of the
+</p>
+</dd>
+<dt>
+<code>-<var>N</var>
+</code>
+</dt>
+<dd>
+<p>Removes the <var>N</var>th directory (counting from the right of the
 list printed by <code>dirs</code>), starting with zero.
-</p></dd>
+</p>
+</dd>
 </dl>
 
-<a name="index-pushd"></a>
+<a name="index-pushd">
+</a>
 </dd>
-<dt><code>pushd</code></dt>
-<dd><div class="example">
+<dt>
+<code>pushd</code>
+</dt>
+<dd>
+<div class="example">
 <pre class="example">pushd [-n] [<var>+N</var> | <var>-N</var> | <var>dir</var>]
-</pre></div>
+</pre>
+</div>
 
 <p>Save the current directory on the top of the directory stack
 and then <code>cd</code> to <var>dir</var>.
 With no arguments, <code>pushd</code> exchanges the top two directories.
 </p>
 <dl compact="compact">
-<dt><code>-n</code></dt>
-<dd><p>Suppresses the normal change of directory when adding directories
+<dt>
+<code>-n</code>
+</dt>
+<dd>
+<p>Suppresses the normal change of directory when adding directories
 to the stack, so that only the stack is manipulated.
-</p></dd>
-<dt><code>+<var>N</var></code></dt>
-<dd><p>Brings the <var>N</var>th directory (counting from the left of the
+</p>
+</dd>
+<dt>
+<code>+<var>N</var>
+</code>
+</dt>
+<dd>
+<p>Brings the <var>N</var>th directory (counting from the left of the
 list printed by <code>dirs</code>, starting with zero) to the top of
 the list by rotating the stack.
-</p></dd>
-<dt><code>-<var>N</var></code></dt>
-<dd><p>Brings the <var>N</var>th directory (counting from the right of the
+</p>
+</dd>
+<dt>
+<code>-<var>N</var>
+</code>
+</dt>
+<dd>
+<p>Brings the <var>N</var>th directory (counting from the right of the
 list printed by <code>dirs</code>, starting with zero) to the top of
 the list by rotating the stack.
-</p></dd>
-<dt><code><var>dir</var></code></dt>
-<dd><p>Makes the current working directory be the top of the stack, making
+</p>
+</dd>
+<dt>
+<code>
+<var>dir</var>
+</code>
+</dt>
+<dd>
+<p>Makes the current working directory be the top of the stack, making
 it the new current directory as if it had been supplied as an argument
 to the <code>cd</code> builtin.
-</p></dd>
+</p>
+</dd>
 </dl>
 </dd>
 </dl>

@@ -64,24 +64,31 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Special-Parameters"></a>
+<a name="Special-Parameters">
+</a>
 <div class="header">
 <p>
 Previous: <a href="Positional-Parameters.html#Positional-Parameters" accesskey="p" rel="prev">Positional Parameters</a>, Up: <a href="Shell-Parameters.html#Shell-Parameters" accesskey="u" rel="up">Shell Parameters</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Special-Parameters-1"></a>
+<a name="Special-Parameters-1">
+</a>
 <h4 class="subsection">3.4.2 Special Parameters</h4>
-<a name="index-parameters_002c-special"></a>
+<a name="index-parameters_002c-special">
+</a>
 
 <p>The shell treats several parameters specially.  These parameters may
 only be referenced; assignment to them is not allowed.
 </p>
 <dl compact="compact">
-<dt><code>*</code>
-<a name="index-_002a"></a>
+<dt>
+<code>*</code>
+<a name="index-_002a">
+</a>
 </dt>
-<dd><a name="index-_0024_002a"></a>
+<dd>
+<a name="index-_0024_002a">
+</a>
 <p>($*) Expands to the positional parameters, starting from one.
 When the expansion is not within double quotes, each positional parameter
 expands to a separate word.
@@ -99,10 +106,14 @@ If <code>IFS</code> is null, the parameters are joined without intervening
 separators.
 </p>
 </dd>
-<dt><code>@</code>
-<a name="index-_0040"></a>
+<dt>
+<code>@</code>
+<a name="index-_0040">
+</a>
 </dt>
-<dd><a name="index-_0024_0040"></a>
+<dd>
+<a name="index-_0024_0040">
+</a>
 <p>($@) Expands to the positional parameters, starting from one.  When the
 expansion occurs within double quotes, each parameter expands to a
 separate word.  That is, <code>&quot;$@&quot;</code> is equivalent to
@@ -116,52 +127,76 @@ When there are no positional parameters, <code>&quot;$@&quot;</code> and
 expand to nothing (i.e., they are removed).
 </p>
 </dd>
-<dt><code>#</code>
-<a name="index-_0023"></a>
+<dt>
+<code>#</code>
+<a name="index-_0023">
+</a>
 </dt>
-<dd><a name="index-_0024_0023"></a>
+<dd>
+<a name="index-_0024_0023">
+</a>
 <p>($#) Expands to the number of positional parameters in decimal.
 </p>
 </dd>
-<dt><code>?</code>
-<a name="index-_003f"></a>
+<dt>
+<code>?</code>
+<a name="index-_003f">
+</a>
 </dt>
-<dd><a name="index-_0024_003f"></a>
+<dd>
+<a name="index-_0024_003f">
+</a>
 <p>($?) Expands to the exit status of the most recently executed foreground
 pipeline.
 </p>
 </dd>
-<dt><code>-</code>
-<a name="index-_002d"></a>
+<dt>
+<code>-</code>
+<a name="index-_002d">
+</a>
 </dt>
-<dd><a name="index-_0024_002d"></a>
+<dd>
+<a name="index-_0024_002d">
+</a>
 <p>($-, a hyphen.)  Expands to the current option flags as specified upon
 invocation, by the <code>set</code>
 builtin command, or those set by the shell itself
 (such as the <samp>-i</samp> option).
 </p>
 </dd>
-<dt><code>$</code>
-<a name="index-_0024"></a>
+<dt>
+<code>$</code>
+<a name="index-_0024">
+</a>
 </dt>
-<dd><a name="index-_0024_0024"></a>
+<dd>
+<a name="index-_0024_0024">
+</a>
 <p>($$) Expands to the process <small>ID</small> of the shell.  In a <code>()</code> subshell, it
 expands to the process <small>ID</small> of the invoking shell, not the subshell.
 </p>
 </dd>
-<dt><code>!</code>
-<a name="index-_0021-1"></a>
+<dt>
+<code>!</code>
+<a name="index-_0021-1">
+</a>
 </dt>
-<dd><a name="index-_0024_0021"></a>
+<dd>
+<a name="index-_0024_0021">
+</a>
 <p>($!) Expands to the process <small>ID</small> of the job most recently placed into the
 background, whether executed as an asynchronous command or using
 the <code>bg</code> builtin (see <a href="Job-Control-Builtins.html#Job-Control-Builtins">Job Control Builtins</a>).
 </p>
 </dd>
-<dt><code>0</code>
-<a name="index-0"></a>
+<dt>
+<code>0</code>
+<a name="index-0">
+</a>
 </dt>
-<dd><a name="index-_00240"></a>
+<dd>
+<a name="index-_00240">
+</a>
 <p>($0) Expands to the name of the shell or shell script.  This is set at
 shell initialization.  If Bash is invoked with a file of commands
 (see <a href="Shell-Scripts.html#Shell-Scripts">Shell Scripts</a>), <code>$0</code> is set to the name of that file.
@@ -171,10 +206,14 @@ executed, if one is present.  Otherwise, it is set
 to the filename used to invoke Bash, as given by argument zero.
 </p>
 </dd>
-<dt><code>_</code>
-<a name="index-_005f"></a>
+<dt>
+<code>_</code>
+<a name="index-_005f">
+</a>
 </dt>
-<dd><a name="index-_0024_005f"></a>
+<dd>
+<a name="index-_0024_005f">
+</a>
 <p>($_, an underscore.)
 At shell startup, set to the absolute pathname used to invoke the
 shell or shell script being executed as passed in the environment
@@ -184,7 +223,8 @@ after expansion.
 Also set to the full pathname used to invoke each command executed
 and placed in the environment exported to that command.
 When checking mail, this parameter holds the name of the mail file.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <hr>

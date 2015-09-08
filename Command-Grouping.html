@@ -64,15 +64,18 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Command-Grouping"></a>
+<a name="Command-Grouping">
+</a>
 <div class="header">
 <p>
 Previous: <a href="Conditional-Constructs.html#Conditional-Constructs" accesskey="p" rel="prev">Conditional Constructs</a>, Up: <a href="Compound-Commands.html#Compound-Commands" accesskey="u" rel="up">Compound Commands</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Grouping-Commands"></a>
+<a name="Grouping-Commands">
+</a>
 <h4 class="subsubsection">3.2.4.3 Grouping Commands</h4>
-<a name="index-commands_002c-grouping"></a>
+<a name="index-commands_002c-grouping">
+</a>
 
 <p>Bash provides two ways to group a list of commands to be executed
 as a unit.  When commands are grouped, redirections may be applied
@@ -80,10 +83,14 @@ to the entire command list.  For example, the output of all the
 commands in the list may be redirected to a single stream.
 </p>
 <dl compact="compact">
-<dt><code>()</code></dt>
-<dd><div class="example">
+<dt>
+<code>()</code>
+</dt>
+<dd>
+<div class="example">
 <pre class="example">( <var>list</var> )
-</pre></div>
+</pre>
+</div>
 
 <p>Placing a list of commands between parentheses causes a subshell
 environment to be created (see <a href="Command-Execution-Environment.html#Command-Execution-Environment">Command Execution Environment</a>), and each
@@ -92,17 +99,24 @@ of the commands in <var>list</var> to be executed in that subshell.  Since the
 effect after the subshell completes. 
 </p>
 </dd>
-<dt><code>{}</code></dt>
-<dd><a name="index-_007b"></a>
-<a name="index-_007d"></a>
+<dt>
+<code>{}</code>
+</dt>
+<dd>
+<a name="index-_007b">
+</a>
+<a name="index-_007d">
+</a>
 <div class="example">
 <pre class="example">{ <var>list</var>; }
-</pre></div>
+</pre>
+</div>
 
 <p>Placing a list of commands between curly braces causes the list to
 be executed in the current shell context.  No subshell is created.
 The semicolon (or newline) following <var>list</var> is required.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <p>In addition to the creation of a subshell, there is a subtle difference

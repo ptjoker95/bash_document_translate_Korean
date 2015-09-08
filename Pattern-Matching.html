@@ -64,16 +64,20 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Pattern-Matching"></a>
+<a name="Pattern-Matching">
+</a>
 <div class="header">
 <p>
 Up: <a href="Filename-Expansion.html#Filename-Expansion" accesskey="u" rel="up">Filename Expansion</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Pattern-Matching-1"></a>
+<a name="Pattern-Matching-1">
+</a>
 <h4 class="subsubsection">3.5.8.1 Pattern Matching</h4>
-<a name="index-pattern-matching"></a>
-<a name="index-matching_002c-pattern"></a>
+<a name="index-pattern-matching">
+</a>
+<a name="index-matching_002c-pattern">
+</a>
 
 <p>Any character that appears in a pattern, other than the special pattern
 characters described below, matches itself.
@@ -84,21 +88,33 @@ The special pattern characters must be quoted if they are to be matched
 literally.
 </p>
 <p>The special pattern characters have the following meanings:
-</p><dl compact="compact">
-<dt><code>*</code></dt>
-<dd><p>Matches any string, including the null string.
+</p>
+<dl compact="compact">
+<dt>
+<code>*</code>
+</dt>
+<dd>
+<p>Matches any string, including the null string.
 When the <code>globstar</code> shell option is enabled, and &lsquo;<samp>*</samp>&rsquo; is used in
 a filename expansion context, two adjacent &lsquo;<samp>*</samp>&rsquo;s used as a single
 pattern will match all files and zero or more directories and
 subdirectories.
 If followed by a &lsquo;<samp>/</samp>&rsquo;, two adjacent &lsquo;<samp>*</samp>&rsquo;s will match only
 directories and subdirectories.
-</p></dd>
-<dt><code>?</code></dt>
-<dd><p>Matches any single character.
-</p></dd>
-<dt><code>[&hellip;]</code></dt>
-<dd><p>Matches any one of the enclosed characters.  A pair of characters
+</p>
+</dd>
+<dt>
+<code>?</code>
+</dt>
+<dd>
+<p>Matches any single character.
+</p>
+</dd>
+<dt>
+<code>[&hellip;]</code>
+</dt>
+<dd>
+<p>Matches any one of the enclosed characters.  A pair of characters
 separated by a hyphen denotes a <var>range expression</var>;
 any character that falls between those two characters, inclusive,
 using the current locale&rsquo;s collating sequence and character set,
@@ -123,24 +139,33 @@ force the use of the C locale by setting the <code>LC_COLLATE</code> or
 </p>
 <p>Within &lsquo;<samp>[</samp>&rsquo; and &lsquo;<samp>]</samp>&rsquo;, <var>character classes</var> can be specified
 using the syntax
-<code>[:</code><var>class</var><code>:]</code>, where <var>class</var> is one of the
+<code>[:</code>
+<var>class</var>
+<code>:]</code>, where <var>class</var> is one of the
 following classes defined in the <small>POSIX</small> standard:
-</p><div class="example">
+</p>
+<div class="example">
 <pre class="example">alnum   alpha   ascii   blank   cntrl   digit   graph   lower
 print   punct   space   upper   word    xdigit
-</pre></div>
+</pre>
+</div>
 <p>A character class matches any character belonging to that class.
 The <code>word</code> character class matches letters, digits, and the character
 &lsquo;<samp>_</samp>&rsquo;.
 </p>
 <p>Within &lsquo;<samp>[</samp>&rsquo; and &lsquo;<samp>]</samp>&rsquo;, an <var>equivalence class</var> can be
-specified using the syntax <code>[=</code><var>c</var><code>=]</code>, which
+specified using the syntax <code>[=</code>
+<var>c</var>
+<code>=]</code>, which
 matches all characters with the same collation weight (as defined
 by the current locale) as the character <var>c</var>.
 </p>
-<p>Within &lsquo;<samp>[</samp>&rsquo; and &lsquo;<samp>]</samp>&rsquo;, the syntax <code>[.</code><var>symbol</var><code>.]</code>
+<p>Within &lsquo;<samp>[</samp>&rsquo; and &lsquo;<samp>]</samp>&rsquo;, the syntax <code>[.</code>
+<var>symbol</var>
+<code>.]</code>
 matches the collating symbol <var>symbol</var>.
-</p></dd>
+</p>
+</dd>
 </dl>
 
 <p>If the <code>extglob</code> shell option is enabled using the <code>shopt</code>
@@ -151,25 +176,41 @@ Composite patterns may be formed using one or more of the following
 sub-patterns:
 </p>
 <dl compact="compact">
-<dt><code>?(<var>pattern-list</var>)</code></dt>
-<dd><p>Matches zero or one occurrence of the given patterns.
+<dt>
+<code>?(<var>pattern-list</var>)</code>
+</dt>
+<dd>
+<p>Matches zero or one occurrence of the given patterns.
 </p>
 </dd>
-<dt><code>*(<var>pattern-list</var>)</code></dt>
-<dd><p>Matches zero or more occurrences of the given patterns.
+<dt>
+<code>*(<var>pattern-list</var>)</code>
+</dt>
+<dd>
+<p>Matches zero or more occurrences of the given patterns.
 </p>
 </dd>
-<dt><code>+(<var>pattern-list</var>)</code></dt>
-<dd><p>Matches one or more occurrences of the given patterns.
+<dt>
+<code>+(<var>pattern-list</var>)</code>
+</dt>
+<dd>
+<p>Matches one or more occurrences of the given patterns.
 </p>
 </dd>
-<dt><code>@(<var>pattern-list</var>)</code></dt>
-<dd><p>Matches one of the given patterns.
+<dt>
+<code>@(<var>pattern-list</var>)</code>
+</dt>
+<dd>
+<p>Matches one of the given patterns.
 </p>
 </dd>
-<dt><code>!(<var>pattern-list</var>)</code></dt>
-<dd><p>Matches anything except one of the given patterns.
-</p></dd>
+<dt>
+<code>!(<var>pattern-list</var>)</code>
+</dt>
+<dd>
+<p>Matches anything except one of the given patterns.
+</p>
+</dd>
 </dl>
 
 <hr>

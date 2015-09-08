@@ -64,16 +64,20 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Shell-Functions"></a>
+<a name="Shell-Functions">
+</a>
 <div class="header">
 <p>
 Next: <a href="Shell-Parameters.html#Shell-Parameters" accesskey="n" rel="next">Shell Parameters</a>, Previous: <a href="Shell-Commands.html#Shell-Commands" accesskey="p" rel="prev">Shell Commands</a>, Up: <a href="Basic-Shell-Features.html#Basic-Shell-Features" accesskey="u" rel="up">Basic Shell Features</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Shell-Functions-1"></a>
+<a name="Shell-Functions-1">
+</a>
 <h3 class="section">3.3 Shell Functions</h3>
-<a name="index-shell-function"></a>
-<a name="index-functions_002c-shell"></a>
+<a name="index-shell-function">
+</a>
+<a name="index-functions_002c-shell">
+</a>
 
 <p>Shell functions are a way to group commands for later execution
 using a single name for the group.  They are executed just like
@@ -84,16 +88,21 @@ Shell functions are executed in the current
 shell context; no new process is created to interpret them.
 </p>
 <p>Functions are declared using this syntax:
-<a name="index-function"></a>
-</p><div class="example">
-<pre class="example"><var>name</var> () <var>compound-command</var> [ <var>redirections</var> ]
-</pre></div>
+<a name="index-function">
+</a>
+</p>
+<div class="example">
+<pre class="example">
+<var>name</var> () <var>compound-command</var> [ <var>redirections</var> ]
+</pre>
+</div>
 
 <p>or
 </p>
 <div class="example">
 <pre class="example">function <var>name</var> [()] <var>compound-command</var> [ <var>redirections</var> ]
-</pre></div>
+</pre>
+</div>
 
 <p>This defines a shell function named <var>name</var>.  The reserved
 word <code>function</code> is optional.

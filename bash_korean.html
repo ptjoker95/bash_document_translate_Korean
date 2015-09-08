@@ -387,12 +387,14 @@ ul.no-bullet {list-style: none}
 <li>
 <a name="toc-Shell-Variables-1" href="#Shell-Variables">5 Shell Variables</a>
 <ul class="no-bullet">
-<li><a name="toc-Bourne-Shell-Variables-1" href="#Bourne-Shell-Variables">5.1 Bourne Shell Variables
+<li>
+<a name="toc-Bourne-Shell-Variables-1" href="#Bourne-Shell-Variables">5.1 Bourne Shell Variables
 </a>
 </li>
 <li>
 <a name="toc-Bash-Variables-1" href="#Bash-Variables">5.2 Bash Variables</a>
-</li></ul>
+</li>
+</ul>
 </li>
 <li>
 <a name="toc-Bash-Features-2" href="#Bash-Features">6 Bash Features
@@ -1882,9 +1884,11 @@ Next:
 <a href="#Indexes" title="Index" rel="index">Index</a>]
 </p>
 </div>
-<a name="ANSI_002dC-Quoting-1"></a>
+<a name="ANSI_002dC-Quoting-1">
+</a>
 <h4 class="subsubsection">3.1.2.4 ANSI-C 인용</h4>
-<a name="index-quoting_002c-ANSI"></a>
+<a name="index-quoting_002c-ANSI">
+</a>
 <p>
 <code>$'<var>문자열</var>'</code> 의 모양을 한 단어들은 특별하게 취급됩니다. 
 그 단어는 
@@ -1962,35 +1966,40 @@ Next:
 <p>큰 따옴표</p>
 </dd>
 <dt>
-<code>\<var>nnn</var></code>
+<code>\<var>nnn</var>
+</code>
 </dt>
 <dd>
 <p>8진법 값 <var>nnn</var> 을 가진 8비트 문자 (1 부터 3 자릿수)
 </p>
 </dd>
 <dt>
-<code>\x<var>HH</var></code>
+<code>\x<var>HH</var>
+</code>
 </dt>
 <dd>
 <p>16진법 값 <var>HH</var> 을 가진 8비트 문자 (1 이나 2 자릿수의 16진법)
 </p>
 </dd>
 <dt>
-<code>\u<var>HHHH</var></code>
+<code>\u<var>HHHH</var>
+</code>
 </dt>
 <dd>
 <p>16진법 값 <var>HHHH</var> 을 가진 유니코드 (ISO/IEC 10646) 문자 (1 부터 4 자릿수의 16진법)
 </p>
 </dd>
 <dt>
-<code>\U<var>HHHHHHHH</var></code>
+<code>\U<var>HHHHHHHH</var>
+</code>
 </dt>
 <dd>
 <p>16진법 값 <var>HHHHHHHH</var> 을 가진 유니코드 (ISO/IEC 10646) 문자 (1 부터 8 자릿수의 16진법)
 </p>
 </dd>
 <dt>
-<code>\c<var>x</var></code>
+<code>\c<var>x</var>
+</code>
 </dt>
 <dd>
 <p>컨트롤 <var>x</var> 문자
@@ -17570,11 +17579,14 @@ Next:
 <var>subscript</var> 는 숫자를 도출해내야 하는 수식 표현으로 취급됩니다. 확실하게 배열을 
 정의하기 위해서는, 
 </p>
-<div class="example"><pre class="example">declare -a <var>name</var></pre>
+<div class="example">
+<pre class="example">declare -a <var>name</var>
+</pre>
 </div> 를 사용하십시요.
 <p>아래의 
 </p>
-<div class="example"><pre class="example">declare -a <var>name</var>[<var>subscript</var>]
+<div class="example">
+<pre class="example">declare -a <var>name</var>[<var>subscript</var>]
 </pre>
 </div>
 <p>도 가능합니다; 
@@ -17582,7 +17594,9 @@ Next:
 </var> 는 무시됩니다.
 </p>
 <p>연결 배열은 </p>
-<div class="example"><pre class="example">declare -A <var>name</var></pre> 
+<div class="example">
+<pre class="example">declare -A <var>name</var>
+</pre> 
 </div>
 으로 만들어집니다.
 <p>속성들은  

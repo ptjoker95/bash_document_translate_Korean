@@ -64,19 +64,26 @@ ul.no-bullet {list-style: none}
 </head>
 
 <body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
-<a name="Shell-Arithmetic"></a>
+<a name="Shell-Arithmetic">
+</a>
 <div class="header">
 <p>
 Next: <a href="Aliases.html#Aliases" accesskey="n" rel="next">Aliases</a>, Previous: <a href="Bash-Conditional-Expressions.html#Bash-Conditional-Expressions" accesskey="p" rel="prev">Bash Conditional Expressions</a>, Up: <a href="Bash-Features.html#Bash-Features" accesskey="u" rel="up">Bash Features</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Indexes.html#Indexes" title="Index" rel="index">Index</a>]</p>
 </div>
 <hr>
-<a name="Shell-Arithmetic-1"></a>
+<a name="Shell-Arithmetic-1">
+</a>
 <h3 class="section">6.5 Shell Arithmetic</h3>
-<a name="index-arithmetic_002c-shell"></a>
-<a name="index-shell-arithmetic"></a>
-<a name="index-expressions_002c-arithmetic"></a>
-<a name="index-evaluation_002c-arithmetic"></a>
-<a name="index-arithmetic-evaluation"></a>
+<a name="index-arithmetic_002c-shell">
+</a>
+<a name="index-shell-arithmetic">
+</a>
+<a name="index-expressions_002c-arithmetic">
+</a>
+<a name="index-evaluation_002c-arithmetic">
+</a>
+<a name="index-arithmetic-evaluation">
+</a>
 
 <p>The shell allows arithmetic expressions to be evaluated, as one of
 the shell expansions or by the <code>let</code> and the <samp>-i</samp> option
@@ -91,77 +98,134 @@ equal-precedence operators.
 The levels are listed in order of decreasing precedence. 
 </p>
 <dl compact="compact">
-<dt><code><var>id</var>++ <var>id</var>--</code></dt>
-<dd><p>variable post-increment and post-decrement 
+<dt>
+<code>
+<var>id</var>++ <var>id</var>--</code>
+</dt>
+<dd>
+<p>variable post-increment and post-decrement 
 </p>
 </dd>
-<dt><code>++<var>id</var> --<var>id</var></code></dt>
-<dd><p>variable pre-increment and pre-decrement
+<dt>
+<code>++<var>id</var> --<var>id</var>
+</code>
+</dt>
+<dd>
+<p>variable pre-increment and pre-decrement
 </p>
 </dd>
-<dt><code>- +</code></dt>
-<dd><p>unary minus and plus
+<dt>
+<code>- +</code>
+</dt>
+<dd>
+<p>unary minus and plus
 </p>
 </dd>
-<dt><code>! ~</code></dt>
-<dd><p>logical and bitwise negation
+<dt>
+<code>! ~</code>
+</dt>
+<dd>
+<p>logical and bitwise negation
 </p>
 </dd>
-<dt><code>**</code></dt>
-<dd><p>exponentiation
+<dt>
+<code>**</code>
+</dt>
+<dd>
+<p>exponentiation
 </p>
 </dd>
-<dt><code>* / %</code></dt>
-<dd><p>multiplication, division, remainder
+<dt>
+<code>* / %</code>
+</dt>
+<dd>
+<p>multiplication, division, remainder
 </p>
 </dd>
-<dt><code>+ -</code></dt>
-<dd><p>addition, subtraction
+<dt>
+<code>+ -</code>
+</dt>
+<dd>
+<p>addition, subtraction
 </p>
 </dd>
-<dt><code>&lt;&lt; &gt;&gt;</code></dt>
-<dd><p>left and right bitwise shifts
+<dt>
+<code>&lt;&lt; &gt;&gt;</code>
+</dt>
+<dd>
+<p>left and right bitwise shifts
 </p>
 </dd>
-<dt><code>&lt;= &gt;= &lt; &gt;</code></dt>
-<dd><p>comparison
+<dt>
+<code>&lt;= &gt;= &lt; &gt;</code>
+</dt>
+<dd>
+<p>comparison
 </p>
 </dd>
-<dt><code>== !=</code></dt>
-<dd><p>equality and inequality
+<dt>
+<code>== !=</code>
+</dt>
+<dd>
+<p>equality and inequality
 </p>
 </dd>
-<dt><code>&amp;</code></dt>
-<dd><p>bitwise AND
+<dt>
+<code>&amp;</code>
+</dt>
+<dd>
+<p>bitwise AND
 </p>
 </dd>
-<dt><code>^</code></dt>
-<dd><p>bitwise exclusive OR
+<dt>
+<code>^</code>
+</dt>
+<dd>
+<p>bitwise exclusive OR
 </p>
 </dd>
-<dt><code>|</code></dt>
-<dd><p>bitwise OR
+<dt>
+<code>|</code>
+</dt>
+<dd>
+<p>bitwise OR
 </p>
 </dd>
-<dt><code>&amp;&amp;</code></dt>
-<dd><p>logical AND
+<dt>
+<code>&amp;&amp;</code>
+</dt>
+<dd>
+<p>logical AND
 </p>
 </dd>
-<dt><code>||</code></dt>
-<dd><p>logical OR
+<dt>
+<code>||</code>
+</dt>
+<dd>
+<p>logical OR
 </p>
 </dd>
-<dt><code>expr ? expr : expr</code></dt>
-<dd><p>conditional operator
+<dt>
+<code>expr ? expr : expr</code>
+</dt>
+<dd>
+<p>conditional operator
 </p>
 </dd>
-<dt><code>= *= /= %= += -= &lt;&lt;= &gt;&gt;= &amp;= ^= |=</code></dt>
-<dd><p>assignment
+<dt>
+<code>= *= /= %= += -= &lt;&lt;= &gt;&gt;= &amp;= ^= |=</code>
+</dt>
+<dd>
+<p>assignment
 </p>
 </dd>
-<dt><code>expr1 , expr2</code></dt>
-<dd><p>comma
-</p></dd>
+<dt>
+<code>expr1 , expr2</code>
+</dt>
+<dd>
+<p>comma
+</p>
+</dd>
 </dl>
 
 <p>Shell variables are allowed as operands; parameter expansion is
@@ -179,10 +243,12 @@ to be used in an expression.
 </p>
 <p>Constants with a leading 0 are interpreted as octal numbers.
 A leading &lsquo;<samp>0x</samp>&rsquo; or &lsquo;<samp>0X</samp>&rsquo; denotes hexadecimal.  Otherwise,
-numbers take the form [<var>base</var><code>#</code>]<var>n</var>, where the optional <var>base</var>
+numbers take the form [<var>base</var>
+<code>#</code>]<var>n</var>, where the optional <var>base</var>
 is a decimal number between 2 and 64 representing the arithmetic
 base, and <var>n</var> is a number in that base.
-If <var>base</var><code>#</code> is omitted, then base 10 is used.
+If <var>base</var>
+<code>#</code> is omitted, then base 10 is used.
 When specifying <var>n</var>,
 he digits greater than 9 are represented by the lowercase letters,
 the uppercase letters, &lsquo;<samp>@</samp>&rsquo;, and &lsquo;<samp>_</samp>&rsquo;, in that order.
