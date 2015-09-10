@@ -17,7 +17,7 @@ A copy of the license is included in the section entitled
 "GNU Free Documentation License". -->
 <!-- Created by GNU Texinfo 5.2, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Bash Reference Manual: Arrays</title>
+<title>Bash Reference Manual: 배열</title>
 
 <meta name="description" content="Bash Reference Manual: Arrays">
 <meta name="keywords" content="Bash Reference Manual: Arrays">
@@ -73,150 +73,159 @@ Next: <a href="The-Directory-Stack.html#The-Directory-Stack" accesskey="n" rel="
 <hr>
 <a name="Arrays-1">
 </a>
-<h3 class="section">6.7 Arrays</h3>
+<h3 class="section">6.7 배열</h3>
 <a name="index-arrays">
 </a>
 
-<p>Bash provides one-dimensional indexed and associative array variables.
-Any variable may be used as an indexed array;
-the <code>declare</code> builtin will explicitly declare an array.
-There is no maximum
-limit on the size of an array, nor any requirement that members
-be indexed or assigned contiguously.
-Indexed arrays are referenced using integers (including arithmetic
-expressions (see <a href="Shell-Arithmetic.html#Shell-Arithmetic">Shell Arithmetic</a>)) and are zero-based;
-associative arrays use arbitrary strings.
-Unless otherwise noted, indexed array indices must be non-negative integers.
+<p>Bash 는 1차원으로 색인되고 결합된 배열 변수를 제공합니다. 어떤 변수들이든 
+색인 배열로 사용가능합니다; 
+<code>declare</code> 내부명령은 배열을 선언하는 데 사용됩니다. 배열의 
+최대 사이즈의 제한이나, 색인되거나 연속적으로 부여된 인자들에 대한 
+어떤 필요조건도 없습니다. 색인된 배열은 정수를 사용해 값을 찾고 (수식 포함 (
+<a href="Shell-Arithmetic.html#Shell-Arithmetic">Shell Arithmetic</a>) 을 참조), 
+0 을 시작으로 합니다; 연결된 배열은 임의의 문자열을 사용합니다. 띠로 언급되지 않으면, 
+색인된 배열의 색인은 음수여서는 안됩니다.
 </p>
-<p>An indexed array is created automatically if any variable is assigned to
-using the syntax
-</p>
+<p>색인 배열은 다음의 문법을 사용해서 값이 주어지면 자동적으로 만들어집니다.</p>
 <div class="example">
 <pre class="example">
 <var>name</var>[<var>subscript</var>]=<var>value</var>
 </pre>
 </div>
 
-<p>The <var>subscript</var>
-is treated as an arithmetic expression that must evaluate to a number.
-To explicitly declare an array, use
+<p>위의 
+<var>subscript</var> 는 숫자를 도출해내야 하는 수식표현으로 취급됩니다. 
+확실하게 배열을 정의하기 위해서는, 
 </p>
 <div class="example">
 <pre class="example">declare -a <var>name</var>
 </pre>
 </div>
-<p>The syntax
-</p>
+를 사용하십시요.
+<p>아래의 </p>
 <div class="example">
 <pre class="example">declare -a <var>name</var>[<var>subscript</var>]
 </pre>
 </div>
-<p>is also accepted; the <var>subscript</var> is ignored.
+<p>도 가능합니다; 
+<var>subscript</var> 는 무시됩니다.
 </p>
-<p>Associative arrays are created using
-</p>
+<p>연결 배열은 </p>
 <div class="example">
 <pre class="example">declare -A <var>name</var>.
 </pre>
 </div>
-
-<p>Attributes may be
-specified for an array variable using the <code>declare</code> and
-<code>readonly</code> builtins.  Each attribute applies to all members of
-an array.
+으로 만들어집니다.
+<p>속성들은 
+<code>declare</code> 와 
+<code>readonly</code> 내부 명령을 사용해 배열 변수에 의해 특정될 수도 있습니다. 
+각 속성은 배열의 모든 요소에 적용됩니다.
 </p>
-<p>Arrays are assigned to using compound assignments of the form
+<p>배열은 각 
+<var>값</var> 들이 
+<code>[<var>subscript</var>]=</code>
+<var>string</var> 의 형태일 때 다음과 같이 내용을 할당하면서 지정됩니다.
 </p>
 <div class="example">
 <pre class="example">
 <var>name</var>=(<var>value1</var> <var>value2</var> &hellip; )
 </pre>
 </div>
-<p>where each
-<var>value</var> is of the form <code>[<var>subscript</var>]=</code>
-<var>string</var>.
-Indexed array assignments do not require anything but <var>string</var>.
-When assigning to indexed arrays, if
-the optional subscript is supplied, that index is assigned to;
-otherwise the index of the element assigned is the last index assigned
-to by the statement plus one.  Indexing starts at zero.
+<p>색인 배열은 단지 
+<var>문자열</var> 만 있으면 됩니다. 색인 배열에서, 별도의 조건이 주어진다면 
+색인은 따로 지정됩니다; 그렇지 않으면 요소의 색인은 맨 마지막 색인에 1을 더한 
+값이 됩니다. 색인은 0 에서 시작합니다.
 </p>
-<p>When assigning to an associative array, the subscript is required.
-</p>
-<p>This syntax is also accepted by the <code>declare</code>
-builtin.  Individual array elements may be assigned to using the
+<p>연결 배열에 값을 넣을 때에는, 하위 스크립트가 필요합니다.</p>
+<p>
+<code>declare</code> 내부명령으로도 이 문법을 쓸 수 있습니다. 개별적인 배열 요소들은 
+위에서 언급한 
 <code>
 <var>name</var>[<var>subscript</var>]=<var>value</var>
-</code> syntax introduced above.
+</code> 문법으로도 부여할 수 있습니다.
 </p>
-<p>When assigning to an indexed array, if <var>name</var>
-is subscripted by a negative number, that number is
-interpreted as relative to one greater than the maximum index of
-<var>name</var>, so negative indices count back from the end of the
-array, and an index of -1 references the last element.
+<p>색인 배열에 값을 넣을 때에, 만일 
+<var>name</var> 에 음수를 넣으면, 그 값은 
+<var>name</var> 의 가장 큰 값보다 하나 더 큰 값으로 간주합니다, 그래서 음수는 배열의 
+끝에서부터 거슬러 올라가고, -1 은 마지막 요소를 가리킵니다.
 </p>
-<p>Any element of an array may be referenced using
-<code>${<var>name</var>[<var>subscript</var>]}</code>.
-The braces are required to avoid
-conflicts with the shell&rsquo;s filename expansion operators.  If the
-<var>subscript</var> is &lsquo;<samp>@</samp>&rsquo; or &lsquo;<samp>*</samp>&rsquo;, the word expands to all members
-of the array <var>name</var>.  These subscripts differ only when the word
-appears within double quotes.
-If the word is double-quoted,
-<code>${<var>name</var>[*]}</code> expands to a single word with
-the value of each array member separated by the first character of the
-<code>IFS</code> variable, and <code>${<var>name</var>[@]}</code> expands each element of
-<var>name</var> to a separate word.  When there are no array members,
-<code>${<var>name</var>[@]}</code> expands to nothing.
+<p>배열의 값은 
+<code>${<var>name</var>[<var>subscript</var>]}</code> 를 이용해서 불러올 수 있습니다.
+이 중괄호는 쉘의 파일명 확장 연산자와 헷갈리지 않기 위해 필요합니다. 만일 
+<var>subscript</var> 가 
+&lsquo;<samp>@</samp>&rsquo; 나 
+&lsquo;<samp>*</samp>&rsquo; 이라면, 
+<var>name</var> 배열의 모든 요소로 확장됩니다. 이 둘은 이중따옴표 안에서만 달라집니다. 
+이중따옴표 안에서는, 
+<code>${<var>name</var>[*]}</code> 는 배열의 요소 각각의 값을 
+<code>IFS</code> 변수의 첫번째 문자로 나눠서 출력하고, 
+<code>${<var>name</var>[@]}</code> 는 배열 
+<var>name</var> 의 각 요소를 (역자주: '빈칸으로')나누어서 출력합니다.
+배열에 아무것도 없다면, 
+<code>${<var>name</var>[@]}</code> 는 아무것도 출력하지 않습니다. 
+
+<!-- 해석 필요  --!>
 If the double-quoted expansion occurs within a word, the expansion of
 the first parameter is joined with the beginning part of the original
 word, and the expansion of the last parameter is joined with the last
 part of the original word.
-This is analogous to the
-expansion of the special parameters &lsquo;<samp>@</samp>&rsquo; and &lsquo;<samp>*</samp>&rsquo;. 
-<code>${#<var>name</var>[<var>subscript</var>]}</code> expands to the length of
-<code>${<var>name</var>[<var>subscript</var>]}</code>.
-If <var>subscript</var> is &lsquo;<samp>@</samp>&rsquo; or
-&lsquo;<samp>*</samp>&rsquo;, the expansion is the number of elements in the array. 
+<!-- 해석 필요  --!>
+
+이것은 특수 매개변수인 
+&lsquo;<samp>@</samp>&rsquo; 와 
+&lsquo;<samp>*</samp>&rsquo; 의 확장과 비슷합니다. 
+<code>${#<var>name</var>[<var>subscript</var>]}</code> 는 
+<code>${<var>name</var>[<var>subscript</var>]}</code> 의 요소의 갯수를 알려줍니다. 
+만일 
+<var>subscript</var> 가 
+&lsquo;<samp>@</samp>&rsquo; 나 
+&lsquo;<samp>*</samp>&rsquo; 라면, 배열의 모든 요소의 갯수를 알려줍니다. 
+
+
+
 Referencing an array variable without a subscript is equivalent to
 referencing with a subscript of 0. 
-If the <var>subscript</var>
-used to reference an element of an indexed array
-evaluates to a number less than zero, it is 
-interpreted as relative to one greater than the maximum index of the array,
-so negative indices count back from the end of the array,
-and an index of -1 refers to the last element.
+
+만일 배열의 요소를 참조하기 위해 
+<var>subscript</var>  에 0 보다 작은 숫자를 쓰게 되면, 배열의 가장 큰 인덱스보다 1 큰 수를 
+참조하게 되고, 그래서 음수는 배열의 뒤에서부터 거슬러 올라오게 됩니다, 즉 -1은 가장 마지막 
+요소를 뜻합니다.
 </p>
-<p>An array variable is considered set if a subscript has been assigned a
-value.  The null string is a valid value.
+<p>Subscript 가 값은 가지면, 배열 변수는 지정된 것으로 간주됩니다. 빈 문자열도 값으로 지정할 
+수 있습니다.
 </p>
-<p>It is possible to obtain the keys (indices) of an array as well as the values.
-${!<var>name</var>[@]} and ${!<var>name</var>[*]} expand to the indices
-assigned in array variable <var>name</var>.
-The treatment when in double quotes is similar to the expansion of the
-special parameters &lsquo;<samp>@</samp>&rsquo; and &lsquo;<samp>*</samp>&rsquo; within double quotes.
+<p>배열의 값 뿐만 아니라, 키(인덱스)를 꺼내볼 수도 있습니다. 
+${!<var>name</var>[@]} 과 
+${!<var>name</var>[*]} 는 
+<var>name</var> 배열 변수에 지정된 인덱스를 반환합니다. 이중따옴표안에 특수문자 
+&lsquo;<samp>@</samp>&rsquo; 과 
+&lsquo;<samp>*</samp>&rsquo; 를 쓰는 것처럼 쓸 수 있습니다.
 </p>
-<p>The <code>unset</code> builtin is used to destroy arrays.
-<code>unset <var>name</var>[<var>subscript</var>]</code>
-destroys the array element at index <var>subscript</var>.
-Negative subscripts to indexed arrays are interpreted as described above.
-Care must be taken to avoid unwanted side effects caused by filename
-expansion.
-<code>unset <var>name</var>
-</code>, where <var>name</var> is an array, removes the
-entire array.  A subscript of &lsquo;<samp>*</samp>&rsquo; or &lsquo;<samp>@</samp>&rsquo; also removes the
-entire array.
+<p>
+<code>unset</code> 내부명령어는 배열을 없앨 때 사용됩니다.
+<code>unset <var>name</var>[<var>subscript</var>]</code> 는 
+<var>subscript</var> 인덱스에 있는 배열 요소를 없애줍니다. 음수의 Subscript는 위에서 
+언급한 것과 같이 작동합니다. 파일명 확장으로 야기된 원하지 않은 부작용을 피하기 위해 
+조심해야합니다. 
+배열의 이름이 
+<var>name</var> 이라면 
+<code>unset <var>name</var></code> 은 배열 전체를 없앱니다. Subscript로 
+&lsquo;<samp>*</samp>&rsquo; 나 
+&lsquo;<samp>@</samp>&rsquo; 를 쓰는 것도 배열 전체를 없앱니다.
 </p>
-<p>The <code>declare</code>, <code>local</code>, and <code>readonly</code>
-builtins each accept a <samp>-a</samp> option to specify an indexed
-array and a <samp>-A</samp> option to specify an associative array.
-If both options are supplied, <samp>-A</samp> takes precedence.
-The <code>read</code> builtin accepts a <samp>-a</samp>
-option to assign a list of words read from the standard input
-to an array, and can read values from the standard input into
-individual array elements.  The <code>set</code> and <code>declare</code>
-builtins display array values in a way that allows them to be
-reused as input.
+<p>
+<code>declare</code>, 
+<code>local</code>, 그리고 
+<code>readonly</code> 내부명령은 인덱스 배열을 지정할 때 
+<samp>-a</samp> 옵션을 씁니다. 
+<samp>-A</samp> 옵션은 연결 배열을 지정할 때 쓰입니다.
+두 옵션이 동시에 사용되면, 
+ <samp>-A</samp> 옵션이 우선합니다. 
+<code>read</code> 내부명령은 
+<samp>-a</samp> 옵션으로 표준 입력으로부터 읽어들인 단어의 리스트를 배열에 할당하고, 
+표준 입력으로 배열의 개별 값을 읽어 올 수 있습니다.
+<code>set</code> 과 
+<code>declare</code> 내부명령은 입력으로 재사용할 수 있는 형태로 배열값을 출력합니다.
 </p>
 <hr>
 <div class="header">
